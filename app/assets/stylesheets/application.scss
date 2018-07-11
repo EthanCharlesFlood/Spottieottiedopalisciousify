@@ -15,7 +15,7 @@
  */
 
 body {
-  font-family: proxima_nova,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-family: Helvetica,Helvetica,Arial,sans-serif;
 }
 
 .splash-container {
@@ -29,10 +29,6 @@ body {
   object-fit: fill;
   background-size: cover;
   height: 100vh;
-}
-
-.splash-shadow {
-
 }
 
 .splash-info {
@@ -66,14 +62,14 @@ body {
   line-height: 1em;
 }
 .splash-ul {
-  list-style-image: image-url('checkmark.jpg');
+  list-style-image: image_url('checkmark.jpg');
   color: #fff;
   font-size: 24px;
   font-weight: 200;
   list-style: initial;
 }
 
-.splash-ul li {
+.splash-ul > li {
   font-weight: 350;
   line-height: 1.2em;
   font-size: 18px;
