@@ -1,0 +1,119 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+  font-family: proxima_nova,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.splash-container {
+  background-color: rgba(0,0,0,.5);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-image: image_url('background.jpg');
+  background-position: center;
+  object-fit: fill;
+  background-size: cover;
+  height: 100vh;
+}
+
+.splash-shadow {
+
+}
+
+.splash-info {
+  width: 60%;
+  border-left: 2px solid grey;
+  margin-right: 40px;
+  padding-left: 35px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.splash-session-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  width: 40%;
+  overflow: hidden;
+  padding: 2px 15px 0;
+  text-align: center;
+  margin: 15px;
+}
+
+.splash-label {
+  color: #07d159;
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1em;
+}
+.splash-ul {
+  list-style-image: url('checkmark.jpg');
+  color: #fff;
+  font-size: 24px;
+  font-weight: 200;
+  list-style: initial;
+}
+
+.splash-ul li {
+  font-weight: 350;
+  line-height: 1.2em;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.splash-seperator {
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 14px;
+  color: hsla(0,0%,100%,.6);
+  line-height: 22px;
+}
+
+.splash-button1 {
+  background-color: #1db954;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 500px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  width: 70%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.splash-button2 {
+  background-color: #fff;
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 500px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  width: 70%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}

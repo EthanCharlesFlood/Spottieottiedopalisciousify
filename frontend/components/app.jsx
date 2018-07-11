@@ -1,6 +1,7 @@
 import React from 'react';
 import LoginFormContainer from './session/log_in_form_container';
 import SignupFormContainer from './session/sign_up_form_container';
+import Greeting from './greeting/greeting';
 import {
   Route,
   Redirect,
@@ -14,11 +15,11 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 const App = () => {
   return (
     <div>
-      <h1>Spottieottiedopalisciousify!</h1>
-      <Link to="/login">Log In</Link>
-      <Link to="/signup">Sign up</Link>
-      <AuthRoute exact path="/login" component={LoginFormContainer} />
-      <AuthRoute exact path="/signup" component={SignupFormContainer} />
+      <Switch>
+        <AuthRoute exact path="/" component={Greeting} />
+        <AuthRoute exact path="/login" component={LoginFormContainer} />
+        <AuthRoute exact path="/signup" component={SignupFormContainer} />
+      </Switch>
     </div>
   );
 };
