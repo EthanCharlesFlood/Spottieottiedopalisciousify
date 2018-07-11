@@ -3,7 +3,7 @@ import {
   LOGOUT_CURRENT_USER } from "./../actions/session_actions";
 import merge from "lodash/merge";
 
-const sessionReducer = (state = {}, action) => {
+const sessionReducer = (state = {id: null}, action) => {
     switch (action.type) {
       case RECEIVE_CURRENT_USER:
         return {id: action.currentUser.id};
