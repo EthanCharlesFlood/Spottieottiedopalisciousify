@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { signup } from './../../actions/session_actions';
+import { signup, login } from './../../actions/session_actions';
 import SessionForm from './session_form';
 
 const mapStateToProps = ({errors}) => {
@@ -9,13 +9,18 @@ const mapStateToProps = ({errors}) => {
     errors: errors.session,
     formType: "signup",
     formHeader: "Sign Up",
-    link: <label>Already have an account?  <Link to={"/login"}>Log In</Link></label>,
+    link: <label>Already have an account?  <Link className="user-form-link" to={"/login"}>Log In</Link></label>,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
+  const demoUser = {
+        username: "Three-Stacks",
+        password: "password"
+      };
   return {
-    processForm: user => dispatch(signup(user))
+    processForm: user => dispatch(signup(user)),
+    demoLogin: () => dispatch(login(demoUser))
   };
 };
 

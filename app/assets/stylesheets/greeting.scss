@@ -1,0 +1,137 @@
+.splash-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-image: image_url('background.jpg');
+  background-position: center;
+  object-fit: fill;
+  background-size: cover;
+  height: 100vh;
+}
+
+
+.splash-info {
+  width: 60%;
+  border-left: 2px solid grey;
+  margin-right: 40px;
+  padding-left: 35px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.splash-session-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  width: 40%;
+  overflow: hidden;
+  padding: 2px 15px 0;
+  text-align: center;
+  margin: 15px;
+}
+.splash-buttons-heading {
+  font-size: 30px;
+  font-weight: 0;
+  color: white;
+}
+
+.splash-label {
+  color: #07d159;
+  font-size: 60px;
+  font-weight: 500;
+  line-height: 1em;
+}
+.splash-ul {
+  list-style-image: image_url('checkmark-green_real');
+  color: #fff;
+  font-size: 24px;
+  font-weight: 200;
+}
+
+.splash-ul > li {
+  font-weight: 350;
+  line-height: 1.2em;
+  font-size: 18px;
+  text-decoration: none;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.splash-seperator {
+  font-weight: 400;
+  text-align: center;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 14px;
+  color: hsla(0,0%,100%,.6);
+  padding: 0 10px;
+}
+
+.splash-seperator:before,
+.splash-seperator:after {
+ background-color: hsla(0,0%,100%,.6);
+ content: "";
+ display: inline-block;
+ height: 1px;
+ position: relative;
+ vertical-align: middle;
+ width: 10%;
+}
+.splash-seperator:before {
+ right: 5px;
+ margin-left: -75%;
+}
+.splash-seperator:after {
+ left: 5px;
+ margin-right: -75%;
+}
+
+.splash-button1 {
+  background-color: #1db954;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 500px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  width: 70%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-top: 30px;
+}
+
+.splash-button2 {
+  background-color: #fff;
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 500px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  width: 70%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.splash-shadow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  background-position: center;
+  object-fit: fill;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0,0,0, .6);
+}

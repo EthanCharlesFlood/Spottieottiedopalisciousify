@@ -1,0 +1,123 @@
+.user-form-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.user-form-header {
+  display: flex;
+  height: 100px;
+  width: 100%;
+  border-bottom: 1px solid #d9dadc;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  margin-bottom: 30px;
+  font-weight: 900;
+}
+
+.user-form-type {
+  text-align: center;
+  color: #fff;
+  background-color: #3b5998;
+  width: 450px;
+  border-radius: 500px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  letter-spacing: 1.5px;
+}
+
+.user-form-line {
+   width: 100%;
+   text-align: center;
+   border-bottom: 1px solid #d9dadc;
+   line-height: 0.1em;
+   margin: 10px 0 20px;
+   width: 450px;
+   padding-top: 10px;
+}
+
+.user-form-divider {
+  font-size: 12px;
+  font-weight: 900;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.user-form {
+  display: flex;
+  width: 450px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 5px;
+}
+
+.user-form-input {
+  background-color: none;
+  margin-top: 5px;
+  height: 40px;
+  width: 450px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #222326;
+}
+
+.user-form-input:focus {
+  outline: none;
+  border: 1px solid black;
+
+}
+
+.user-form-submit {
+  color: #fff;
+  background-color: #1ed760;
+  font-size: 14px;
+  line-height: 1;
+  border-radius: 500px;
+  padding: 16px 48px 18px;
+  margin-top: 15px;
+  width: 450px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.user-form-error {
+  color: #eb1e32;
+}
+
+.user-form-link {
+  color: #1ed760;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-size: .9375em;
+}
+
+.user-form-terms {
+  width: 420px;
+  border-top: 1px solid #c1c3c6;
+  color: #c1c3c6;
+  font-size: .7em;
+
+}
+
+.user-form-demo {
+  color: #fff;
+  background-color: #1ed760;
+  font-size: 14px;
+  line-height: 1;
+  border-radius: 500px;
+  padding: 16px 48px 18px;
+  margin-top: 5px;
+  width: 450px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}

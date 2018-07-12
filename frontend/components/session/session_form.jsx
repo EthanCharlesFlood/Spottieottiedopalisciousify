@@ -30,10 +30,10 @@ class SessionForm extends React.Component {
 
   renderErrors() {
     const errors = this.props.errors.map((error, i) => {
-      return <li key={i}>{error}</li>;
+      return <li className="user-form-error" key={i}>{error}</li>;
     });
     return (
-      <ul>
+      <ul className="user-form-errors-list">
         {errors}
       </ul>
     );
@@ -43,8 +43,8 @@ class SessionForm extends React.Component {
   render() {
     let emailForm;
     if (this.props.formType === "signup") {
-      emailForm = <label>Email:
-        <input type="text" onChange={this.update("email")}></input>
+      emailForm = <label>
+        <input className="user-form-input" placeholder="Email" type="text" onChange={this.update("email")}></input>
       </label>;
     } else {
       emailForm = null;
@@ -52,30 +52,19 @@ class SessionForm extends React.Component {
 
     return (
       <div className={"user-form-container"}>
-        <label>{this.props.formHeader}
-        <br></br>
-          {this.renderErrors()}
-        <br></br>
-          <form onSubmit={this.handleSubmit}>
-            <label>Username:
-              <input type="text" onChange={this.update("username")}></input>
-            </label>
-            <br></br>
-            <br></br>
-            <label>Password:
-              <input type="password" onChange={this.update("password")}></input>
-            </label>
-            <br></br>
-            <br></br>
+        <h1 className="user-form-header">Spottieottiedopalisciousify&#174;</h1>
+        <span className="user-form-type">Facebook login not supported!</span>
+        <h2 className="user-form-line"><span className="user-form-divider"> INSTEAD </span></h2>
+          <form className="user-form" onSubmit={this.handleSubmit}>
+            <input className="user-form-input" type="text" placeholder="Username" onChange={this.update("username")}></input>
             {emailForm}
-            <br></br>
-            <br></br>
-            <input type="submit" className={"user-from-submit"}/>
+            <input type="password" className="user-form-input" placeholder="Password" onChange={this.update("password")}></input>
+            {this.renderErrors()}
+            <input type="submit" className={"user-form-submit"} value={this.props.formHeader}/>
           </form>
-          <br></br>
-          <br></br>
-        </label>
+        <button className="user-form-demo" onClick={this.props.demoLogin.bind(this)}>Demo Login</button>
         {this.props.link}
+        <p className="user-form-terms">We do not have any terms here at Spottieottiedopalisciousify! Relax, you're doing great!</p>
       </div>
     );
   }

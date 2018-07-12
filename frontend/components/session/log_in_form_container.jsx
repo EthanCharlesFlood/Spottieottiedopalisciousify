@@ -9,13 +9,18 @@ const mapStateToProps = ({errors}) => {
     errors: errors.session,
     formType: "login",
     formHeader: "Log In",
-    link: <label>Don't have an account?  <Link to={"/signup"}>Sign Up</Link></label>
+    link: <label>Don't have an account?  <Link className="user-form-link" to={"/signup"}>Sign Up</Link></label>,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
+  const demoUser = {
+          username: "Three-Stacks",
+          password: "password"
+        };
   return {
     processForm: user => dispatch(login(user)),
+    demoLogin: () => dispatch(login(demoUser))
   };
 };
 

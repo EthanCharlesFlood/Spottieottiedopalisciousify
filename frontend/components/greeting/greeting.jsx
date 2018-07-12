@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 
 const Greeting = () => {
   return (
-    <div className="splash-shadow">
       <div className="splash-container">
+        <div className="splash-shadow">
         <div className="splash-session-buttons">
-          <h1>Spottieottiedopalisciousify!</h1>
+          <h1 className="splash-buttons-heading">Spottieottiedopalisciousify&#174;</h1>
           <Link className="splash-button1" to="/signup">Sign Up</Link>
           <br />
           <span className="splash-seperator">Already have an account?</span>
