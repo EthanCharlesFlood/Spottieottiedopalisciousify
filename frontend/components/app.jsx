@@ -1,6 +1,7 @@
 import React from 'react';
 import LoginFormContainer from './session/log_in_form_container';
 import SignupFormContainer from './session/sign_up_form_container';
+import MainContainer from './main/main_container';
 import Greeting from './greeting/greeting';
 import {
   Route,
@@ -15,6 +16,9 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 const App = () => {
   return (
     <div>
+			<Switch>
+				<ProtectedRoute exact path="/main" component={MainContainer} />
+			</Switch>
       <Switch>
         <AuthRoute exact path="/" component={Greeting} />
         <AuthRoute exact path="/login" component={LoginFormContainer} />

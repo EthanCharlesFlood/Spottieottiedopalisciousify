@@ -12,9 +12,9 @@
 
 
 .splash-info {
-  width: 60%;
+  width: 400px;
   border-left: 2px solid grey;
-  margin-right: 40px;
+  margin-right: 240px;
   padding-left: 35px;
   height: 400px;
   display: flex;
@@ -28,7 +28,7 @@
   flex-direction: column;
   justify-content: center;
   align-items:center;
-  width: 40%;
+  width: 400px;
   overflow: hidden;
   padding: 2px 15px 0;
   text-align: center;
@@ -70,7 +70,7 @@
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 14px;
-  color: hsla(0,0%,100%,.6);
+  color: hsla(0,0%,100%,.1);
   padding: 0 10px;
 }
 
@@ -82,7 +82,7 @@
  height: 1px;
  position: relative;
  vertical-align: middle;
- width: 10%;
+ width: 25px;
 }
 .splash-seperator:before {
  right: 5px;
@@ -102,7 +102,7 @@
   border-radius: 500px;
   text-transform: uppercase;
   letter-spacing: 3px;
-  width: 70%;
+  width: 300px;
   padding-top: 15px;
   padding-bottom: 15px;
   margin-top: 30px;
@@ -117,7 +117,7 @@
   border-radius: 500px;
   text-transform: uppercase;
   letter-spacing: 3px;
-  width: 70%;
+  width: 300px;
   padding-top: 15px;
   padding-bottom: 15px;
 }

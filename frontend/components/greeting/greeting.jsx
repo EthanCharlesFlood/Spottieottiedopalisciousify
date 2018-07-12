@@ -11,7 +11,7 @@ const Greeting = () => {
           <br />
           <span className="splash-seperator">Already have an account?</span>
           <br />
-          <Link className="splash-button2" to="/signup">Log In</Link>
+          <Link className="splash-button2" to="/login">Log In</Link>
         </div>
         <br />
         <br />
