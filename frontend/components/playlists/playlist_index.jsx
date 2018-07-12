@@ -9,14 +9,16 @@ class PlaylistIndex extends React.Component {
 
 	render() {
 		const playlists = this.props.playlists.map(playlist => {
-			return <Link className="playlist-index-item" key={playlist.id}
-				to={`api/playlists/${playlist.id}`}>{playlist.name}</Link>;
+			return (
+			<div className="playlist-index-item">
+			<Link className="playlist-index-item-link" key={playlist.id}
+				to={`api/playlists/${playlist.id}`}>{playlist.playlist_name}</Link>
+			</div>
+			);
 		});
 		return (
 			<div className="playlist-index-container">
-				<ul className="playlist-index-list">
 					{playlists}
-				</ul>
 			</div>
 		);
 	}

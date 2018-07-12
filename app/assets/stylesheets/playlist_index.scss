@@ -1,3 +1,17 @@
 .playlist-index-container {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
 
+.playlist-index-item {
+	display: flex;
+	justify-content: flex-end;
+	height: 200px;
+}
+
+.playlist-index-item-link {
+	text-decoration: none;
+	color: white;
 }

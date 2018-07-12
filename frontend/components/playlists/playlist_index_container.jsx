@@ -8,7 +8,7 @@ import { selectPlaylists } from './../../reducers/selectors';
 
 const mapStateToProps = (state) => {
 	return {
-		playlists: selectPlaylists(state)
+		playlists: Object.values(state.entities.playlists)
 	};
 };
 
