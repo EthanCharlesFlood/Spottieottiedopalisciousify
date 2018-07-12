@@ -14,7 +14,9 @@ class PlaylistIndex extends React.Component {
 		});
 		return (
 			<div className="playlist-index-container">
-				{playlists}
+				<ul className="playlist-index-list">
+					{playlists}
+				</ul>
 			</div>
 		);
 	}
