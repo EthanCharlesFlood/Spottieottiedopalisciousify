@@ -10,10 +10,10 @@
 #
 
 class Playlist < ApplicationRecord
-	belongs_to :user
+	belongs_to :creator,
+		class_name: 'User'
 	has_many :songs_to_playlists,
-		inverse_of: :song_to_playlists
 		dependent: :destroy
-	has_many :songs, through: :song_to_playlists
+	has_many :songs, through: :songs_to_playlists
 
 end

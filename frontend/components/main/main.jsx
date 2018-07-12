@@ -1,4 +1,6 @@
 import React from 'react';
+import SideBarContainer from './../bars/side_bar_container';
+import PlaylistIndexContainer from './../playlists/playlist_index_container';
 
 
 
@@ -6,8 +8,9 @@ class Main extends React.Component {
 
 	render() {
 		return (
-		<div>
-			<h3>{this.props.currentUser.username}</h3>
+		<div className="main-container">
+			<SideBarContainer />
+			<PlaylistIndexContainer />
 		</div>
 		);
 	}

@@ -15,8 +15,7 @@ class Song < ApplicationRecord
 	belongs_to :artist
 	belongs_to :album
 	has_many :songs_to_playlists,
-		inverse_of: :song,
 		dependent: :destroy
-	has_many :playlists, through: :song_to_playlists
+	has_many :playlists, through: :songs_to_playlists
 
 end

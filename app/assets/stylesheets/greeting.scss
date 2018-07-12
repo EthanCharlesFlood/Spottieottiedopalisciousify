@@ -8,6 +8,7 @@
   object-fit: fill;
   background-size: cover;
   height: 100vh;
+	min-width: 720px;
 }
 
 
@@ -29,7 +30,6 @@
   justify-content: center;
   align-items:center;
   width: 400px;
-  overflow: hidden;
   padding: 2px 15px 0;
   text-align: center;
   margin: 15px;

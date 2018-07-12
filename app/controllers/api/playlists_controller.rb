@@ -1,4 +1,4 @@
-class Api::PlaylistsController < ApplicationRecord
+class Api::PlaylistsController < ApplicationController
 
 	def create
 		@playlist = Playlist.new(playlists_params)
@@ -36,6 +36,7 @@ class Api::PlaylistsController < ApplicationRecord
 	private
 
 	def playlists_params
+		params.require(:playlist).permit(:playlist_name, :creator_id)
 	end
 
 end

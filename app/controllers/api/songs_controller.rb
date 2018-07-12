@@ -1,18 +1,9 @@
-class Api::SongsController < ApplicationRecord
-
-	def create
-	end
+class Api::SongsController < ApplicationController
 
 	def show
 	end
 
 	def index
-	end
 
-	def update
 	end
-
-	def destroy
-	end
-
 end
