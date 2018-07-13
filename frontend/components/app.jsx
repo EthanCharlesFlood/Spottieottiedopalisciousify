@@ -11,12 +11,16 @@ import {
   HashRouter
 } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import UsersShowContainer from './users/users_show_container';
 
 
-const App = () => {
+const App = (props) => {
   return (
     <div>
-			<ProtectedRoute path="/main" component={MainContainer} />
+      <Switch>
+			  <ProtectedRoute exact path="/main" component={MainContainer} />
+			  <ProtectedRoute exact path="/user/:userid" component={UsersShowContainer} />
+      </Switch>
       <Switch>
         <AuthRoute exact path="/" component={Greeting} />
         <AuthRoute exact path="/login" component={LoginFormContainer} />

@@ -12,6 +12,7 @@ class Api::UsersController < ApplicationController
   end
 
   def show
+    @user = User.includes(:playlists).find(params[:id])
   end
 
   private

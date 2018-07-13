@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { logout } from './../../actions/session_actions';
+import { createPlaylist } from './../../actions/playlist_actions';
 import Main from './main';
 
 
@@ -13,6 +14,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
 	return {
+    createPlaylist: playlist => dispatch(createPlaylist(playlist))
 	};
 };
 

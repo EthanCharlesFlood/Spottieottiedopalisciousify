@@ -10,7 +10,7 @@ class PlaylistIndex extends React.Component {
 	render() {
 		const playlists = this.props.playlists.map(playlist => {
 			return (
-			<div className="playlist-index-item">
+			<div className="playlist-index-item" key={playlist.id}>
 			<Link className="playlist-index-item-link" key={playlist.id}
 				to={`api/playlists/${playlist.id}`}>{playlist.playlist_name}</Link>
 			</div>

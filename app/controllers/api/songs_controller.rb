@@ -1,9 +1,7 @@
 class Api::SongsController < ApplicationController
 
-	def show
-	end
-
 	def index
-
+    @songs = Song.includes(:artist, :album).all
 	end
+
 end
