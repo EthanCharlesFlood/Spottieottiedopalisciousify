@@ -2,6 +2,7 @@ import React from 'react';
 import LoginFormContainer from './session/log_in_form_container';
 import SignupFormContainer from './session/sign_up_form_container';
 import MainContainer from './main/main_container';
+import Modal from './modal/modal';
 import Greeting from './greeting/greeting';
 import {
   Route,
@@ -17,6 +18,7 @@ import UsersShowContainer from './users/users_show_container';
 const App = (props) => {
   return (
     <div>
+      <Modal />
       <Switch>
 			  <ProtectedRoute exact path="/main" component={MainContainer} />
 			  <ProtectedRoute exact path="/user/:userid" component={UsersShowContainer} />

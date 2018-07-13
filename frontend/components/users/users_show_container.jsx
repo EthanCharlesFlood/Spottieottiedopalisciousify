@@ -5,7 +5,7 @@ import { logout } from './../../actions/session_actions';
 import UsersShow from './users_show';
 import { fetchPlaylists } from './../../actions/playlist_actions';
 import { selectPlaylists } from './../../reducers/selectors';
-
+import { openModal, closeModal } from '../../actions/modal_actions';
 
 
 const mapStateToProps = (state) => {
@@ -17,7 +17,13 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    createPlaylist: playlist => dispatch(createPlaylist(playlist))
+    createPlaylist: playlist => dispatch(createPlaylist(playlist)),
+    createModal: (
+      <button className="playlist-modal" onClick={() => dispatch(openModal('Create'))}>
+        New Playlist
+      </button>
+    ),
+    closeModal: () => dispatch(closeModal()),
   };
 };
 

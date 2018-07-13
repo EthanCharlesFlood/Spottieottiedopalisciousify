@@ -53,8 +53,6 @@ class SessionForm extends React.Component {
     return (
       <div className={"user-form-container"}>
         <h1 className="user-form-header"><i className="fab fa-spotify" />Spottieottiedopalisciousify&#174;</h1>
-        <span className="user-form-type">Facebook login not supported!</span>
-        <h2 className="user-form-line"><span className="user-form-divider"> INSTEAD </span></h2>
           <form className="user-form" onSubmit={this.handleSubmit}>
             <input className="user-form-input" type="text" placeholder="Username" onChange={this.update("username")}></input>
             {emailForm}

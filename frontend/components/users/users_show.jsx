@@ -1,6 +1,7 @@
 import React from 'react';
 import SideBarContainer from './../bars/side_bar_container';
 import { Link } from 'react-router-dom';
+import Modal from '../modal/modal';
 
 class UsersShow extends React.Component {
 
@@ -18,6 +19,7 @@ class UsersShow extends React.Component {
         <div className="users-show-subcontainer">
           <SideBarContainer />
           {playlists}
+          {this.props.createModal}
         </div>
       </div>
     );

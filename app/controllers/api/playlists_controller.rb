@@ -2,7 +2,7 @@ class Api::PlaylistsController < ApplicationController
 
 	def create
 		@playlist = Playlist.new(playlists_params)
-
+    debugger
 		if @playlist.save
 			render "api/playlists/show"
 		else
@@ -36,7 +36,7 @@ class Api::PlaylistsController < ApplicationController
 	private
 
 	def playlists_params
-		params.require(:playlist).permit(:playlist_name, :creator_id)
+		params.require(:playlist).permit(:playlist_name, :user_id)
 	end
 
 end
