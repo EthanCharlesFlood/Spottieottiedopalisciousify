@@ -1,6 +1,7 @@
 import React from 'react';
 import LoginFormContainer from './session/log_in_form_container';
 import SignupFormContainer from './session/sign_up_form_container';
+import PlaylistShowContainer from './playlists/playlist_show_container';
 import MainContainer from './main/main_container';
 import Modal from './modal/modal';
 import Greeting from './greeting/greeting';
@@ -22,6 +23,7 @@ const App = (props) => {
       <Switch>
 			  <ProtectedRoute exact path="/main" component={MainContainer} />
 			  <ProtectedRoute exact path="/user/:userid" component={UsersShowContainer} />
+        <ProtectedRoute exact path='/playlists/:playlistid' component={PlaylistShowContainer} />
       </Switch>
       <Switch>
         <AuthRoute exact path="/" component={Greeting} />

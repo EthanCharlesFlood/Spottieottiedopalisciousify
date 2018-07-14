@@ -28,8 +28,8 @@ Song.create(song_name: "Hacker", artist_id: Artist.second.id, album_id: Album.se
 Song.create(song_name: "Dracula Mountain", artist_id: Artist.third.id, album_id: Album.third.id)
 
 Playlist.destroy_all
-Playlist.create(playlist_name: "Angry Music", creator_id: User.first.id)
-Playlist.create(playlist_name: "Not Angry Music", creator_id: User.last.id)
+Playlist.create(playlist_name: "Angry Music", user_id: User.first.id)
+Playlist.create(playlist_name: "Not Angry Music", user_id: User.last.id)
 
 SongsToPlaylist.destroy_all
 SongsToPlaylist.create(song_id: Song.first.id, playlist_id: Playlist.last.id)

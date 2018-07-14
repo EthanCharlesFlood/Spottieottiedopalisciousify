@@ -11,12 +11,13 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 const mapStateToProps = (state) => {
   return {
     currentUser: state.entities.users[state.session.id],
-    playlists: Object.values(state.entities.playlists)
+    playlists: selectPlaylists(state),
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    fetchPlaylists: () => dispatch(fetchPlaylists()),
     createPlaylist: playlist => dispatch(createPlaylist(playlist)),
     createModal: (
       <button className="playlist-modal" onClick={() => dispatch(openModal('Create'))}>

@@ -32,7 +32,7 @@ export const fetchPlaylists = () => {
 
 export const fetchPlaylist = (playlistId) => {
 	return dispatch => {
-		return PlaylistApiUtil.fetchPlaylist(playlistId).then(playlist => dispatch(receivePlaylist));
+		return PlaylistApiUtil.fetchPlaylist(playlistId).then(playlist => dispatch(receivePlaylist(playlist)));
 	};
 };
 

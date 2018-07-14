@@ -12,12 +12,13 @@ class PlaylistIndex extends React.Component {
 			return (
 			<div className="playlist-index-item" key={playlist.id}>
 			<Link className="playlist-index-item-link" key={playlist.id}
-				to={`api/playlists/${playlist.id}`}>{playlist.playlist_name}</Link>
+				to={`/playlists/${playlist.id}`}>{playlist.playlist_name}</Link>
 			</div>
 			);
 		});
 		return (
 			<div className="playlist-index-container">
+        <span className="playlist-index-title">Playlists</span>
 					{playlists}
 			</div>
 		);

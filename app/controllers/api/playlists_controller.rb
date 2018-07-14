@@ -2,7 +2,6 @@ class Api::PlaylistsController < ApplicationController
 
 	def create
 		@playlist = Playlist.new(playlists_params)
-    debugger
 		if @playlist.save
 			render "api/playlists/show"
 		else
@@ -11,7 +10,7 @@ class Api::PlaylistsController < ApplicationController
 	end
 
 	def show
-		@playlist = Playlist.find(params[:id]).includes(:songs)
+		@playlist = Playlist.includes(:songs).find(params[:id])
 	end
 
 	def index
