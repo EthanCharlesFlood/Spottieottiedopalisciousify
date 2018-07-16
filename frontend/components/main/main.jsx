@@ -22,6 +22,7 @@ class Main extends React.Component {
 		<div className="main-container">
       <div className="main-subcontainer">
   			<SideBarContainer />
+        <NavBarContainer />
         <Switch>
   			  <PlaylistIndexContainer />
         </Switch>

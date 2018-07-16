@@ -5,8 +5,9 @@ import PlaylistShow from './playlist_show';
 import { fetchPlaylist } from './../../actions/playlist_actions';
 
 const mapStateToProps = (state, ownProps) => {
+  const playlist = state.entities.playlists[ownProps.match.params.playlistId];
   return {
-    playlist: state.entities.playlists[ownProps.match.params.playlistId],
+    playlist: playlist,
   };
 };
 

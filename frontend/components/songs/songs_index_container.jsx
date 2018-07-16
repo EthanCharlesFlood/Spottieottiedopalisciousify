@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 
 const mapStateToProps = (state) => {
   return {
-    playlists: Object.values(state.entities.songs)
+    songs: Object.values(state.entities.songs)
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-
+    fetchSongs: () => dispatch(fetchSongs()),
   };
 };
 

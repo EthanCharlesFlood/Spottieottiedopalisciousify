@@ -1,3 +1,30 @@
 .navbar-container {
+  display: flex;
+  height: 100px;
+  flex-direction: row;
+  align-items: center;
+}
 
+.navbar-button {
+  font-family: Helvetica,Helvetica,Arial,sans-serif;
+  border: none;
+  background: none;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.navbar-button:hover {
+  border: none;
+
+}
+
+.navbar-button:active,
+.navbar-button:focus,
+.navbar-button:active {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }

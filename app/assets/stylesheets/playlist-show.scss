@@ -1,5 +1,95 @@
 .playlist-show-container {
 	display: flex;
+  flex-direction: row;
 	height: 100vh;
   background: linear-gradient(#ff6600,#000);
+  font-family: Helvetica,Helvetica,Arial,sans-serif;
+}
+
+.playlist-show-info {
+  margin-left: 40px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+}
+
+.playlist-show-play {
+  color: #fff;
+  background-color: #1ed760;
+  font-size: 12px;
+  line-height: 1;
+  border-radius: 500px;
+  width: 150px;
+  height: 40px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: none;
+  margin-top: 30px;
+}
+
+.playlist-show-delete {
+  font-family: Helvetica,Helvetica,Arial,sans-serif;
+  border: none;
+  background: none;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.playlist-show-delete:active,
+.playlist-show-delete:focus,
+.playlist-show-delete:active {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+
+.playlist-show-title {
+  font-size: 28px;
+  line-height: 36px;
+  letter-spacing: -.005em;
+  font-weight: 600;
+  color: #fff;
+  text-transform: none;
+  height: 35px;
+}
+
+.playlist-show-image {
+  width: 157px;
+  height: 157px;
+  background-color: white;
+}
+
+.playlist-show-song-count {
+  font-size: 11px;
+  line-height: 16px;
+  font-weight: 200;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 2px;
+}
+
+.playlist-show-song-count {
+  margin-top: 10px;
+}
+
+.playlist-show-info-subcontainer {
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.playlist-show-author {
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 200;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.playlist-show-user-show-link {
+  margin-left: 5px;
+  color: #fff;
 }
