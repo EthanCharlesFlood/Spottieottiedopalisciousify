@@ -10,7 +10,7 @@ class Api::PlaylistsController < ApplicationController
 	end
 
 	def show
-		@playlist = Playlist.includes(:songs).find(params[:id])
+		@playlist = Playlist.includes(:songs, :creator).find(params[:id])
 	end
 
 	def index

@@ -12,8 +12,8 @@ class PlaylistIndex extends React.Component {
     const playlists = this.props.playlists.map(playlist => {
       return (
       <div key={playlist.id} className="playlist-index-item">
-      <div className="playlist-index-item-container">
-        <div className="playlist-index-item-image"></div>
+      <div className="playlist-index-item-container" key={playlist.id}>
+        <div className="playlist-index-item-image" key={playlist.id + 1}></div>
         <Link className="playlist-index-item-link" key={playlist.id} to={`/playlists/${playlist.id}`}>{playlist.playlist_name}</Link>
       </div>
       </div>
@@ -21,11 +21,13 @@ class PlaylistIndex extends React.Component {
     });
 		return (
 			<div className="playlist-index-container">
-        <NavBarContainer />
-        <span className="playlist-index-title">Tunezz</span>
-          <div className="playlist-index-playlists">
-					       {playlists}
-          </div>
+        <div className="playlist-index-header">
+          <NavBarContainer />
+          <span className="playlist-index-title">Tunezz</span>
+        </div>
+        <div className="playlist-index-playlists">
+				       {playlists}
+        </div>
 			</div>
 		);
 	}

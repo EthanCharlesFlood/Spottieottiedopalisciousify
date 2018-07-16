@@ -14,9 +14,15 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchSongs: () => dispatch(fetchSongs()),
-    createModal: (
+    createModal1: (
       <button className="playlist-modal" onClick={() => dispatch(openModal('Create'))}>
         New Playlist
+      </button>
+    ),
+    createModal2: (
+      <button className="song-modal" onClick={() =>
+        dispatch(openModal())}>
+        <i className="fas fa-ellipsis-h"></i>
       </button>
     ),
     closeModal: () => dispatch(closeModal()),

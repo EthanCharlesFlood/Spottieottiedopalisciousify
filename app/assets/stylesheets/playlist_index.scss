@@ -50,6 +50,9 @@
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
+  position: fixed;
+  left: 250px;
+  top: 150px;
 }
 
 .playlist-index-item-link {
@@ -61,4 +64,5 @@
   color: #fff;
   text-transform: none;
   max-height: 560px;
+  text-overflow: ellipsis;
 }

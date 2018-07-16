@@ -12,11 +12,16 @@ class SongsIndex extends React.Component {
   render() {
     const songs = this.props.songs.map(song => {
       return (
-        <div className="song-index-list-item">
-          <span className="song-index-list-title">placeholder title
-
+        <li key={song.id} className="song-index-list-item">
+          <span key={song.id} className="song-index-list-title">
+            <i className="fas fa-music"></i>
+            {song.song_name}
           </span>
-        </div>
+          <span className="song-index-list-features">
+            {this.props.createModal2}
+            {"4'33'"}
+          </span>
+        </li>
       );
     });
     return (
@@ -24,10 +29,10 @@ class SongsIndex extends React.Component {
         <SideBarContainer />
         <div className="song-index-items">
           <NavBarContainer />
-          {this.props.createModal}
+          {this.props.createModal1}
           <div className="song-index-list-container">
             <ul className="song-index-list">
-
+              {songs}
             </ul>
           </div>
         </div>

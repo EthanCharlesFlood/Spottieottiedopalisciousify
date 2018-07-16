@@ -2,6 +2,7 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import CreatePlaylistFormContainer from './../playlists/create_playlist_form_container';
+import AddSongToPlaylistFormContainer from './../songs/add_song_to_playlist_container';
 
 function Modal(props) {
   if (!props.modal) {
@@ -11,6 +12,9 @@ function Modal(props) {
   switch (props.modal) {
     case 'Create':
       component = <CreatePlaylistFormContainer />;
+      break;
+    case 'StP':
+      component = <AddSongToPlaylistFormContainer />;
       break;
     default:
       return null;

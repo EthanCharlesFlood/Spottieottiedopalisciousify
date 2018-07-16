@@ -33,3 +33,11 @@ export const updatePlaylist = (playlist) => {
 		url: `api/playlists/${playlist.id}`
 	});
 };
+
+export const addSongToPlaylist = (ids) => {
+  return $.ajax({
+    method: "POST",
+    url: "api/songs_to_playlists",
+    data: {ids}
+  });
+};

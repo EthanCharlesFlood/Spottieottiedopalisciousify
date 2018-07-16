@@ -1,14 +1,18 @@
 .playlist-show-container {
-	display: flex;
-  flex-direction: row;
+  display: flex;
 	height: 100vh;
   background: linear-gradient(#ff6600,#000);
-  font-family: Helvetica,Helvetica,Arial,sans-serif;
+  justify-content: center;
 }
 
 .playlist-show-items {
+  width: 900px;
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid hsla(0,0%,100%,.1);
+  padding-bottom: 30px;
   position: fixed;
-  left: 200px;
+  left: 250px;
 }
 
 .playlist-show-info {
@@ -97,4 +101,11 @@
 .playlist-show-user-show-link {
   margin-left: 5px;
   color: #fff;
+}
+
+.playlist-show-song-container {
+  width: 800px;
+  position: fixed;
+  left: 250px;
+  top: 250px;
 }

@@ -17,7 +17,7 @@
 }
 
 .song-index-list-container {
-
+  width: 75%;
 }
 
 .song-index-list {
@@ -25,9 +25,16 @@
 }
 
 .song-index-list-item {
-
+  display: flex;
+  justify-content: space-between;
 }
 
 .song-index-list-title {
 
+}
+
+.playlist-index-header {
+  position: fixed;
+  left: 600px;
+  top: 25px;
 }

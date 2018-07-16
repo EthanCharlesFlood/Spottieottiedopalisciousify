@@ -4,10 +4,11 @@ export const RECEIVE_PLAYLISTS = "RECEIVE_PLAYLISTS";
 export const RECEIVE_PLAYLIST = "RECEIVE_PLAYLIST";
 export const REMOVE_PLAYLIST = "REMOVE_PLAYLIST";
 
-const receivePlaylist = (playlist) => {
+const receivePlaylist = ({playlist, songs}) => {
 	return {
 		type: RECEIVE_PLAYLIST,
-		playlist
+		playlist,
+    songs
 	};
 };
 
@@ -19,8 +20,10 @@ const receivePlaylists = (playlists) => {
 };
 
 const removePlaylist = (playlistId) => {
+  debugger
 	return {
 		type: REMOVE_PLAYLIST,
+    playlistId
 	};
 };
 
@@ -32,7 +35,7 @@ export const fetchPlaylists = () => {
 
 export const fetchPlaylist = (playlistId) => {
 	return dispatch => {
-		return PlaylistApiUtil.fetchPlaylist(playlistId).then(playlist => dispatch(receivePlaylist(playlist)));
+		return PlaylistApiUtil.fetchPlaylist(playlistId).then(payload => dispatch(receivePlaylist(payload)));
 	};
 };
 
@@ -50,6 +53,15 @@ export const updatePlaylist = (playlist) => {
 
 export const deletePlaylist = (playlistId) => {
 	return dispatch => {
-		return PlaylistApiUtil.deletePlaylist(playlistId).then(playlistId => dispatch(removePlaylist(playlistId)));
+    debugger
+		PlaylistApiUtil.deletePlaylist(playlistId).then(playlistId => { dispatch(removePlaylist(playlistId));
+    return playlistId;
+    });
 	};
+};
+
+export const addSongToPlaylist = (ids) => {
+  return dispatch => {
+    return PlaylistApiUtil.addSongToPlaylist(ids).then(playlist => dispatch(receivePlaylist(playlist)));
+  };
 };

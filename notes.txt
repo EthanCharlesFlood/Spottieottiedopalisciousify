@@ -1,0 +1,4 @@
+upon deleting a playlist it still lives in the index on redirect
+creating a playlist does not display the name
+implement song to playlist functionality
+implement songs and song functionality on playlist show

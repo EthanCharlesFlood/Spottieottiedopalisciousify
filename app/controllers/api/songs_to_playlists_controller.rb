@@ -4,7 +4,7 @@ class Api::SongsToPlaylistsController < ApplicationController
 		stp = SongsToPlaylist.new(stp_params)
 
 		if stp.save
-			render "api/playlists/show"
+			render "api/songs"
 		else
 			render json: stp.errors.full_messages, status: 422
 		end
