@@ -27,7 +27,7 @@ class PlaylistShow extends React.Component {
               <span className="playlist-show-song-count">2 Songs</span>
               <div className="playlist-show-button-container">
                 <button className="playlist-show-play">Play</button>
-                <button className="playlist-show-delete">Delete</button>
+                <button className="playlist-show-delete" onClick={} >Delete</button>
               </div>
             </div>
           </div>

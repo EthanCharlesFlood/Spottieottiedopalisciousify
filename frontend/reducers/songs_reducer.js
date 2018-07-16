@@ -3,7 +3,7 @@ import {
 	RECEIVE_SONGS } from './../actions/playlist_actions.js';
 import { merge } from 'lodash';
 
-const songReducer = (state = {}, action) => {
+const songsReducer = (state = {}, action) => {
 	switch (action.type) {
 		case RECEIVE_SONG:
 			return merge({}, state, {[action.song.id]: action.song});
@@ -14,4 +14,4 @@ const songReducer = (state = {}, action) => {
 	}
 };
 
-export default playlistReducer;
+export default songsReducer;

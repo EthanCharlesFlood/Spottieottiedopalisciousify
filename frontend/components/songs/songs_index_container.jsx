@@ -2,6 +2,8 @@ import { connect } from 'react-redux';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { openModal, closeModal } from '../../actions/modal_actions';
+import { fetchSongs } from '../../actions/song_actions';
+import SongsIndex from './songs_index';
 
 const mapStateToProps = (state) => {
   return {

@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import React from 'react';
 import { logout } from './../../actions/session_actions';
 import PlaylistShow from './playlist_show';
-import { fetchPlaylist } from './../../actions/playlist_actions';
+import { fetchPlaylist, deletePlaylist } from './../../actions/playlist_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const playlist = state.entities.playlists[ownProps.match.params.playlistId];
@@ -13,7 +13,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchPlaylist: playlistId => dispatch(fetchPlaylist(playlistId))
+    fetchPlaylist: playlistId => dispatch(fetchPlaylist(playlistId)),
+    deletePlaylist: playlistid => dispatch(deletePlaylist(playlistId)),
   };
 };
 
