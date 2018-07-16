@@ -15,7 +15,8 @@ class PlaylistShow extends React.Component {
   }
 
   handleDelete() {
-    this.props.deletePlaylist(this.props.match.params.playlistid);
+    this.props.deletePlaylist(this.props.match.params.playlistid).then(() => this.props.history.push("/main")
+    );
   }
 
 
@@ -38,6 +39,13 @@ class PlaylistShow extends React.Component {
         });
       playlist_name = this.props.playlist.playlist_name;
     }
+
+    let deleteButton;
+    if (this.props.playlist.user_id === this.props.currentUserId) {
+      deleteButton = <button className="playlist-show-delete" onClick={this.props.handleDelete} >Delete</button>;
+    } else {
+      deleteButton =  null;
+    }
     return (
       <div className="playlist-show-container">
         <SideBarContainer />
@@ -52,7 +60,7 @@ class PlaylistShow extends React.Component {
                 <span className="playlist-show-song-count">2 Songs</span>
                 <div className="playlist-show-button-container">
                   <button className="playlist-show-play">Play</button>
-                  <button className="playlist-show-delete" onClick={this.handleDelete} >Delete</button>
+                  {deleteButton}
                 </div>
               </div>
           </div>

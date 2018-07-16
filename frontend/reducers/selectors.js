@@ -6,7 +6,7 @@ export const selectPlaylists = (state) => {
       userPlaylists.push(playlists[i]);
     }
   }
-  return playlists;
+  return userPlaylists;
 };
 
 

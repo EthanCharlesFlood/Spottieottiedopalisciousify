@@ -20,7 +20,6 @@ const receivePlaylists = (playlists) => {
 };
 
 const removePlaylist = (playlistId) => {
-  debugger
 	return {
 		type: REMOVE_PLAYLIST,
     playlistId
@@ -53,9 +52,9 @@ export const updatePlaylist = (playlist) => {
 
 export const deletePlaylist = (playlistId) => {
 	return dispatch => {
-    debugger
-		PlaylistApiUtil.deletePlaylist(playlistId).then(playlistId => { dispatch(removePlaylist(playlistId));
-    return playlistId;
+		return PlaylistApiUtil.deletePlaylist(playlistId).then(playlistId => {
+      dispatch(removePlaylist(playlistId));
+      return playlistId;
     });
 	};
 };

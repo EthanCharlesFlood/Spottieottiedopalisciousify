@@ -1,4 +1,3 @@
-upon deleting a playlist it still lives in the index on redirect
-creating a playlist does not display the name
 implement song to playlist functionality
-implement songs and song functionality on playlist show
+  -passing another argument to open modal that will be passed down as props to the modal?
+implement song functionality on playlist show
