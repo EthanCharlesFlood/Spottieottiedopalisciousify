@@ -1,19 +1,23 @@
 .playlist-index-container {
-	height: 100%;
-	width: 100%;
 	display: flex;
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
   font-family: Helvetica,Helvetica,Arial,sans-serif;
+  margin: 0;
+  width: 100%;
+  position: fixed;
+  left: 125px;
+  overflow-y: scroll;
 }
 
 .playlist-index-item {
 	height: 200px;
   width: 200px;
+  margin-bottom: 75px;
 }
 
-.playlist-index-item-link {
+.playlist-index-item-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,13 +30,35 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-left: -100px;
   font-size: 40px;
   font-weight: 900;
+  margin-top: 0;
+  height: 100px;
+  color: #fff;
 }
 
 .playlist-index-item-image {
   width: 200px;
   height: 200px;
   background-color: white;
+}
+
+.playlist-index-playlists {
+  width: 900px;
+  margin: 0 25px 0 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.playlist-index-item-link {
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: .015em;
+  font-weight: 400;
+  color: #fff;
+  text-transform: none;
+  max-height: 560px;
 }

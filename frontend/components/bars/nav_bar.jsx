@@ -1,14 +1,12 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 
 
 const NavBar = () => {
   return (
     <div className="navbar-container">
-      <button className="navbar-button">Placeholder</button>
-      <button className="navbar-button">Placeholder</button>
-      <button className="navbar-button">Placeholder</button>
-      <button className="navbar-button">Placeholder</button>
+      <Link className="navbar-button" to="/">Playlists</Link>
+      <Link className="navbar-button" to="/songs">Songs</Link>
     </div>
   );
 };

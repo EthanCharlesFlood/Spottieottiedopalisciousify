@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import NavBarContainer from './../bars/nav_bar_container';
 
 class PlaylistIndex extends React.Component {
 	componentDidMount() {
@@ -8,18 +9,23 @@ class PlaylistIndex extends React.Component {
 
 
 	render() {
-		const playlists = this.props.playlists.map(playlist => {
-			return (
-			<div className="playlist-index-item" key={playlist.id}>
-			<Link className="playlist-index-item-link" key={playlist.id}
-				to={`/playlists/${playlist.id}`}>{playlist.playlist_name}</Link>
-			</div>
-			);
-		});
+    const playlists = this.props.playlists.map(playlist => {
+      return (
+      <div key={playlist.id} className="playlist-index-item">
+      <div className="playlist-index-item-container">
+        <div className="playlist-index-item-image"></div>
+        <Link className="playlist-index-item-link" key={playlist.id} to={`/playlists/${playlist.id}`}>{playlist.playlist_name}</Link>
+      </div>
+      </div>
+      );
+    });
 		return (
 			<div className="playlist-index-container">
-        <span className="playlist-index-title">Playlists</span>
-					{playlists}
+        <NavBarContainer />
+        <span className="playlist-index-title">Tunezz</span>
+          <div className="playlist-index-playlists">
+					       {playlists}
+          </div>
 			</div>
 		);
 	}

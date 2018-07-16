@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :show]
     resource :session, only: [:create, :destroy]
 		resources :playlists, except: [:new, :edit]
-		resources :songs, only: [:show]
+		resources :songs, only: [:show, :index]
 		resources :songs_to_playlists, only: [:create, :destroy]
   end
 
