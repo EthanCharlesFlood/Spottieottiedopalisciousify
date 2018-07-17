@@ -14,7 +14,7 @@ function Modal(props) {
       component = <CreatePlaylistFormContainer />;
       break;
     case 'SongToPlaylist':
-      component = <AddSongToPlaylistContainer />;
+      component = <AddSongToPlaylistContainer songId={props.songId}/>;
       break;
     default:
       return null;
@@ -31,6 +31,7 @@ function Modal(props) {
 const mapStateToProps = (state) => {
   return {
     modal: state.ui.modal,
+    songId: state.ui.songId,
   };
 };
 

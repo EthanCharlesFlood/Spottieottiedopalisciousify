@@ -22,7 +22,7 @@ const mapDispatchToProps = (dispatch, ownPops) => {
     ),
     createModal2: (
       <button className="song-modal" onClick={() =>
-        dispatch(openModal('SongToPlaylist'))}>
+        dispatch(openModal('SongToPlaylist', songId))}>
         <i className="fas fa-ellipsis-h"></i>
       </button>
     ),
