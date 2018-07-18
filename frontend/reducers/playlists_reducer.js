@@ -18,7 +18,8 @@ const playlistReducer = (state = {}, action) => {
     case REMOVE_SONG:
       const secondNewState = merge({}, state);
       const playlist = Object.values(secondNewState)[0];
-      playlist.song_ids.filter(e => e !== action.songId.song_id);
+      playlist.song_ids = playlist.song_ids.filter(e => e !== action.songId.song_id);
+      debugger
       return secondNewState;
 		default:
 			return state;

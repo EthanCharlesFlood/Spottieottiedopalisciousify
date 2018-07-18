@@ -10,7 +10,6 @@ import { removeSongToPlaylist } from './../../actions/song_actions';
 import { selectPlaylist, selectPlaylistSongs } from './../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
   const playlist = selectPlaylist(state, ownProps.match.params.playlistid);
   const songs = selectPlaylistSongs(state, playlist);
   return {

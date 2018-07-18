@@ -5,7 +5,7 @@ class PlaylistShow extends React.Component {
 
   constructor(props) {
     super(props);
-    
+
     this.handleDelete = this.handleDelete.bind(this);
     this.handleRemove = this.handleRemove.bind(this);
   }
@@ -32,11 +32,13 @@ class PlaylistShow extends React.Component {
     if (this.props.playlist !== undefined) {
         songs = this.props.songs.map(song => {
           return (
+
             <li key={Math.random()} className="song-index-list-item">
               <span key={Math.random()} className="song-index-list-title">
                 <i className="fas fa-music"></i>
                 {song.song_name}
               </span>
+
               <span key={Math.random()} className="song-index-list-features">
                 <button id={song.id} onClick={this.handleRemove}><i className="fas fa-trash-alt"></i></button>
                 {"4'33'"}
