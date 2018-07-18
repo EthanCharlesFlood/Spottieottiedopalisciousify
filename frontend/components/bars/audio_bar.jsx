@@ -7,7 +7,7 @@ class AudioBar extends React.Component {
 
     this.volume = this.volume.bind(this);
     this.playPause = this.playPause.bind(this);
-    this.repeat = this.repeat.bind(this);
+    this.toggleRepeat = this.toggleRepeat.bind(this);
 
     let pPButton;
     if (this.props.playing === true) {
@@ -59,8 +59,12 @@ class AudioBar extends React.Component {
     this.audio.volume = e.currentTarget.value / 100;
   }
 
-  repeat(e) {
-    this.audio.loop = true;
+  toggleRepeat(e) {
+    if (e.currentTarget.loop === false) {
+      this.audio.loop = true;
+    } else {
+      this.audio.loop = false;
+    }
   }
 
   render() {
@@ -75,16 +79,16 @@ class AudioBar extends React.Component {
         <div className="audio-player">
 
           <div className="audio-player-controls">
-            <span className="next-song"><i className="fas fa-forward"></i></span>
+            <span className="next-song" onClick={this.props.nextSong}><i className="fas fa-forward"></i></span>
             <span className="play-pause-button" onClick={this.playPause}>{this.state.pPButton}</span>
-            <span className="previous-song"><i className="fas fa-backward"></i></span>
+            <span className="previous-song" onClick={this.props.previousSong}><i className="fas fa-backward"></i></span>
           </div>
 
           <div className="song-progress-container">
-            <input type="range" className="song-progress"></input>
+            <input type="range" defaultValue="0" className="song-progress"></input>
           </div>
 
-          <audio loop={false} ref={(audio) => this.audio = audio}/>
+          <audio loop={false} src={'/app/assets/songs/Sam_Newsome_-_02_-_Live_in_Studio_B-1.mp3'} ref={(audio) => this.audio = audio}/>
         </div>
 
         <div className="audio-bar-volume">
