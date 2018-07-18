@@ -1,7 +1,6 @@
 .sidebar-container {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
 	height: 100%;
 	background-color: hsla(0,0,0,.5);
 	color: hsla(0,0%,100%,.6);
@@ -24,6 +23,7 @@
 	margin-bottom: -500px;
 	font-weight: 900;
 	letter-spacing: 1px;
+  position: fixed;
 }
 
 .search-component-link {
@@ -32,6 +32,8 @@
 	text-decoration: none;
 	font-weight: 900;
 	letter-spacing: 1px;
+  position: fixed;
+  top: 100px;
 }
 
 .search-component-link:hover {
@@ -44,6 +46,8 @@
 .sidebar-link-user-show {
 	color: inherit;
 	text-decoration: none;
+  position: fixed;
+  top: 150px;
 }
 
 .sidebar-link-user-show:hover {
@@ -59,6 +63,8 @@
 	text-decoration: none;
 	font-weight: 900;
 	letter-spacing: 1px;
+  position: fixed;
+  top: 200px;
 }
 
 .sidebar-link-main-home:hover {
@@ -70,13 +76,28 @@
 
 .sidebar-username {
 	color: white;
+  position: fixed;
+  bottom: 0;
+  width: 150px;
+  margin-bottom: 75px;
+  border-top: 1px solid #404040;
+  padding-top: 10px;
+}
+
+.sidebar-username > button {
+	color: white;
+  background: none;
+  border: none;
+  font-weight: 900;
 }
 
 
 .sidebar-user-profile-pic {
 	color: white;
-	margin-bottom: 100px;
 	text-decoration: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 500px;
 }
 
 .fas, .fab,  {

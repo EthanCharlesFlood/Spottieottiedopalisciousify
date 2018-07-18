@@ -1,6 +1,10 @@
 import {
 	RECEIVE_SONG,
-	RECEIVE_SONGS } from './../actions/song_actions';
+	RECEIVE_SONGS,
+  REMOVE_SONG } from './../actions/song_actions';
+import {
+  OPEN_MODAL
+} from './../actions/modal_actions';
 import { RECEIVE_PLAYLIST } from './../actions/playlist_actions';
 import { merge } from 'lodash';
 
@@ -12,6 +16,10 @@ const songsReducer = (state = {}, action) => {
       return merge({}, state, action.songs);
 		case RECEIVE_SONGS:
 			return merge({}, state, action.songs);
+    case REMOVE_SONG:
+      const newState = merge({}, state);
+      delete newState[action.songId.song_id];
+      return newState;
 		default:
 			return state;
 	}

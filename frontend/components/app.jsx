@@ -15,6 +15,8 @@ import {
 } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import UsersShowContainer from './users/users_show_container';
+import AudioBarContainer from './bars/audio_bar_container';
+import SideBarContainer from './bars/side_bar_container';
 
 
 const App = (props) => {
@@ -32,6 +34,8 @@ const App = (props) => {
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
       </Switch>
+      <SideBarContainer />
+      <AudioBarContainer />
     </div>
   );
 };

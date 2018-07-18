@@ -15,26 +15,29 @@ class AddSongToPlaylist extends React.Component {
   }
 
   handleAddingSong(e) {
-    const ids = {playlist_id: e.target.id, song_id: this.props.songId };
-    this.props.handleAddingSong(ids);
+    const songs_to_playlist = {playlist_id: e.currentTarget.id, song_id: this.props.songId };
+    this.props.addSongToPlaylist(songs_to_playlist);
+    return this.props.closeModal();
   }
 
   render() {
     const playlists = this.props.playlists.map(playlist => {
       return (
-      <div key={playlist.id} className="playlist-index-item">
-      <button onClick={this.handleAddingSong} id={playlist.id} className="playlist-index-item-container" key={playlist.id}>
-        <div className="playlist-index-item-image" key={playlist.id + 1}></div>
+      <div key={playlist.id} className="stp-index-item">
+      <button onClick={this.handleAddingSong} id={playlist.id} className="stp-index-item-container" key={playlist.id}>
+        <div className="stp-index-item-image" key={playlist.id + 1}></div>
         <span>{playlist.playlist_name}</span>
       </button>
       </div>
       );
     });
     return (
-      <div>
-        <span>Add to Playlist</span>
+      <div className="stp-container">
+        <span className="stp-title">Add to Playlist</span>
         {this.props.createModal}
-        {playlists}
+        <div className="stp-index-grid">
+          {playlists}
+        </div>
       </div>
     );
   }

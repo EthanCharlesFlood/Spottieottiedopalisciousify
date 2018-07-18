@@ -6,8 +6,15 @@ import Modal from '../modal/modal';
 class SongsIndex extends React.Component {
   componentDidMount() {
     this.props.fetchSongs();
+
+    this.openModal = this.openModal.bind(this);
   }
 
+
+  openModal(e) {
+    const payload = {modal: "SongToPlaylist", song_id: e.currentTarget.id};
+    this.props.openModal(payload);
+  }
 
   render() {
     const songs = this.props.songs.map(song => {
@@ -18,7 +25,7 @@ class SongsIndex extends React.Component {
             {song.song_name}
           </span>
           <span className="song-index-list-features">
-            {this.props.createModal2}
+            <button key={song.id} id={song.id} className="song-modal" onClick={this.openModal}><i className="fas fa-ellipsis-h"></i></button>
             {"4'33'"}
           </span>
         </li>
@@ -26,16 +33,15 @@ class SongsIndex extends React.Component {
     });
     return (
       <div className="song-index-container">
-        <SideBarContainer />
-        <div className="song-index-items">
-          <NavBarContainer />
-          {this.props.createModal1}
-          <div className="song-index-list-container">
-            <ul className="song-index-list">
-              {songs}
-            </ul>
+          <div className="song-index-items">
+            <NavBarContainer />
+            {this.props.createModal1}
+            <div className="song-index-list-container">
+              <ul className="song-index-list">
+                {songs}
+              </ul>
+            </div>
           </div>
-        </div>
       </div>
     );
   }

@@ -25,7 +25,6 @@ class UsersShow extends React.Component {
     });
     return (
       <div className="users-show-container">
-        <SideBarContainer />
         <div className="users-show-subcontainer">
           <NavBarContainer />
           {this.props.createModal}

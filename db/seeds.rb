@@ -7,20 +7,52 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
+# model_instance = SampleModel.new(title: 'A Good Title')
+# file = EzDownload.open('https://s3.amazonaws.com/some-bucket/some-file.jpg')
+# model_instance.image.attach(io: file, filename: 'some-file.jpg')
+# model_instance.save!
+
+
+
+
 User.destroy_all
-User.create(username: "Three-Stacks", password: "password", email:"andre@southernplayalisticadillacmuzik.com")
-User.create(username: "Ethan-god", password: "password", email: "please dont ever email me")
+user = User.new(username: "Three-Stacks", password: "password", email:"andre@southernplayalisticadillacmuzik.com")
+file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-dev/MK1KyC5romqVb5XSQspoC7TE')
+user.image.attach(io: file, filename:'20px-AqueminiOutKast.jpg')
+user.save!
+user = User.new(username: "Ethan", password: "password", email: "please dont ever email me")
+file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-dev/MK1KyC5romqVb5XSQspoC7TE')
+user.image.attach(io: file, filename:'20px-AqueminiOutKast.jpg')
+user.save!
+user = User.new(username: "DogMan", password: "password", email: "dogman@gmail.com")
+file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-dev/MK1KyC5romqVb5XSQspoC7TE')
+user.image.attach(io: file, filename:'20px-AqueminiOutKast.jpg')
+user.save!
+user = User.new(username: "BigBoi", password: "password", email: "daddyfatstacks@gmail.com")
+file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-dev/MK1KyC5romqVb5XSQspoC7TE')
+user.image.attach(io: file, filename:'20px-AqueminiOutKast.jpg')
+user.save!
+user = User.new(username: "Person", password: "password", email: "person@gmail.com")
+file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-dev/MK1KyC5romqVb5XSQspoC7TE')
+user.image.attach(io: file, filename:'20px-AqueminiOutKast.jpg')
+user.save!
 
 
 Artist.destroy_all
 Artist.create(artist_name: "Outkast")
 Artist.create(artist_name: "Death Grips")
 Artist.create(artist_name: "Lightning Bolt")
+Artist.create(artist_name: "Fleetwood Mac")
+Artist.create(artist_name: "Do Make Say Think")
+Artist.create(artist_name: "Skrillex")
+Artist.create(artist_name: "Huey Lewis and the News")
+
 
 Album.destroy_all
 Album.create(album_name: "Aquemini", artist_id: Artist.first.id)
-Album.create(album_name: "The Money Store", artist_id: Artist.second.id)
-Album.create(album_name: "Beautiful Rainbow", artist_id: Artist.last.id)
+Album.create(album_name: "Government Plates", artist_id: Artist.second.id)
+Album.create(album_name: "Beautiful Rainbow", artist_id: Artist.third.id)
+
 
 Song.destroy_all
 Song.create(song_name: "Hold on, be strong", artist_id: Artist.first.id, album_id: Album.first.id)

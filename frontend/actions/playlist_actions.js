@@ -4,11 +4,12 @@ export const RECEIVE_PLAYLISTS = "RECEIVE_PLAYLISTS";
 export const RECEIVE_PLAYLIST = "RECEIVE_PLAYLIST";
 export const REMOVE_PLAYLIST = "REMOVE_PLAYLIST";
 
-const receivePlaylist = ({playlist, songs}) => {
+const receivePlaylist = ({playlist, songs, user}) => {
 	return {
 		type: RECEIVE_PLAYLIST,
 		playlist,
-    songs
+    songs,
+    user
 	};
 };
 

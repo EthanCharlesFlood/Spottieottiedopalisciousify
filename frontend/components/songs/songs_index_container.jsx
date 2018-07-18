@@ -16,16 +16,14 @@ const mapDispatchToProps = (dispatch, ownPops) => {
   return {
     fetchSongs: () => dispatch(fetchSongs()),
     createModal1: (
-      <button className="playlist-modal" onClick={() => dispatch(openModal('Create'))}>
+      <button className="playlist-modal" onClick={() => {
+        return dispatch(openModal({ modal: 'Create' }));
+        }
+      }>
         New Playlist
       </button>
     ),
-    createModal2: (
-      <button className="song-modal" onClick={() =>
-        dispatch(openModal('SongToPlaylist', songId))}>
-        <i className="fas fa-ellipsis-h"></i>
-      </button>
-    ),
+    openModal: (payload) => dispatch(openModal(payload)),
     closeModal: () => dispatch(closeModal()),
   };
 };

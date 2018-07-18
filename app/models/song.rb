@@ -18,4 +18,5 @@ class Song < ApplicationRecord
 		dependent: :destroy
 	has_many :playlists, through: :songs_to_playlists
 
+  has_one_attached :file
 end

@@ -6,9 +6,12 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
 		resources :playlists, except: [:new, :edit]
 		resources :songs, only: [:show, :index]
-		resources :songs_to_playlists, only: [:create, :destroy]
+		resources :songs_to_playlists, only: [:create]
+    delete "/songs_to_playlists", to: 'songs_to_playlists#remove'
   end
 
   root "static_pages#root"
 
 end
+
+#route on song or playlist controller

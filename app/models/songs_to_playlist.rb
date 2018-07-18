@@ -10,6 +10,8 @@
 #
 
 class SongsToPlaylist < ApplicationRecord
+  validates :song, uniqueness: { scope: :playlist }
+
 	belongs_to :song,
 		inverse_of: :songs_to_playlists
 	belongs_to :playlist,

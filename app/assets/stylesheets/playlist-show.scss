@@ -1,7 +1,7 @@
 .playlist-show-container {
   display: flex;
 	height: 100vh;
-  background: linear-gradient(#ff6600,#000);
+  background: linear-gradient(rgb(72, 77, 81), rgb(7, 8, 8) 85%);
   justify-content: center;
 }
 
@@ -104,6 +104,10 @@
 }
 
 .playlist-show-song-container {
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: .015em;
+  color: #fff;
   width: 800px;
   position: fixed;
   left: 250px;

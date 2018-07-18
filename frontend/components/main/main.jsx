@@ -21,7 +21,6 @@ class Main extends React.Component {
 		return (
 		<div className="main-container">
       <div className="main-subcontainer">
-  			<SideBarContainer />
   			<PlaylistIndexContainer />
       </div>
 		</div>

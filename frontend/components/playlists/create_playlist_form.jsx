@@ -29,7 +29,8 @@ class PlaylistForm extends React.Component {
   render() {
     return (
       <div className="modal-form-container">
-        <label className="modal-top-label">Create New Playlist
+        <label className="modal-top-label">
+          <div className="modal-header" >Create New Playlist</div>
           <form className="modal-form" onSubmit={this.handleSubmit}>
             <div className="modal-bar">
               <label className="modal-label">Playlist Name

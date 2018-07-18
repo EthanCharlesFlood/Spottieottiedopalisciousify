@@ -34,10 +34,10 @@ export const updatePlaylist = (playlist) => {
 	});
 };
 
-export const addSongToPlaylist = (ids) => {
+export const addSongToPlaylist = (songs_to_playlist) => {
   return $.ajax({
     method: "POST",
     url: "api/songs_to_playlists",
-    data: {ids}
+    data: {songs_to_playlist}
   });
 };

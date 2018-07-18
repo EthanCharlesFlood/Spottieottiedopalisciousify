@@ -20,13 +20,15 @@ class PlaylistIndex extends React.Component {
       );
     });
 		return (
-			<div className="playlist-index-container">
-        <div className="playlist-index-header">
-          <NavBarContainer />
-          <span className="playlist-index-title">Tunezz</span>
-        </div>
-        <div className="playlist-index-playlists">
-				       {playlists}
+			<div className="component-container">
+        <div className="playlist-index-subcontainer">
+          <div className="playlist-index-header">
+            <NavBarContainer />
+            <span className="playlist-index-title">Tunezz</span>
+          </div>
+          <div className="playlist-index-playlists">
+  				       {playlists}
+          </div>
         </div>
 			</div>
 		);

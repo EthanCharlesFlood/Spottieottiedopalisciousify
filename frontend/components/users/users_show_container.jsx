@@ -20,7 +20,7 @@ const mapDispatchToProps = (dispatch) => {
     fetchPlaylists: () => dispatch(fetchPlaylists()),
     createPlaylist: playlist => dispatch(createPlaylist(playlist)),
     createModal: (
-      <button className="playlist-modal" onClick={() => dispatch(openModal('Create'))}>
+      <button className="playlist-modal" onClick={() => dispatch(openModal({ modal: 'Create' }))}>
         New Playlist
       </button>
     ),

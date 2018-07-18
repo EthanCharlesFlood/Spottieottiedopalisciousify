@@ -23,6 +23,8 @@ class User < ApplicationRecord
   has_many :friends
   has_many :follows
 
+  has_one_attached :image
+
   attr_reader :password
 
   def self.find_by_credentials(username, password)

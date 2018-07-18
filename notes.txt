@@ -1,4 +1,2 @@
-implement song to playlist functionality
-  -passing another argument to open modal that will be passed down as props to the modal?
-  -per daniel passing the songId into state to map it to the modals prop
-implement song functionality on playlist show
+
+refs for audio player

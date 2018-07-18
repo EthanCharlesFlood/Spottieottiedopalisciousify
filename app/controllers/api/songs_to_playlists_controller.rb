@@ -1,19 +1,21 @@
 class Api::SongsToPlaylistsController < ApplicationController
 
 	def create
-		stp = SongsToPlaylist.new(stp_params)
+		songs_to_playlist = SongsToPlaylist.new(stp_params)
 
-		if stp.save
-			render "api/songs"
+		if songs_to_playlist.save
+      render json: "api/songs"
 		else
 			render json: stp.errors.full_messages, status: 422
 		end
 	end
 
 
-	def destroy
-		stp = SongsToPlaylist.find(params[:id])
-		stp.destroy
+	def remove
+		stp = SongsToPlaylist.where(stp_params)
+    song_id = stp[0].song_id
+		stp.destroy_all
+    render json: {song_id: song_id}
 	end
 
 	private
