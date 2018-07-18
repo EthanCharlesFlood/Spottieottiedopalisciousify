@@ -1,6 +1,7 @@
 import React from 'react';
 import SideBarContainer from './../bars/side_bar_container';
 import NavBarContainer from './../bars/nav_bar_container';
+import AudioBarContainer from './../bars/audio_bar_container';
 import { Link } from 'react-router-dom';
 import Modal from '../modal/modal';
 
@@ -25,6 +26,8 @@ class UsersShow extends React.Component {
     });
     return (
       <div className="users-show-container">
+        <SideBarContainer />
+        <AudioBarContainer />
         <div className="users-show-subcontainer">
           <NavBarContainer />
           {this.props.createModal}

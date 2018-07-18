@@ -17,24 +17,24 @@
 
 User.destroy_all
 user = User.new(username: "Three-Stacks", password: "password", email:"andre@southernplayalisticadillacmuzik.com")
-file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-dev/MK1KyC5romqVb5XSQspoC7TE')
-user.image.attach(io: file, filename:'20px-AqueminiOutKast.jpg')
+# file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-dev/MK1KyC5romqVb5XSQspoC7TE')
+# user.image.attach(io: file, filename:'20px-AqueminiOutKast.jpg')
 user.save!
 user = User.new(username: "Ethan", password: "password", email: "please dont ever email me")
-file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-dev/MK1KyC5romqVb5XSQspoC7TE')
-user.image.attach(io: file, filename:'20px-AqueminiOutKast.jpg')
+# file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-dev/MK1KyC5romqVb5XSQspoC7TE')
+# user.image.attach(io: file, filename:'20px-AqueminiOutKast.jpg')
 user.save!
 user = User.new(username: "DogMan", password: "password", email: "dogman@gmail.com")
-file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-dev/MK1KyC5romqVb5XSQspoC7TE')
-user.image.attach(io: file, filename:'20px-AqueminiOutKast.jpg')
+# file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-dev/MK1KyC5romqVb5XSQspoC7TE')
+# user.image.attach(io: file, filename:'20px-AqueminiOutKast.jpg')
 user.save!
 user = User.new(username: "BigBoi", password: "password", email: "daddyfatstacks@gmail.com")
-file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-dev/MK1KyC5romqVb5XSQspoC7TE')
-user.image.attach(io: file, filename:'20px-AqueminiOutKast.jpg')
+# file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-dev/MK1KyC5romqVb5XSQspoC7TE')
+# user.image.attach(io: file, filename:'20px-AqueminiOutKast.jpg')
 user.save!
 user = User.new(username: "Person", password: "password", email: "person@gmail.com")
-file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-dev/MK1KyC5romqVb5XSQspoC7TE')
-user.image.attach(io: file, filename:'20px-AqueminiOutKast.jpg')
+# file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-dev/MK1KyC5romqVb5XSQspoC7TE')
+# user.image.attach(io: file, filename:'20px-AqueminiOutKast.jpg')
 user.save!
 
 

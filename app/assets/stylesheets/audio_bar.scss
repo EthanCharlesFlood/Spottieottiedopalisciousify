@@ -4,12 +4,67 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 50px;
+  height: 100px;
   z-index: 100;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  color: #fff;
 }
 
 .audio-player {
   background-color: #282828;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.audio-player-controls {
+  display: flex;
+  justify-content: center;
+}
+
+.song-progress-container {
+  width: 100%;
+}
+
+.song-progress {
+  width: 100%;
+}
+
+.far, .fas {
+  color: #fff;
+}
+
+.now-playing-info {
+  margin-left: 20px;
+}
+
+.now-playing-img {
+  width: 75px;
+  height: 75px;
+  background-color: #fff;
+}
+
+.audio-bar-volume {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.play-pause-button {
+  margin-right: 10px;
+}
+
+.fa-play-circle {
+  font-size: 40px;
+}
+
+.nextSong {
+  margin-left: 10px;
+}
+
+.fa-forward, .fa-backward {
+
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import SideBarContainer from './../bars/side_bar_container';
+import AudioBarContainer from './../bars/audio_bar_container';
 
 class PlaylistShow extends React.Component {
 
@@ -57,6 +58,8 @@ class PlaylistShow extends React.Component {
     }
     return (
       <div className="playlist-show-container">
+        <SideBarContainer />
+        <AudioBarContainer />
         <div className="playlist-show-items">
             <div className="playlist-show-info">
               <div className="playlist-show-image"></div>
