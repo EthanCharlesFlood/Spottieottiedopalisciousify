@@ -87,7 +87,7 @@ class PlaylistShow extends React.Component {
         <SideBarContainer />
         <div className="playlist-show-items">
             <div className="playlist-show-info">
-              <div className="playlist-show-image"></div>
+              <img src={this.props.playlist.imgurl} className="playlist-show-image" />
               <div className= "playlist-show-info-subcontainer">
                 <span className="playlist-show-title">{playlist_name}</span>
                 <span className="playlist-show-author">By
