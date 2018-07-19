@@ -20,7 +20,6 @@ const mapStateToProps = (state, ownProps) => {
       follows = true;
     }
   });
-  debugger
   return {
     playlist: playlist,
     songs: songs,

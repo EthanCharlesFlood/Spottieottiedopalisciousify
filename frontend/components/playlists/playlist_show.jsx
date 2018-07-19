@@ -7,6 +7,10 @@ class PlaylistShow extends React.Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      follows: this.props.follows
+    };
+
     this.handleDelete = this.handleDelete.bind(this);
     this.handleRemove = this.handleRemove.bind(this);
     this.handleFollow = this.handleFollow.bind(this);
@@ -29,10 +33,12 @@ class PlaylistShow extends React.Component {
   }
 
   handleFollow() {
+    this.setState({ follows: true });
     this.props.followPlaylist({ playlist_id: this.props.playlist.id, user_id: this.props.currentUserId});
   }
 
   handleUnfollow() {
+    this.setState({ follows: false });
     this.props.removeFollow({ playlist_id: this.props.playlist.id, user_id: this.props.currentUserId});
   }
 
@@ -71,7 +77,7 @@ class PlaylistShow extends React.Component {
     let actionButton;
     if (this.props.playlist.user_id === this.props.currentUserId) {
       actionButton = <button className="playlist-show-delete" onClick={this.handleDelete} >Delete</button>;
-    } else if (this.props.follows === true) {
+    } else if (this.state.follows === true) {
       actionButton = <button className="playlist-show-delete" onClick={this.handleUnfollow} >Unfollow Playlist</button>;
     } else {
       actionButton = <button className="playlist-show-delete" onClick={this.handleFollow} >Follow Playlist</button>;
