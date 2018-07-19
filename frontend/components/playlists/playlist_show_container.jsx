@@ -9,6 +9,7 @@ import {
   removeFollow } from './../../actions/playlist_actions';
 import { fetchSongs } from './../../actions/song_actions';
 import { removeSongToPlaylist } from './../../actions/song_actions';
+import { addPlaylistToQueue } from './../../actions/audio_actions';
 import { selectPlaylist, selectPlaylistSongs } from './../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => {
@@ -37,7 +38,8 @@ const mapDispatchToProps = (dispatch) => {
     },
     removeSong: ids => dispatch(removeSongToPlaylist(ids)),
     followPlaylist: ids => dispatch(followPlaylist(ids)),
-    removeFollow: ids => dispatch(removeFollow(ids))
+    removeFollow: ids => dispatch(removeFollow(ids)),
+    addPlaylistToQueue: playlist => dispatch(addPlaylistToQueue(playlist)),
   };
 };
 

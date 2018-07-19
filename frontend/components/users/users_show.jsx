@@ -28,7 +28,7 @@ class UsersShow extends React.Component {
       return (
       <div key={playlist.id} className="playlist-index-item">
       <div className="playlist-index-item-container">
-        <div className="playlist-index-item-image"></div>
+        <img className="playlist-index-item-image" src={playlist.imgurl}/>
         <Link className="playlist-index-item-link" key={playlist.id} to={`/playlists/${playlist.id}`}>{playlist.playlist_name}</Link>
       </div>
       </div>

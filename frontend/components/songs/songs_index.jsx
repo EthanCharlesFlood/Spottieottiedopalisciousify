@@ -9,8 +9,12 @@ class SongsIndex extends React.Component {
     this.props.fetchSongs();
 
     this.openModal = this.openModal.bind(this);
+    this.handleAddSong = this.handleAddSong.bind(this);
   }
 
+  handleAddSong(e) {
+    this.props.receiveSong(this.props.songs[e.currentTarget.id]);
+  }
 
   openModal(e) {
     const payload = {modal: "SongToPlaylist", song_id: e.currentTarget.id};
@@ -18,11 +22,12 @@ class SongsIndex extends React.Component {
   }
 
   render() {
-    const songs = this.props.songs.map(song => {
+    const songs = this.props.songs.map((song, idx) => {
+      let songAdder = (song) => this.handleAddSong(song);
       return (
         <li key={song.id} className="song-index-list-item">
           <span key={song.id} className="song-index-list-title">
-            <i className="fas fa-music"></i>
+            <span key={Math.random()} id={idx} onClick={songAdder}><i className="fas fa-music"></i></span>
             {song.song_name}
           </span>
           <span className="song-index-list-features">

@@ -15,6 +15,7 @@ class PlaylistShow extends React.Component {
     this.handleRemove = this.handleRemove.bind(this);
     this.handleFollow = this.handleFollow.bind(this);
     this.handleUnfollow = this.handleUnfollow.bind(this);
+    this.handleAddToQueue = this.handleAddToQueue.bind(this);
   }
 
   componentDidMount() {
@@ -42,7 +43,9 @@ class PlaylistShow extends React.Component {
     this.props.removeFollow({ playlist_id: this.props.playlist.id, user_id: this.props.currentUserId});
   }
 
-
+  handleAddToQueue() {
+    this.props.addPlaylistToQueue(this.props.songs);
+  }
 
   render() {
     let songs = "";
@@ -95,7 +98,7 @@ class PlaylistShow extends React.Component {
                 </span>
                 <span className="playlist-show-song-count">{this.props.songs.length} Songs</span>
                 <div className="playlist-show-button-container">
-                  <button className="playlist-show-play">Play</button>
+                  <button onClick={this.handleAddToQueue} className="playlist-show-play">Play</button>
                   {actionButton}
                 </div>
               </div>

@@ -34,7 +34,7 @@ class AudioBar extends React.Component {
 
   componentDidMount() {
     this.audio.volume = 0.5;
-    if (this.props.playingSong) {
+    if (this.state.playingSong) {
       this.setState({
         remainingTime: (this.audio.duration - this.audio.currentTime),
         currentTime: this.audio.currentTime,
@@ -119,12 +119,18 @@ class AudioBar extends React.Component {
   }
 
   render() {
+    let songName = "";
+    let songImg = "";
+    if (this.state.playingSong) {
+      songName = this.state.playingSong.song_name;
+      songImg = this.state.playingSong.imgurl;
+    }
     return (
       <div className="audio-bar-container">
 
         <div className="now-playing-info">
-          <div className="now-playing-img" />
-          <span className="now-playing-title">Song Title</span>
+          <img src={songImg} className="now-playing-img" />
+          <span className="now-playing-title">{songName}</span>
         </div>
 
         <div className="audio-player">
@@ -153,7 +159,7 @@ class AudioBar extends React.Component {
 
           <audio loop={false}
                  onLoadedData={this.fetchDuration}
-                 src={'/assets/song.mp3'}
+                 src={this.state.playingSong}
                  onEnded={this.handleEnd}
                  ref={(audio) => this.audio = audio}
                  onTimeUpdate={this.updateTime} />
