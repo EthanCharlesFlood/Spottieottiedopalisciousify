@@ -36,6 +36,18 @@ user = User.new(username: "Person", password: "password", email: "person@gmail.c
 # file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-dev/MK1KyC5romqVb5XSQspoC7TE')
 # user.image.attach(io: file, filename:'20px-AqueminiOutKast.jpg')
 user.save!
+user = User.new(username: "Uncle Dennis", password: "gimmietheloot", email: "laorbust@gmail.com")
+# file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-dev/MK1KyC5romqVb5XSQspoC7TE')
+# user.image.attach(io: file, filename:'20px-AqueminiOutKast.jpg')
+user.save!
+user = User.new(username: "YHVH", password: "password", email: "dontspeakit@gmail.com")
+# file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-dev/MK1KyC5romqVb5XSQspoC7TE')
+# user.image.attach(io: file, filename:'20px-AqueminiOutKast.jpg')
+user.save!
+user = User.new(username: "Tim Allen", password: "password", email: "tooltime@gmail.com")
+# file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-dev/MK1KyC5romqVb5XSQspoC7TE')
+# user.image.attach(io: file, filename:'20px-AqueminiOutKast.jpg')
+user.save!
 
 
 Artist.destroy_all
@@ -68,3 +80,8 @@ SongsToPlaylist.create(song_id: Song.first.id, playlist_id: Playlist.last.id)
 SongsToPlaylist.create(song_id: Song.second.id, playlist_id: Playlist.first.id)
 SongsToPlaylist.create(song_id: Song.last.id, playlist_id: Playlist.first.id)
 SongsToPlaylist.create(song_id: Song.last.id, playlist_id: Playlist.last.id)
+
+
+Follow.destroy_all
+Follow.create(user_id: User.first.id, playlist_id: Playlist.first.id)
+Follow.create(user_id: User.first.id, playlist_id: Playlist.last.id)

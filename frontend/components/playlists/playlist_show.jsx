@@ -9,6 +9,8 @@ class PlaylistShow extends React.Component {
 
     this.handleDelete = this.handleDelete.bind(this);
     this.handleRemove = this.handleRemove.bind(this);
+    this.handleFollow = this.handleFollow.bind(this);
+    this.handleUnfollow = this.handleUnfollow.bind(this);
   }
 
   componentDidMount() {
@@ -26,12 +28,28 @@ class PlaylistShow extends React.Component {
     );
   }
 
+  handleFollow() {
+    this.props.followPlaylist({ playlist_id: this.props.playlist.id, user_id: this.props.currentUserId});
+  }
+
+  handleUnfollow() {
+    this.props.removeFollow({ playlist_id: this.props.playlist.id, user_id: this.props.currentUserId});
+  }
+
+
 
   render() {
     let songs = "";
     let playlist_name = "";
+
     if (this.props.playlist !== undefined) {
         songs = this.props.songs.map(song => {
+          let removeSongButton;
+          if (this.props.playlist.user_id === this.props.currentUserId) {
+            removeSongButton = <button id={song.id} onClick={this.handleRemove}><i className="fas fa-trash-alt"></i></button>;
+          } else {
+            removeSongButton =  null;
+          }
           return (
 
             <li key={Math.random()} className="song-index-list-item">
@@ -41,7 +59,7 @@ class PlaylistShow extends React.Component {
               </span>
 
               <span key={Math.random()} className="song-index-list-features">
-                <button id={song.id} onClick={this.handleRemove}><i className="fas fa-trash-alt"></i></button>
+                {removeSongButton}
                 {"4'33'"}
               </span>
             </li>
@@ -50,16 +68,17 @@ class PlaylistShow extends React.Component {
       playlist_name = this.props.playlist.playlist_name;
     }
 
-    let deleteButton;
+    let actionButton;
     if (this.props.playlist.user_id === this.props.currentUserId) {
-      deleteButton = <button className="playlist-show-delete" onClick={this.handleDelete} >Delete</button>;
+      actionButton = <button className="playlist-show-delete" onClick={this.handleDelete} >Delete</button>;
+    } else if (this.props.follows === true) {
+      actionButton = <button className="playlist-show-delete" onClick={this.handleUnfollow} >Unfollow Playlist</button>;
     } else {
-      deleteButton =  null;
+      actionButton = <button className="playlist-show-delete" onClick={this.handleFollow} >Follow Playlist</button>;
     }
     return (
       <div className="playlist-show-container">
         <SideBarContainer />
-        <AudioBarContainer />
         <div className="playlist-show-items">
             <div className="playlist-show-info">
               <div className="playlist-show-image"></div>
@@ -71,7 +90,7 @@ class PlaylistShow extends React.Component {
                 <span className="playlist-show-song-count">{this.props.songs.length} Songs</span>
                 <div className="playlist-show-button-container">
                   <button className="playlist-show-play">Play</button>
-                  {deleteButton}
+                  {actionButton}
                 </div>
               </div>
           </div>

@@ -23,7 +23,7 @@ const App = (props) => {
   return (
     <div>
       <Modal />
-        <ProtectedRoute path='/' component={AudioBarContainer} />
+      <ProtectedRoute path='/' component={AudioBarContainer} />
       <Switch>
 			  <ProtectedRoute exact path="/main" component={MainContainer} />
 			  <ProtectedRoute exact path="/user/:userid" component={UsersShowContainer} />

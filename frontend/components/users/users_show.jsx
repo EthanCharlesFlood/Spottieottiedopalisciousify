@@ -24,15 +24,28 @@ class UsersShow extends React.Component {
       </div>
       );
     });
+    const followedPlaylists = this.props.followedPlaylists.map(playlist => {
+      return (
+      <div key={playlist.id} className="playlist-index-item">
+      <div className="playlist-index-item-container">
+        <div className="playlist-index-item-image"></div>
+        <Link className="playlist-index-item-link" key={playlist.id} to={`/playlists/${playlist.id}`}>{playlist.playlist_name}</Link>
+      </div>
+      </div>
+      );
+    });
     return (
       <div className="users-show-container">
         <SideBarContainer />
-        <AudioBarContainer />
         <div className="users-show-subcontainer">
           <NavBarContainer />
           {this.props.createModal}
           <div className="users-show-playlists">
             {playlists}
+            <span className="users-show-followed-title">Followed Playlists</span>
+          </div>
+          <div className="users-show-followed-playlists">
+            {followedPlaylists}
           </div>
         </div>
       </div>

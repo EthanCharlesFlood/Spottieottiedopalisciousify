@@ -65,3 +65,15 @@ export const addSongToPlaylist = (ids) => {
     return PlaylistApiUtil.addSongToPlaylist(ids).then(playlist => dispatch(receivePlaylist(playlist)));
   };
 };
+
+export const followPlaylist = (ids) => {
+  return dispatch => {
+    return PlaylistApiUtil.followPlaylist(ids).then(playlist => dispatch(receivePlaylist(playlist)));
+  };
+};
+
+export const removeFollow = (ids) => {
+  return dispatch => {
+    return PlaylistApiUtil.removeFollow(ids).then(playlist => dispatch(receivePlaylist(playlist)));
+  };
+};

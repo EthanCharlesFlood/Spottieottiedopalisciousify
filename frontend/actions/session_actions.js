@@ -4,10 +4,11 @@ export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 
-const receiveCurrentUser = user => {
+const receiveCurrentUser = ({user, followed_playlists}) => {
   return {
     type: RECEIVE_CURRENT_USER,
-    user
+    user,
+    followed_playlists,
   };
 };
 

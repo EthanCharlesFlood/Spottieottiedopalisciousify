@@ -41,3 +41,19 @@ export const addSongToPlaylist = (songs_to_playlist) => {
     data: {songs_to_playlist}
   });
 };
+
+export const followPlaylist = (follow) => {
+  return $.ajax({
+    method: "POST",
+    url: "api/follows",
+    data: {follow}
+  });
+};
+
+export const removeFollow = (follow) => {
+  return $.ajax({
+    method: "DELETE",
+    url: "api/follows",
+    data: {follow}
+  });
+};

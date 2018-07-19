@@ -9,9 +9,11 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 
 
 const mapStateToProps = (state) => {
+  const currentUser = state.entities.users[state.session.id];
   return {
-    currentUser: state.entities.users[state.session.id],
+    currentUser: currentUser,
     playlists: selectPlaylists(state),
+    followedPlaylists: currentUser.followed_playlists
   };
 };
 

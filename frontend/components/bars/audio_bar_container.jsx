@@ -7,7 +7,6 @@ import { nextSong,
          play,
          pause } from './../../actions/audio_actions';
 
-
 const mapStateToProps = (state) => {
   return {
     playing: state.ui.audio.playing,

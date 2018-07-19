@@ -22,6 +22,7 @@ class User < ApplicationRecord
   has_many :playlists
   has_many :friends
   has_many :follows
+  has_many :followed_playlists, through: :follows, source: :playlist
 
   has_one_attached :image
 

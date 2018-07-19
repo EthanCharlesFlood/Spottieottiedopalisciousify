@@ -19,4 +19,5 @@ class Song < ApplicationRecord
 	has_many :playlists, through: :songs_to_playlists
 
   has_one_attached :file
+  has_one_attached :image
 end
