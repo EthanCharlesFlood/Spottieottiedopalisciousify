@@ -2,6 +2,8 @@ class Api::PlaylistsController < ApplicationController
 
 	def create
 		@playlist = Playlist.new(playlists_params)
+    file = File.open('app/assets/images/349.jpg')
+    @playlist.image.attach(io: file, filename: '349.jpg')
 		if @playlist.save
 			render "api/playlists/show"
 		else

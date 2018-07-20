@@ -14,6 +14,7 @@ class AudioBar extends React.Component {
     this.next = this.next.bind(this);
     this.previous = this.previous.bind(this);
     this.loop = this.loop.bind(this);
+    this.shuffle = this.shuffle.bind(this);
 
     this.state = {
       duration: 0,
@@ -21,6 +22,7 @@ class AudioBar extends React.Component {
       remainingTime: null,
       progress: "",
       loop: false,
+      shuffle: false,
     };
   }
 
@@ -112,10 +114,24 @@ class AudioBar extends React.Component {
   }
 
   loop() {
-    if (this.state.loop) {
-      this.setState({ loop: false });
-    } else {
+    if ( !this.state.loop) {
+      document.getElementById("loop").style.color = "green";
       this.setState({ loop: true });
+    } else {
+      document.getElementById("loop").style.color = "white";
+      this.setState({ loop: false });
+    }
+  }
+
+  shuffle() {
+    if ( !this.state.loop ) {
+      this.setState({ shuffle: false }, () => {
+        document.getElementById("loop").style.color = "green";
+      });
+    } else {
+      this.setState({ shuffle: true }, () => {
+        document.getElementById("loop").style.color = "white";
+      });
     }
   }
 
@@ -146,6 +162,7 @@ class AudioBar extends React.Component {
     } else {
       pPButton = <i className="far fa-play-circle"></i>;
     }
+
     return (
       <div className="audio-bar-container">
 
@@ -154,11 +171,15 @@ class AudioBar extends React.Component {
         <div className="audio-player">
 
           <div className="audio-player-controls">
+            <span id="loop" className="loop" onClick={this.loop}><i className="fas fa-redo-alt"></i></span>
+
             <span className="next-song" onClick={this.previous}><i className="fas fa-backward" /></span>
 
             <span className="play-pause-button" onClick={this.playPause}>{pPButton}</span>
 
             <span className="previous-song" onClick={this.next}><i className="fas fa-forward" /></span>
+
+            <span id="shuffle" className="shuffle" onClick={this.shuffle}><i className="fas fa-random"></i></span>
           </div>
 
           <div className="song-progress-container">

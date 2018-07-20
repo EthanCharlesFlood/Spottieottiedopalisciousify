@@ -14,6 +14,7 @@ class UsersShow extends React.Component {
 
 
   render() {
+    console.log(this.props.playlists)
     const playlists = this.props.playlists.map(playlist => {
       return (
       <div key={playlist.id} className="playlist-index-item">
@@ -24,16 +25,23 @@ class UsersShow extends React.Component {
       </div>
       );
     });
-    const followedPlaylists = this.props.followedPlaylists.map(playlist => {
+
+    let followedPlaylists;
+
+    if (this.props.followedPlaylists[0] !== undefined) {
+    followedPlaylists = this.props.followedPlaylists.map(playlist => {
       return (
-      <div key={playlist.id} className="playlist-index-item">
-      <div className="playlist-index-item-container">
-        <img className="playlist-index-item-image" src={playlist.imgurl}/>
-        <Link className="playlist-index-item-link" key={playlist.id} to={`/playlists/${playlist.id}`}>{playlist.playlist_name}</Link>
-      </div>
-      </div>
-      );
-    });
+        <div key={playlist.id} className="playlist-index-item">
+        <div className="playlist-index-item-container">
+          <img className="playlist-index-item-image" src={playlist.imgurl}/>
+          <Link className="playlist-index-item-link" key={playlist.id} to={`/playlists/${playlist.id}`}>{playlist.playlist_name}</Link>
+        </div>
+        </div>
+        );
+      });
+    } else {
+      followedPlaylists = "";
+    }
     return (
       <div className="users-show-container">
         <SideBarContainer />

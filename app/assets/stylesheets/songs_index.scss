@@ -37,11 +37,17 @@
 .song-index-list-item {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
 }
 
-.song-index-list-title {
+.song-index-list-item:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  color: #fff;
+}
 
+.song-index-list-title:hover {
+  opacity: none;
 }
 
 .song-modal {

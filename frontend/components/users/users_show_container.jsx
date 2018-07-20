@@ -4,16 +4,17 @@ import { Link } from 'react-router-dom';
 import { logout } from './../../actions/session_actions';
 import UsersShow from './users_show';
 import { fetchPlaylists } from './../../actions/playlist_actions';
-import { selectPlaylists } from './../../reducers/selectors';
+import { selectPlaylists, selectFollowedPlaylists } from './../../reducers/selectors';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 
 const mapStateToProps = (state) => {
   const currentUser = state.entities.users[state.session.id];
+
   return {
     currentUser: currentUser,
     playlists: selectPlaylists(state),
-    followedPlaylists: currentUser.followed_playlists
+    followedPlaylists: selectFollowedPlaylists(state),
   };
 };
 

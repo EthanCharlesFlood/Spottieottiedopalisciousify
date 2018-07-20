@@ -9,6 +9,14 @@ export const LOOP = "LOOP";
 export const BLOOP = "BLOOP";
 export const RESET = "RESET";
 export const BRESET = "BRESET";
+export const SHUFFLE = "SHUFFLE";
+
+export const shuffle = (songQueue) => {
+  return {
+    type: SHUFFLE,
+    songQueue
+  };
+};
 
 export const reset = () => {
   return {

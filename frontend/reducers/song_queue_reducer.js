@@ -1,4 +1,7 @@
-import { QUEUE_SONG, ADD_SONG_TO_QUEUE, ADD_PLAYLIST_TO_QUEUE, NEXT_SONG } from './../actions/audio_actions';
+import { QUEUE_SONG,
+         ADD_SONG_TO_QUEUE,
+         ADD_PLAYLIST_TO_QUEUE,
+         NEXT_SONG } from './../actions/audio_actions';
 
 const songQueueReducer = (state = [], action) => {
   const newState = state;

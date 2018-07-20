@@ -23,3 +23,15 @@ export const selectPlaylistSongs = (state, playlist) => {
     return [];
   }
 };
+
+export const selectFollowedPlaylists = (state) => {
+  const currentUser = state.entities.users[state.session.id];
+  if ( state.entities.playlists ) {
+    const followedPlaylists = currentUser.followed_playlist_ids.map(id => {
+      return state.entities.playlists[id];
+    });
+    return followedPlaylists;
+  } else {
+    return [];
+  }
+};
