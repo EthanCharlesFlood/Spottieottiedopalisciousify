@@ -18,8 +18,8 @@ class AudioBar extends React.Component {
 
     this.state = {
       duration: 0,
-      currentTime: 0,
-      remainingTime: null,
+      currentTime: "0:00",
+      remainingTime: "0:00",
       progress: "",
       loop: false,
       shuffle: false,
@@ -57,6 +57,7 @@ class AudioBar extends React.Component {
     } else if (this.props.idx < (this.props.songQueue.length - 1)) {
       this.props.nextSong();
     } else {
+      this.setState({ remainingTime: "0:00" })
       this.props.resetQ();
     }
   }
@@ -136,9 +137,13 @@ class AudioBar extends React.Component {
   }
 
   updateTime(e) {
+    let remainingTime = this.parseTime(this.audio.duration - this.audio.currentTime);
+    if (remainingTime === "NaN:NaN") {
+      remainingTime = "0:00";
+    }
     this.setState({
       currentTime: this.parseTime(Math.floor(this.audio.currentTime)),
-      remainingTime: this.parseTime(this.audio.duration - this.audio.currentTime),
+      remainingTime: remainingTime,
       progress: ((this.audio.currentTime / this.audio.duration) * 100)
     });
   }
@@ -171,7 +176,7 @@ class AudioBar extends React.Component {
         <div className="audio-player">
 
           <div className="audio-player-controls">
-            <span id="loop" className="loop" onClick={this.loop}><i className="fas fa-redo-alt"></i></span>
+
 
             <span className="next-song" onClick={this.previous}><i className="fas fa-backward" /></span>
 
@@ -179,7 +184,7 @@ class AudioBar extends React.Component {
 
             <span className="previous-song" onClick={this.next}><i className="fas fa-forward" /></span>
 
-            <span id="shuffle" className="shuffle" onClick={this.shuffle}><i className="fas fa-random"></i></span>
+
           </div>
 
           <div className="song-progress-container">
@@ -200,7 +205,7 @@ class AudioBar extends React.Component {
                  autoPlay={this.props.playing}
                  onLoadedData={this.fetchDuration}
                  src={song}
-                 onEnded={this.handleEnd}
+                 onEnded={this.next}
                  ref={(audio) => this.audio = audio}
                  onTimeUpdate={this.updateTime} />
         </div>
@@ -213,4 +218,7 @@ class AudioBar extends React.Component {
     );
   }
 }
+// <span id="loop" className="loop" onClick={this.loop}><i className="fas fa-redo-alt"></i></span>
+// <span id="shuffle" className="shuffle" onClick={this.shuffle}><i className="fas fa-random"></i></span>
+
 export default AudioBar;

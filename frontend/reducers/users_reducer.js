@@ -7,7 +7,7 @@ const usersReducer = (state = {}, action) => {
     case RECEIVE_CURRENT_USER:
       return merge({}, state, { [action.user.id]: action.user});
     case RECEIVE_PLAYLIST:
-      return merge({}, state, action.user);
+      const newState = merge({}, state);
     default:
       return state;
   }

@@ -3,7 +3,7 @@
 	height: 100vh;
   background: linear-gradient(rgb(72, 77, 81), rgb(7, 8, 8) 85%);
   justify-content: center;
-
+  padding-bottom: 2000px;
 }
 
 .users-show-subcontainer {
@@ -12,12 +12,7 @@
   align-items: center;
   width: 100%;
   min-width: 1250px;
-  position: fixed;
-  top: 0;
-  bottom:0;
   left: 120px;
-  overflow-y: scroll;
-  justify-content: space-between;
 }
 
 .users-show-playlists {
@@ -27,6 +22,7 @@
   flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
+  min-width: 900px;
 }
 
 .users-show-playlists::-webkit-scrollbar {
@@ -47,7 +43,7 @@
   color: #fff;
   font-weight: 900;
   width: 100%;
-  margin-top: 200px;
+  margin-top: 100px;
   margin-bottom: 75px;
   display: flex;
   justify-content: center;

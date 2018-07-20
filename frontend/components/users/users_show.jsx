@@ -12,9 +12,7 @@ class UsersShow extends React.Component {
   }
 
 
-
   render() {
-    console.log(this.props.playlists)
     const playlists = this.props.playlists.map(playlist => {
       return (
       <div key={playlist.id} className="playlist-index-item">
@@ -51,9 +49,9 @@ class UsersShow extends React.Component {
           <div className="users-show-playlists">
             {playlists}
             <span className="users-show-followed-title">Followed Playlists</span>
-          </div>
-          <div className="users-show-followed-playlists">
-            {followedPlaylists}
+            <div className="users-show-followed-playlists">
+              {followedPlaylists}
+            </div>
           </div>
         </div>
       </div>

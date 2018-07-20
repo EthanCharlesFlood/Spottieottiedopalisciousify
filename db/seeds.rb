@@ -276,7 +276,7 @@ file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/i
 playlist.image.attach(io: file, filename:'images.jpeg')
 playlist.save!
 
-playlist = Playlist.new(playlist_name: "Definately Not Outkast", user_id: User.third.id)
+playlist = Playlist.new(playlist_name: "Hello World", user_id: User.third.id)
 file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/blog-stock-02.jpg')
 playlist.image.attach(io: file, filename:'blog-stock-02.jpg')
 playlist.save!
