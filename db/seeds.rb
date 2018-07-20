@@ -51,7 +51,7 @@ artist.save!
 Album.destroy_all
 
 album = Album.new(album_name: "Aquemini", artist_id: Artist.first.id)
-albm_img = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-dev/MK1KyC5romqVb5XSQspoC7TE')
+albm_img = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-dev/220px-AqueminiOutKast.jpg')
 album.image.attach(io: albm_img, filename:'20px-AqueminiOutKast.jpg')
 album.save!
 

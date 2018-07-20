@@ -11,22 +11,16 @@ class AudioBar extends React.Component {
     this.handleEnd = this.handleEnd.bind(this);
     this.fetchDuration = this.fetchDuration.bind(this);
     this.updateTime = this.updateTime.bind(this);
-    let pPButton;
-    if (this.props.playing === true) {
-      pPButton = <i class="far fa-pause-circle"></i>;
-    } else {
-      pPButton = <i className="far fa-play-circle"></i>;
-    }
+    this.next = this.next.bind(this);
+    this.previous = this.previous.bind(this);
+    this.loop = this.loop.bind(this);
 
     this.state = {
-      playing: this.props.playing,
-      playingSong: this.props.playingSong,
-      songQueue: this.props.songQueue,
-      pPButton: pPButton,
       duration: 0,
       currentTime: 0,
       remainingTime: null,
-      progress: 0
+      progress: "",
+      loop: false,
     };
   }
 
@@ -34,38 +28,45 @@ class AudioBar extends React.Component {
 
   componentDidMount() {
     this.audio.volume = 0.5;
-    if (this.state.playingSong) {
-      this.setState({
-        remainingTime: (this.audio.duration - this.audio.currentTime),
-        currentTime: this.audio.currentTime,
-      });
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (this.props.currentSong !== newProps.currentSong ) {
+      this.playPause();
     }
   }
 
   playPause() {
-    if (this.state.playing === true) {
+    if (!this.props.playingSong) {
+      return;
+    } else if (this.props.playing === true) {
       this.props.pause();
       this.audio.pause();
-      this.setState({
-        playing: false,
-        pPButton: <i className="far fa-play-circle"></i>,
-      });
     } else {
       this.props.play();
       this.audio.play();
-      this.setState({
-        playing: true,
-        pPButton: <i className="far fa-pause-circle"></i>,
-      });
     }
   }
 
+
   next() {
-    this.props.nextSong();
+    if ((this.props.idx > this.props.songQueue.length) && this.state.loop) {
+      this.props.loop();
+    } else if (this.props.idx < (this.props.songQueue.length - 1)) {
+      this.props.nextSong();
+    } else {
+      this.props.resetQ();
+    }
   }
 
   previous() {
-    this.props.previousSong();
+    if ((this.props.idx === 0) && this.state.loop) {
+      this.props.bloop((this.props.songQueue.length - 1));
+    } else if (this.props.idx === 0) {
+      this.props.breset((this.props.songQueue.length - 1));
+    } else if (this.props.idx < this.props.songQueue.length) {
+      this.props.previousSong();
+    }
   }
 
   fetchDuration(e) {
@@ -110,6 +111,14 @@ class AudioBar extends React.Component {
     }
   }
 
+  loop() {
+    if (this.state.loop) {
+      this.setState({ loop: false });
+    } else {
+      this.setState({ loop: true });
+    }
+  }
+
   updateTime(e) {
     this.setState({
       currentTime: this.parseTime(Math.floor(this.audio.currentTime)),
@@ -119,28 +128,37 @@ class AudioBar extends React.Component {
   }
 
   render() {
-    let songName = "";
-    let songImg = "";
-    if (this.state.playingSong) {
-      songName = this.state.playingSong.song_name;
-      songImg = this.state.playingSong.imgurl;
+    let info;
+    let song = "";
+    if (this.props.playingSong) {
+      info = <div className="now-playing-info">
+              <img src={this.props.playingSong.imgurl} className="now-playing-img" />
+              <span className="now-playing-title">{this.props.playingSong.song_name}</span>
+            </div>;
+      song = this.props.playingSong.songurl;
+    } else {
+      info = <div className="now-playing-info" />;
+    }
+
+    let pPButton;
+    if (this.props.playing === true) {
+      pPButton = <i className="far fa-pause-circle"></i>;
+    } else {
+      pPButton = <i className="far fa-play-circle"></i>;
     }
     return (
       <div className="audio-bar-container">
 
-        <div className="now-playing-info">
-          <img src={songImg} className="now-playing-img" />
-          <span className="now-playing-title">{songName}</span>
-        </div>
+        {info}
 
         <div className="audio-player">
 
           <div className="audio-player-controls">
-            <span className="next-song" onClick={this.props.nextSong}><i className="fas fa-backward" /></span>
+            <span className="next-song" onClick={this.previous}><i className="fas fa-backward" /></span>
 
-            <span className="play-pause-button" onClick={this.playPause}>{this.state.pPButton}</span>
+            <span className="play-pause-button" onClick={this.playPause}>{pPButton}</span>
 
-            <span className="previous-song" onClick={this.props.previousSong}><i className="fas fa-forward" /></span>
+            <span className="previous-song" onClick={this.next}><i className="fas fa-forward" /></span>
           </div>
 
           <div className="song-progress-container">
@@ -149,7 +167,7 @@ class AudioBar extends React.Component {
             <input
               type="range"
               onChange={this.selectTime}
-              value={this.state.progress}
+
               min="0"
               className="song-progress"
               max={this.state.duration} />
@@ -158,8 +176,9 @@ class AudioBar extends React.Component {
           </div>
 
           <audio loop={false}
+                 autoPlay={this.props.playing}
                  onLoadedData={this.fetchDuration}
-                 src={this.state.playingSong}
+                 src={song}
                  onEnded={this.handleEnd}
                  ref={(audio) => this.audio = audio}
                  onTimeUpdate={this.updateTime} />

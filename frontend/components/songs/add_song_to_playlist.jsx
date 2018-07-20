@@ -24,10 +24,10 @@ class AddSongToPlaylist extends React.Component {
     const playlists = this.props.playlists.map(playlist => {
       return (
       <div key={playlist.id} className="stp-index-item">
-      <button onClick={this.handleAddingSong} id={playlist.id} className="stp-index-item-container" key={playlist.id}>
-        <div className="stp-index-item-image" key={playlist.id + 1}></div>
-        <span>{playlist.playlist_name}</span>
-      </button>
+      <span onClick={this.handleAddingSong} id={playlist.id} className="stp-index-item-container" key={playlist.id}>
+        <img src={playlist.imgurl} className="stp-index-item-image" key={playlist.id + 1}></img>
+      </span>
+      <span className="stp-index-item-title">{playlist.playlist_name}</span>
       </div>
       );
     });

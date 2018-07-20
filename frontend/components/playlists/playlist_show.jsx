@@ -16,6 +16,7 @@ class PlaylistShow extends React.Component {
     this.handleFollow = this.handleFollow.bind(this);
     this.handleUnfollow = this.handleUnfollow.bind(this);
     this.handleAddToQueue = this.handleAddToQueue.bind(this);
+    this.handleReceive = this.handleReceive.bind(this);
   }
 
   componentDidMount() {
@@ -47,12 +48,16 @@ class PlaylistShow extends React.Component {
     this.props.addPlaylistToQueue(this.props.songs);
   }
 
+  handleReceive(e) {
+    this.props.queueSong(this.props.songs[e.currentTarget.id]);
+  }
+
   render() {
     let songs = "";
     let playlist_name = "";
 
     if (this.props.playlist !== undefined) {
-        songs = this.props.songs.map(song => {
+        songs = this.props.songs.map((song, idx) => {
           let removeSongButton;
           if (this.props.playlist.user_id === this.props.currentUserId) {
             removeSongButton = <button id={song.id} onClick={this.handleRemove}><i className="fas fa-trash-alt"></i></button>;
@@ -62,7 +67,7 @@ class PlaylistShow extends React.Component {
           return (
 
             <li key={Math.random()} className="song-index-list-item">
-              <span key={Math.random()} className="song-index-list-title">
+              <span id={idx} onClick={this.handleReceive} key={Math.random()} className="song-index-list-title">
                 <i className="fas fa-music"></i>
                 {song.song_name}
               </span>

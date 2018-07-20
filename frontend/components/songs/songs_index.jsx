@@ -13,7 +13,7 @@ class SongsIndex extends React.Component {
   }
 
   handleAddSong(e) {
-    this.props.receiveSong(this.props.songs[e.currentTarget.id]);
+    this.props.queueSong(this.props.songs[e.currentTarget.id]);
   }
 
   openModal(e) {

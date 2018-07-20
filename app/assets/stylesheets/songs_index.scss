@@ -17,7 +17,12 @@
 
 .song-index-list-container {
   width: 75%;
+  height: 600px;
+  overflow-y: scroll;
+  padding-right: 25px;
 }
+
+.song-index-container::-webkit-scrollbar { width: 0 !important }
 
 .song-index-list {
   color: #fff;
@@ -32,6 +37,7 @@
 .song-index-list-item {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 10px;
 }
 
 .song-index-list-title {

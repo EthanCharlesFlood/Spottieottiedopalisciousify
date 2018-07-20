@@ -1,14 +1,31 @@
 export const PLAY = "PLAY";
 export const PAUSE = "PAUSE";
-export const RECEIVE_SONG = "RECEIVE_SONG";
+export const QUEUE_SONG = "QUEUE_SONG";
 export const ADD_SONG_TO_QUEUE = "ADD_SONG_TO_QUEUE";
 export const ADD_PLAYLIST_TO_QUEUE = "ADD_PLAYLIST_TO_QUEUE";
 export const NEXT_SONG = "NEXT_SONG";
 export const PREVIOUS_SONG = "PREVIOUS_SONG";
+export const LOOP = "LOOP";
+export const BLOOP = "BLOOP";
+export const RESET = "RESET";
+export const BRESET = "BRESET";
 
-export const receiveSong = (song) => {
+export const reset = () => {
   return {
-    type: RECEIVE_SONG,
+    type: RESET,
+  };
+};
+
+export const breset = (length) => {
+  return {
+    type: BRESET,
+    length,
+  };
+};
+
+export const queueSong = (song) => {
+  return {
+    type: QUEUE_SONG,
     song
   };
 };
@@ -48,5 +65,18 @@ export const play = () => {
 export const pause = () => {
   return {
     type: PAUSE,
+  };
+};
+
+export const loop = () => {
+  return {
+    type: LOOP,
+  };
+};
+
+export const bloop = (length) => {
+  return {
+    type: BLOOP,
+    length
   };
 };

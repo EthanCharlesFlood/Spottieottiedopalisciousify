@@ -18,15 +18,23 @@
 }
 
 .stp-index-item {
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .stp-index-item-image {
-
+  width: 250px;
+  height: 250px;
 }
 
 .stp-index-item-container {
   width: 250px;
   height: 250px;
-  margin: 15px;
+  padding: none;
+}
+
+.stp-index-item-title {
+  color: #fff;
 }

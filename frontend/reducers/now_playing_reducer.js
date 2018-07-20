@@ -1,4 +1,9 @@
-import { PLAY, PAUSE, RECEIVE_SONG, ADD_PLAYLIST_TO_QUEUE, NEXT_SONG } from './../actions/audio_actions';
+import { PLAY,
+         PAUSE,
+         QUEUE_SONG,
+         ADD_PLAYLIST_TO_QUEUE,
+         RESET,
+         BRESET } from './../actions/audio_actions';
 import { merge } from 'lodash';
 
 
@@ -8,12 +13,14 @@ const nowPlayingReducer = (state = { playing: false }, action) => {
       return { playing: true };
     case PAUSE:
       return { playing: false };
-    case RECEIVE_SONG:
+    case RESET:
+      return { playing: false };
+    case BRESET:
+      return { playing: false };
+    case QUEUE_SONG:
       return { playing: true };
     case ADD_PLAYLIST_TO_QUEUE:
       return { playing: true };
-    case NEXT_SONG:
-      return { playin: true};
     default:
       return state;
   }
