@@ -13,8 +13,9 @@ class PlaylistIndex extends React.Component {
       return (
       <div key={playlist.id} className="playlist-index-item">
       <div className="playlist-index-item-container" key={playlist.id}>
-        <img className="playlist-index-item-image" key={playlist.id + 1} src={playlist.imgurl}/>
-        <Link className="playlist-index-item-link" key={playlist.id} to={`/playlists/${playlist.id}`}>{playlist.playlist_name}</Link>
+        <Link key={playlist.id} to={`/playlists/${playlist.id}`}>
+					<img className="playlist-index-item-image" key={playlist.id + 1} src={playlist.imgurl}/>
+					<span className="playlist-index-item-link">{playlist.playlist_name}</span></Link>
       </div>
       </div>
       );
