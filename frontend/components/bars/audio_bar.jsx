@@ -33,6 +33,7 @@ class AudioBar extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
+    this.progressBar.value = 0;
     if (this.props.currentSong !== newProps.currentSong ) {
       this.playPause();
     }
@@ -52,6 +53,7 @@ class AudioBar extends React.Component {
 
 
   next() {
+    this.progressBar.value = 0;
     if ((this.props.idx > this.props.songQueue.length) && this.state.loop) {
       this.props.loop();
     } else if (this.props.idx < (this.props.songQueue.length - 1)) {
@@ -63,6 +65,7 @@ class AudioBar extends React.Component {
   }
 
   previous() {
+    this.progressBar.value = 0;
     if ((this.props.idx === 0) && this.state.loop) {
       this.props.bloop((this.props.songQueue.length - 1));
     } else if (this.props.idx === 0) {
@@ -168,6 +171,11 @@ class AudioBar extends React.Component {
       pPButton = <i className="far fa-play-circle"></i>;
     }
 
+    let time = this.state.remainingTime;
+    if (time === "NaN:NaN") {
+      time = "0:00"
+    }
+
     return (
       <div className="audio-bar-container">
 
@@ -193,12 +201,12 @@ class AudioBar extends React.Component {
             <input
               type="range"
               onChange={this.selectTime}
-
+              ref={(progressBar => this.progressBar = progressBar)}
               min="0"
               className="song-progress"
               max={this.state.duration} />
 
-            <span className="song-remaining-time">{this.state.remainingTime}</span>
+            <span className="song-remaining-time">{time}</span>
           </div>
 
           <audio loop={false}

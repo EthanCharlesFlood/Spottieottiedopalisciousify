@@ -31,6 +31,7 @@
 
 .song-progress {
   width: 75%;
+  cursor: pointer;
 
 }
 
@@ -55,11 +56,11 @@
   align-items: center;
   justify-content: center;
   margin-right: 20px;
-
 }
 
 .play-pause-button {
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .fa-play-circle {
@@ -73,21 +74,25 @@
   margin-left: 10px;
   text-align: center;
   padding-top: 7px;
+  cursor: pointer;
 }
 
 .previous-song {
   text-align: center;
   padding-top: 7px;
+  cursor: pointer;
 }
 
 .loop {
   text-align: center;
   padding-top: 7px;
+  cursor: pointer;
 }
 
 .shuffle {
   text-align: center;
   padding-top: 7px;
+  cursor: pointer;
 }
 
 .fa-forward, .fa-backward {

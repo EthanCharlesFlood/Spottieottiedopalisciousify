@@ -42,6 +42,7 @@
   margin-top: 75px;
 }
 
+
 .playlist-index-title {
   width: 100%;
   display: flex;
@@ -56,6 +57,10 @@
 .playlist-index-item-image {
   width: 200px;
   height: 200px;
+}
+
+.playlist-index-item-image:hover {
+	filter: brightness(.3);
 }
 
 .playlist-index-playlists {
