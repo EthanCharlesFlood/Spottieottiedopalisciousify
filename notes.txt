@@ -1,9 +1,4 @@
 seeds
 
-implement audioplayer on main
-
-
-
-
 when done testing delet config.assets.paths << Rails.root.join("app", "assets", "songs")
 from config/application.rb
