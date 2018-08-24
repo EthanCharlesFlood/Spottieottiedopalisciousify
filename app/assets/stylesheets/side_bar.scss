@@ -84,12 +84,20 @@
   padding-top: 10px;
 }
 
-.sidebar-username > button {
+.sidebar-username > span {
 	color: white;
   background: none;
   border: none;
   font-weight: 900;
-  cursor: pointer;
+}
+
+.sidebar-username > button {
+	color: white;
+	background: none;
+	border: none;
+	font-weight: 900;
+	cursor: pointer;
+	width: 100px;
 }
 
 

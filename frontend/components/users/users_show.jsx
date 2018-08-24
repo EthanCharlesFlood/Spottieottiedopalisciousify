@@ -16,10 +16,10 @@ class UsersShow extends React.Component {
     const playlists = this.props.playlists.map(playlist => {
       return (
       <div key={playlist.id} className="playlist-index-item">
-      <div className="playlist-index-item-container">
-        <img className="playlist-index-item-image" src={playlist.imgurl}/>
-        <Link className="playlist-index-item-link" key={playlist.id} to={`/playlists/${playlist.id}`}>{playlist.playlist_name}</Link>
-      </div>
+        <Link className="playlist-index-item-container" key={playlist.id} to={`/playlists/${playlist.id}`}>
+          <img className="playlist-index-item-image" src={playlist.imgurl}/>
+          <div className="playlist-index-item-link">{playlist.playlist_name}</div>
+        </Link>
       </div>
       );
     });
