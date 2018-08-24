@@ -1,4 +1,3 @@
-seeds
+finish search
 
-when done testing delet config.assets.paths << Rails.root.join("app", "assets", "songs")
-from config/application.rb
+follows not functioning 100% correctly
