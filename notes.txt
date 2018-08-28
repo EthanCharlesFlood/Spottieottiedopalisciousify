@@ -1,3 +1,12 @@
+possibly fix login
+
 finish search
 
 follows not functioning 100% correctly
+
+add column to songs table with length
+manually implement every songs length
+
+for javascript game:
+
+firebase, make instructions obvious for the braindead
