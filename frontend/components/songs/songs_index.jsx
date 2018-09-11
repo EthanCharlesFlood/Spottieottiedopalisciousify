@@ -25,9 +25,9 @@ class SongsIndex extends React.Component {
     const songs = this.props.songs.map((song, idx) => {
       let songAdder = (song) => this.handleAddSong(song);
       return (
-        <li key={song.id} id={idx} onClick={songAdder} className="song-index-list-item">
+        <li key={song.id} id={idx}  className="song-index-list-item">
           <span key={song.id} className="song-index-list-title">
-            <span key={Math.random()}><i className="fas fa-music"></i></span>
+            <span key={Math.random()} onClick={songAdder} id={idx}><i className="fas fa-music"></i></span>
             {song.song_name}
           </span>
           <span className="song-index-list-features">
