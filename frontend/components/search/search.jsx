@@ -19,7 +19,7 @@ class Search extends React.Component {
     return (
       <div className="search-container">
         <div className="search-top">
-          <span>Search for a song or playlist.</span>
+          <span>"Search for a song or playlist."</span>
         </div>
         <div className="search-input">
           <form>

@@ -10,3 +10,7 @@ manually implement every songs length
 for javascript game:
 
 firebase, make instructions obvious for the braindead
+
+for chess:
+
+AI player

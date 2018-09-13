@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 		resources :songs, only: [:show, :index]
 		resources :songs_to_playlists, only: [:create]
     resources :follows, only: [:create]
+    get "/search", to: "search#index"
     delete "/songs_to_playlists", to: 'songs_to_playlists#remove'
     delete "/follows", to: 'follows#remove'
   end
