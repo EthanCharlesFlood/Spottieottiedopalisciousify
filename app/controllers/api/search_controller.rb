@@ -11,6 +11,6 @@ class Api::SearchController < ApplicationController
   private
 
   def query_string
-
+    
   end
 end
