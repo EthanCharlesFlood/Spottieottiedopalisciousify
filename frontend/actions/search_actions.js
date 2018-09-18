@@ -21,7 +21,7 @@ const clearSearchResults = () => {
 
 
 export const fetchSearchResults = (query) => (dispatch) => {
-  return SearchAPIUtil.fetchSearchResults(query).then(results => {
+  return SearchAPIUtil.performSearch(query).then(results => {
     return (dispatch) => receiveSearchResults(results);
   });
 };
