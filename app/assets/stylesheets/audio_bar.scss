@@ -28,15 +28,13 @@
 
 .song-progress-container {
   width: 100%;
+  align-items: center;
 }
 
 .song-progress {
   width: 75%;
   cursor: pointer;
-
 }
-
-
 
 .far, .fas {
   color: #fff;
@@ -105,10 +103,12 @@
   color: #fff;
   height: 15px;
   width: 15px;
+  margin-left: 10px;
 }
 
 .song-progress-time {
   color: #fff;
   height: 15px;
   width: 15px;
+  margin-right: 10px;
 }
