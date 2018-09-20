@@ -33,8 +33,8 @@ class AudioBar extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    this.progressBar.value = 0;
     if (this.props.currentSong !== newProps.currentSong ) {
+      this.progressBar.value = 0;
       this.playPause();
     }
   }
