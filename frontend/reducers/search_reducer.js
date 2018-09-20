@@ -12,4 +12,4 @@ const searchReducer = (action, state = {}) => {
   }
 };
 
-export defualt searchReducer;
+export default searchReducer;
