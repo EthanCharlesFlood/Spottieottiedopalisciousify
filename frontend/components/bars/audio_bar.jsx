@@ -53,18 +53,28 @@ class AudioBar extends React.Component {
 
 
   next() {
+    if (this.props.songQueue.length === 1) {
+      this.audio.currentTime = 0;
+      this.progressBar.value = 0;
+      return null;
+    }
     this.progressBar.value = 0;
     if ((this.props.idx > this.props.songQueue.length) && this.state.loop) {
       this.props.loop();
     } else if (this.props.idx < (this.props.songQueue.length - 1)) {
       this.props.nextSong();
     } else {
-      this.setState({ remainingTime: "0:00" })
+      this.setState({ currentTime: "0:00", remainingTime: "0:00" })
       this.props.resetQ();
     }
   }
 
   previous() {
+    if (this.props.songQueue.length === 1) {
+      this.audio.currentTime = 0;
+      this.progressBar.value = 0;
+      return null;
+    }
     this.progressBar.value = 0;
     if ((this.props.idx === 0) && this.state.loop) {
       this.props.bloop((this.props.songQueue.length - 1));
