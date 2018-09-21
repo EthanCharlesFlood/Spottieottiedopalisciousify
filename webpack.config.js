@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 var path = require('path');
+=======
+var path = require("path");
+>>>>>>> bc1b848be9d8265c695a9dd89f5987e45a5be16c
 
 module.exports = {
   context: __dirname,
