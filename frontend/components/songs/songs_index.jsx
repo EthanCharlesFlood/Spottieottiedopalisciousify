@@ -29,6 +29,8 @@ class SongsIndex extends React.Component {
           <span key={song.id} className="song-index-list-title">
             <span key={Math.random()} onClick={songAdder} id={idx}><i className="fas fa-music"></i></span>
             {song.song_name}
+            <br></br>
+            {song.artist.artist_name} - {song.album}
           </span>
           <span className="song-index-list-features">
             <button key={song.id} id={song.id} className="song-modal" onClick={this.openModal}><i className="fas fa-ellipsis-h"></i></button>
