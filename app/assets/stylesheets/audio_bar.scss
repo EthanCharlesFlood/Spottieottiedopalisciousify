@@ -109,12 +109,15 @@ input[type=range]::-ms-fill-upper {
 
 .now-playing-info {
   margin-left: 20px;
-  width: 205px;
+  width: 300px;
+  margin-top: 10px;
+  margin-right: -250px;
 }
 
 .now-playing-img {
   width: 75px;
   height: 75px;
+  margin-right: 10px;
 }
 
 .audio-bar-volume {
