@@ -238,7 +238,5 @@ class AudioBar extends React.Component {
     );
   }
 }
-//
-//
 
 export default AudioBar;
