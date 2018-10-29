@@ -6,3 +6,7 @@ add column to songs table with length
 manually implement every songs length
 
 followed playlists still have link as name
+
+for shuffle decide whether to implement via reducer or state(reducer seams to make more sense)
+
+test loop/bloop
