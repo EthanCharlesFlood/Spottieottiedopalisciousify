@@ -196,7 +196,7 @@ class AudioBar extends React.Component {
 
           <div className="audio-player-controls">
 
-            <span className="shuffle" onClick={this.shuffle}></span>
+            <span id="shuffle" className="shuffle" onClick={this.shuffle}><i className="fas fa-random"></i></span>
 
             <span className="next-song" onClick={this.previous}><i className="fas fa-backward" /></span>
 
@@ -239,6 +239,6 @@ class AudioBar extends React.Component {
   }
 }
 //
-// <span id="shuffle" className="shuffle" onClick={this.shuffle}><i className="fas fa-random"></i></span>
+//
 
 export default AudioBar;
