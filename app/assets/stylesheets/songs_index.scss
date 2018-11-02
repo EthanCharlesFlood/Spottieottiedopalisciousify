@@ -38,7 +38,6 @@
   display: flex;
   justify-content: space-between;
   padding-bottom: 15px;
-  cursor: pointer;
 }
 
 .song-index-list-item:hover {
@@ -54,6 +53,7 @@
 .song-modal {
   background: none;
   border: none;
+  cursor: pointer;
 }
 
 .song-modal:active {
