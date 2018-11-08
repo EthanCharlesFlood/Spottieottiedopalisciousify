@@ -35,7 +35,8 @@ class Search extends React.Component {
         </div>
         <div className="search-results">
           <ul>
-            Search Results
+            <PlaylistResultsContainer className="playlist-results" />
+            <SongResultsContainer className="song-results" />
           </ul>
         </div>
       </div>
