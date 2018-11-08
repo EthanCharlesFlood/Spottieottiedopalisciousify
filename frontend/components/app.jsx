@@ -17,6 +17,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import UsersShowContainer from './users/users_show_container';
 import AudioBarContainer from './bars/audio_bar_container';
 import SideBarContainer from './bars/side_bar_container';
+import SearchContainer from './search/search_container';
 
 
 const App = (props) => {
@@ -29,6 +30,7 @@ const App = (props) => {
 			  <ProtectedRoute exact path="/user/:userid" component={UsersShowContainer} />
         <ProtectedRoute exact path='/playlists/:playlistid' component={PlaylistShowContainer} />
         <ProtectedRoute exact path='/songs' component={SongsIndexContainer} />
+        <ProtectedRoute exact path='/search' component={SearchContainer} />
       </Switch>
       <Switch>
         <AuthRoute exact path="/" component={Greeting} />
