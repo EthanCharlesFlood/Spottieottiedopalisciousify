@@ -5,10 +5,6 @@ class PlaylistResults extends React.component {
 
 
 
-
-
-
-
   render() {
     return (
       <div className="playlist-songs-results-container">
