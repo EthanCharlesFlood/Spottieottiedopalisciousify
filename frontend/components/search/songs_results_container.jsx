@@ -3,13 +3,13 @@ import SongResults from "./song_results";
 
 const mapStateToProps = (state) => {
   return {
-
+    song_results: song_results,
   };
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-
+    queueSong: (song) => dispatch(queueSong(song)),
   };
 };
 
