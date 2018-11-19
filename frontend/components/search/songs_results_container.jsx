@@ -3,7 +3,7 @@ import SongResults from "./song_results";
 
 const mapStateToProps = (state) => {
   return {
-    song_results: song_results,
+    song_results: state.entities.song_results,
   };
 };
 

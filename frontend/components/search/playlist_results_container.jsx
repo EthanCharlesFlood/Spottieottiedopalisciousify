@@ -3,7 +3,7 @@ import PlaylistResults from "./playlist_results";
 
 const mapStateToProps = (state) => {
   return {
-    playlist_results: playlist_results,
+    playlist_results: state.entities.playlist_results,
   };
 };
 
