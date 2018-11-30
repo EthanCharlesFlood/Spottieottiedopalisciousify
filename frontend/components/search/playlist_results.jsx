@@ -1,7 +1,7 @@
 import React from "react";
 
 
-class PlaylistResults extends React.component {
+class PlaylistResults extends React.Component {
 
 
 

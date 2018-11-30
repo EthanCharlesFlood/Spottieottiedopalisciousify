@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from 'react-redux';
 import SongResults from "./songs_results";
 
 const mapStateToProps = (state) => {
