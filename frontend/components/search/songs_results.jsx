@@ -1,7 +1,7 @@
 import React from "react";
 
 
-class SongsResults extends React.component {
+class SongsResults extends React.Component {
 
 
   handleAddSong(e) {
@@ -34,3 +34,5 @@ class SongsResults extends React.component {
     );
   }
 }
+
+export default SongsResults

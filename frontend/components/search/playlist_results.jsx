@@ -26,3 +26,5 @@ class PlaylistResults extends React.Component {
     );
   }
 }
+
+export default PlaylistResults
