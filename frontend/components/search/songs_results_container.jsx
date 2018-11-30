@@ -1,5 +1,5 @@
 import React from "react";
-import SongResults from "./song_results";
+import SongResults from "./songs_results";
 
 const mapStateToProps = (state) => {
   return {

@@ -1,6 +1,6 @@
 import React from 'react';
 import PlaylistResultsContainer from './playlist_results_container';
-import SongResultsContainer from './song_results_container';
+import SongResultsContainer from './songs_results_container';
 
 class Search extends React.Component {
   constructor(props) {
