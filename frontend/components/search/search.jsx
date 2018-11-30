@@ -1,4 +1,5 @@
 import React from 'react';
+import SideBarContainer from './../bars/side_bar_container';
 import PlaylistResultsContainer from './playlist_results_container';
 import SongResultsContainer from './songs_results_container';
 
@@ -19,6 +20,7 @@ class Search extends React.Component {
   render() {
     return (
       <div className="search-container">
+        <SideBarContainer />
         <div className="search-top">
           <span>"Search for a song or playlist."</span>
         </div>
@@ -35,8 +37,7 @@ class Search extends React.Component {
         </div>
         <div className="search-results">
           <ul>
-            // <PlaylistResultsContainer className="playlist-results" />
-            // <SongResultsContainer className="song-results" />
+
           </ul>
         </div>
       </div>
