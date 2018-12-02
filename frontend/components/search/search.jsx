@@ -22,7 +22,6 @@ class Search extends React.Component {
       <div className="search-container">
         <SideBarContainer />
         <div className="search-top">
-          <span>"Search for a song or playlist."</span>
         </div>
         <div className="search-input">
           <form>
