@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from 'react-redux';
-import PlaylistResults from "./playlist_results";
+import SearchResults from "./search_results";
 
 const mapStateToProps = (state) => {
   return {
@@ -11,7 +11,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     addPlaylistToQueue: playlist => dispatch(addPlaylistToQueue(playlist)),
+    queueSong: (song) => dispatch(queueSong(song)),
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(PlaylistResults);
+export default connect(mapStateToProps, mapDispatchToProps)(SearchResults);

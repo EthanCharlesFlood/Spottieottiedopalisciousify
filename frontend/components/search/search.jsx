@@ -1,7 +1,7 @@
 import React from 'react';
 import SideBarContainer from './../bars/side_bar_container';
-import PlaylistResultsContainer from './playlist_results_container';
-import SongResultsContainer from './songs_results_container';
+import SearchResultsContainer from './search_results_container';
+
 
 class Search extends React.Component {
   constructor(props) {
