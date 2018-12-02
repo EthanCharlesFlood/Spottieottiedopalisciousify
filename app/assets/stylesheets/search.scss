@@ -29,6 +29,8 @@
   font-size: 36px;
   border: none;
   margin-left: 20px;
+  text-overflow: scroll;
+  width: 900px;
 }
 
 .search-input-form:focus {

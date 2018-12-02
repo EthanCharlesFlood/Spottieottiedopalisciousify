@@ -13,7 +13,7 @@ const receiveSearchResults = (results) => {
   };
 };
 
-const clearSearchResults = () => {
+export const clearSearchResults = () => {
   return {
     type: CLEAR_SEARCH_RESULTS
   };
@@ -22,6 +22,6 @@ const clearSearchResults = () => {
 
 export const fetchSearchResults = (query) => (dispatch) => {
   return SearchAPIUtil.performSearch(query).then(results => {
-    return (dispatch) => receiveSearchResults(results);
+    dispatch(receiveSearchResults(results));
   });
 };

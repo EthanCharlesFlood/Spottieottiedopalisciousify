@@ -10,7 +10,7 @@ const entitiesReducer = combineReducers({
   songs: songsReducer,
   users: usersReducer,
   songsToPlaylist: songsToPlaylistReducer,
-	// search: searchReducer,
+	search: searchReducer,
 });
 
 export default entitiesReducer;

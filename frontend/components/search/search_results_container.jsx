@@ -4,7 +4,8 @@ import SearchResults from "./search_results";
 
 const mapStateToProps = (state) => {
   return {
-    playlist_results: state.entities.playlist_results,
+    playlists: Object.values(state.entities.search.playlists),
+    songs: Object.values(state.entities.search.songs),
   };
 };
 

@@ -5,8 +5,8 @@ class Api::SearchController < ApplicationController
     @query = params[:query]
 
 
-    @playlists = Playlist.where('lower(playlist_name) LIKE ?', "#{@query}")
-    @songs = Song.where('lower(song_name) LIKE ?', "#{@query}")
+    @playlists = Playlist.where('lower(playlist_name) LIKE ?', "#{@query}%")
+    @songs = Song.where('lower(song_name) LIKE ?', "#{@query}%")
   end
 
 end

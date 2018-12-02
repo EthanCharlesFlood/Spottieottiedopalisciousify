@@ -14,8 +14,14 @@ class Search extends React.Component {
 
 
   handleUpdate(e) {
-    this.setState({ query: e.currentTarget.value});
-    this.props.fetchSearchResults(this.state.query);
+    this.setState({ query: e.currentTarget.value}, () => {
+      if (this.state.query) {
+        this.props.fetchSearchResults(this.state.query);
+      } else {
+        this.props.clearSearchResults();
+      }
+    });
+
   }
 
   render() {
@@ -32,12 +38,12 @@ class Search extends React.Component {
               value={this.state.query}
               onChange={this.handleUpdate}
               autoFocus
-              placeholder="Search for a song..." />
+              placeholder="Search for a song or playlist..." />
           </form>
         </div>
         <div className="search-results">
           <ul>
-
+            <SearchResultsContainer />
           </ul>
         </div>
       </div>
