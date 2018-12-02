@@ -6,7 +6,7 @@ import SongResultsContainer from './songs_results_container';
 class Search extends React.Component {
   constructor(props) {
     super(props);
-
+    this.handleUpdate = this.handleUpdate.bind(this);
     this.state = {
       query: "",
     };
@@ -30,7 +30,7 @@ class Search extends React.Component {
               type="text"
               className="search-input-form"
               value={this.state.query}
-              onUpdate={this.handleUpdate}
+              onChange={this.handleUpdate}
               autoFocus
               placeholder="Search for a song..." />
           </form>
