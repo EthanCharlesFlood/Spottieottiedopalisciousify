@@ -141,7 +141,6 @@ input[type=range]::-ms-fill-upper {
 }
 
 .next-song {
-  margin-left: 10px;
   text-align: center;
   padding-top: 12px;
   cursor: pointer;
@@ -155,13 +154,13 @@ input[type=range]::-ms-fill-upper {
 
 .loop {
   text-align: center;
-  padding-top: 7px;
+  padding-top: 12px;
   cursor: pointer;
 }
 
 .shuffle {
   text-align: center;
-  padding-top: 7px;
+  padding-top: 12px;
   cursor: pointer;
 }
 
