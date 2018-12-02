@@ -15,6 +15,7 @@ class Search extends React.Component {
 
   handleUpdate(e) {
     this.setState({ query: e.currentTarget.value});
+    this.props.fetchSearchResults(this.state.query);
   }
 
   render() {
