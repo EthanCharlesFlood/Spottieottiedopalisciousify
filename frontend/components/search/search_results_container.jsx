@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux';
 import SearchResults from "./search_results";
+import { queueSong } from '../../actions/audio_actions';
 
 const mapStateToProps = (state) => {
   return {

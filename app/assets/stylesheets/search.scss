@@ -37,6 +37,11 @@
   outline: none;
 }
 
-.search-results {
-
+.search-results-container {
+  display: flex;
+  margin-top: 76px;
+  margin-left: 198px;
+  width: 900px;
+  align-items: center;
+  justify-content: center;
 }

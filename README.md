@@ -2,16 +2,44 @@
 
 ## [Spottieottiedopalisciousify](https://spottieottiedopalisciousify.herokuapp.com/)
 
-A single page webapp clone of spotify, featuring playist CRUD operations and
+A single page webapp clone of Spotify, featuring playist CRUD operations and
 a continuously playing audioplayer. Spottieottiedopalisciousify is built with Rails, React, and Redux
 and provides you with the ability to play 10s of your favorite songs (that are by Outkast(and from their second or third album)).
 
+[Splash](app/assets/images/Splash.png)
 
 ## PLAY YOUR FAVORITE SONGS
-An HTML5 audio player was implemented via React and Redux allowing users to play all of their favorite songs from Outkast's second and third albums.  Custom styled HTML components where used with various event listeners to add functionality such as next and previous songs, fastforward and rewind, play and pause.
+An HTML5 audio player was implemented via React and Redux allowing users to play all of their favorite songs from Outkast's second and third albums.  Custom styled HTML components where used with various event listeners to add functionality such as next and previous songs, fast forward and rewind, play and pause.
 
-Redux was used to provide song queueing capabilities, allowing users to queue albums or add individual songs to the queue.
+```
+<audio loop={false}
+       autoPlay={this.props.playing}
+       onLoadedData={this.fetchDuration}
+       src={song}
+       onEnded={this.next}
+       ref={(audio) => this.audio = audio}
+       onTimeUpdate={this.updateTime} />
 
+```
+
+Songs are placed in the Redux store via various methods when navigating the site, and the connected audioplayer component provides seamless music
+playing capabilities as they navigate the site. Refs are used in a limited capacity to help manage the large amount of asynchronous functions
+that would otherwise need to be used to handle continuous audio playing.
+
+Redux was used to provide song playing capabilities, allowing users to listen to playlists or individual songs to the queue.
+functionality is added via various actions and reducers which maintain the song queue and manage the currently playing song. Songs are stored
+via active storage and AWS S3 buckets and are served up to the front end via Active Storage blobs.
+
+```
+export default combineReducers({
+  nowPlaying: nowPlayingReducer,
+  songQueue: songQueueReducer,
+  queueSelector: queueSelectorReducer,
+});
+```
 ## PLAYLIST CRUD
 
-Users can create, destroy, edit their own playlists and follow and listen to playlists created by other users.  In a users profile they have access to all of their own playlists in addition to any other playlists they are currently following.
+[Playlist](app/assets/images/playlist.png)
+
+Users can create, edit, delete, and view playlists and can also follow other users created playlists. Playlists are tied to the user who
+created them via active record associations and can have songs added or removed, and can be followed by other users providing convenient access on the users profile page.

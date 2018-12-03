@@ -5,12 +5,14 @@ import { Link } from 'react-router-dom';
 class SearchResults extends React.Component {
 
   handleAddSong(e) {
-    this.props.queueSong(this.props.song_results[e.currentTarget.id]);
+    this.props.queueSong(this.props.songs[e.currentTarget.id]);
   }
 
   render() {
     let playlists;
     let songs;
+    let pHeader;
+    let sHeader;
     if (this.props.playlists[0] !== undefined) {
       playlists = this.props.playlists.map(playlist => {
         return (
@@ -22,11 +24,15 @@ class SearchResults extends React.Component {
         </div>
         );
       });
+      pHeader = <h3>Playlists</h3>;
     } else {
       playlists = "";
+      pHeader = "";
     }
 
-    if (this.props.songs) {
+
+
+    if (this.props.songs[0] !== undefined) {
       songs = this.props.songs.map((song, idx) => {
         let songAdder = (song) => this.handleAddSong(song);
         return (
@@ -44,19 +50,21 @@ class SearchResults extends React.Component {
           </li>
         );
       });
+      sHeader = <h3>Songs</h3>;
     } else {
       songs = "";
+      sHeader = "";
     }
     return (
-      <div className="playlist-songs-results-container">
+      <div className="search-results-container">
         <ul className="playlSist-songs-results-list">
           <div>
-            <h3>Playlists</h3>
-            {playlists}
+            {sHeader}
+            {songs}
           </div>
           <div>
-            <h3>Songs</h3>
-            {songs}
+            {pHeader}
+            {playlists}
           </div>
         </ul>
       </div>
