@@ -1,11 +1,21 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import Modal from '../modal/modal';
 
 
 class SearchResults extends React.Component {
+  constructor(props) {
+    super(props);
+    this.openModal = this.openModal.bind(this);
+  }
 
   handleAddSong(e) {
     this.props.queueSong(this.props.songs[e.currentTarget.id]);
+  }
+
+  openModal(e) {
+    const payload = {modal: "SongToPlaylist", song_id: e.currentTarget.id};
+    this.props.openModal(payload);
   }
 
   render() {
@@ -24,7 +34,7 @@ class SearchResults extends React.Component {
         </div>
         );
       });
-      pHeader = <h3>Playlists</h3>;
+      pHeader = <h3 className="search-header">Playlists</h3>;
     } else {
       playlists = "";
       pHeader = "";
@@ -36,37 +46,36 @@ class SearchResults extends React.Component {
       songs = this.props.songs.map((song, idx) => {
         let songAdder = (song) => this.handleAddSong(song);
         return (
-          <li key={song.id} id={idx}  className="song-index-list-item">
-            <span key={song.id} className="song-index-list-title">
+          <li key={song.id} id={idx}  className="search-songs-list-item">
+            <span key={song.id} className="search-songs-list-title">
               <span key={Math.random()} onClick={songAdder} id={idx} className="play-button"><i className="fas fa-music"></i></span>
               {song.song_name}
               <br></br>
               {song.artist.artist_name} - {song.album}
             </span>
-            <span className="song-index-list-features">
+            <span className="search-songs-list-features">
               <button key={song.id} id={song.id} className="song-modal" onClick={this.openModal}><i className="fas fa-ellipsis-h"></i></button>
               {"4'33'"}
             </span>
           </li>
         );
       });
-      sHeader = <h3>Songs</h3>;
+      sHeader = <h3 className="search-header">Songs</h3>;
     } else {
       songs = "";
       sHeader = "";
     }
     return (
       <div className="search-results-container">
-        <ul className="playlSist-songs-results-list">
-          <div>
-            {sHeader}
+          {sHeader}
+          <ul className="search-songs-list">
             {songs}
-          </div>
-          <div>
-            {pHeader}
+          </ul>
+          {pHeader}
+          <ul className="search-playlists-list">
             {playlists}
-          </div>
-        </ul>
+          </ul>
+
       </div>
     );
   }
