@@ -9,9 +9,9 @@ const presetState = {
 const searchReducer = (state = presetState, action) => {
   switch (action.type) {
     case RECEIVE_SEARCH_RESULTS:
-      state.playlists = action.results.playlists;
-      state.songs = action.results.songs;
-      return state;
+      const playlists = action.results.playlists || {};
+      const songs = action.results.songs || {};
+      return { playlists: playlists, songs: songs, };
     case CLEAR_SEARCH_RESULTS:
       return {playlists: {}, songs: {},};
     default:

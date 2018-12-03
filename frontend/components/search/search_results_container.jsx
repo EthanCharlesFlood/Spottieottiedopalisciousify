@@ -11,7 +11,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    addPlaylistToQueue: playlist => dispatch(addPlaylistToQueue(playlist)),
     queueSong: (song) => dispatch(queueSong(song)),
   };
 };

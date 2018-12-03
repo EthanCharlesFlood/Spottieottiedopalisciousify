@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 
 class SearchResults extends React.Component {
@@ -10,18 +11,10 @@ class SearchResults extends React.Component {
   render() {
     let playlists;
     let songs;
-    console.log(this.props.playlists);
-    if (this.props.playlists !== undefined) {
-      this.props.playlists.map(playlist => {
-        return (
-        <Link className="playlist-index-item-container" key={playlist.id} to={`/playlists/${playlist.id}`}>
-          <img className="playlist-index-item-image" src={playlist.imgurl}/>
-          <div className="playlist-index-item-link">{playlist.playlist_name}</div>
-        </Link>
-      );
-      });
+    if (this.props.playlists[0] !== undefined) {
+    
     } else {
-      playlists = "";
+      playlists = "aaa";
     }
 
     if (this.props.songs) {
