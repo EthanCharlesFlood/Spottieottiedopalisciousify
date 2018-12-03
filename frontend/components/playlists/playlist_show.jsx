@@ -7,6 +7,7 @@ class PlaylistShow extends React.Component {
   constructor(props) {
     super(props);
 
+    this.openModal = this.openModal.bind(this);
     this.state = {
       follows: this.props.follows
     };
@@ -50,6 +51,11 @@ class PlaylistShow extends React.Component {
 
   handleReceive(e) {
     this.props.queueSong(this.props.songs[e.currentTarget.id]);
+  }
+
+  openModal(e) {
+    const payload = {modal: "SongToPlaylist", song_id: e.currentTarget.id};
+    this.props.openModal(payload);
   }
 
   render() {
