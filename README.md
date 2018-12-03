@@ -6,7 +6,7 @@ A single page webapp clone of Spotify, featuring playist CRUD operations and
 a continuously playing audioplayer. Spottieottiedopalisciousify is built with Rails, React, and Redux
 and provides you with the ability to play 10s of your favorite songs (that are by Outkast(and from their second or third album)).
 
-[Splash](app/assets/images/Splash.png)
+![Splash](app/assets/images/Splash.png)
 
 ## PLAY YOUR FAVORITE SONGS
 An HTML5 audio player was implemented via React and Redux allowing users to play all of their favorite songs from Outkast's second and third albums.  Custom styled HTML components where used with various event listeners to add functionality such as next and previous songs, fast forward and rewind, play and pause.
@@ -39,7 +39,7 @@ export default combineReducers({
 ```
 ## PLAYLIST CRUD
 
-[Playlist](app/assets/images/playlist.png)
+![Playlist](app/assets/images/playlist.png)
 
 Users can create, edit, delete, and view playlists and can also follow other users created playlists. Playlists are tied to the user who
 created them via active record associations and can have songs added or removed, and can be followed by other users providing convenient access on the users profile page.
