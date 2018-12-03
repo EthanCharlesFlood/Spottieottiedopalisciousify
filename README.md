@@ -1,5 +1,3 @@
-# PRODUCTION README
-
 ## [Spottieottiedopalisciousify](https://spottieottiedopalisciousify.herokuapp.com/)
 
 A single page webapp clone of Spotify, featuring playist CRUD operations and
@@ -42,4 +40,38 @@ export default combineReducers({
 ![Playlist](app/assets/images/playlist.png)
 
 Users can create, edit, delete, and view playlists and can also follow other users created playlists. Playlists are tied to the user who
-created them via active record associations and can have songs added or removed, and can be followed by other users providing convenient access on the users profile page.
+created them via active record associations and can have songs added or removed, and can be followed by other users providing convenient access on the users profile page. Playlists are rendered via connected components that pull the relevant association information from the back end via the Redux store.
+
+```
+const mapStateToProps = (state, ownProps) => {
+  const playlist = selectPlaylist(state, ownProps.match.params.playlistid);
+  const songs = selectPlaylistSongs(state, playlist);
+  let follows = false;
+  state.entities.users[state.session.id].followed_playlists.map(pl => {
+    if (pl.id === playlist.id) {
+      follows = true;
+    }
+  });
+  return {
+    playlist: playlist,
+    songs: songs,
+    currentUserId: state.session.id,
+    currentUser: state.entities.users[state.session.id],
+    follows: follows,
+  };
+};
+```
+
+Songs can be added to playlists from several locations and are available to be played individually from playlists or with the playlist as one unit.  Songs are added via an active record association that serves as a join table tying playlist ids to the ids of the playlists they appear in.
+
+```
+class SongsToPlaylist < ApplicationRecord
+  validates :song, uniqueness: { scope: :playlist }
+
+	belongs_to :song,
+		inverse_of: :songs_to_playlists
+	belongs_to :playlist,
+		inverse_of: :songs_to_playlists
+
+end
+```
