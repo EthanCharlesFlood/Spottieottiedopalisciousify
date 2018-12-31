@@ -7,6 +7,10 @@ class SearchResults extends React.Component {
   constructor(props) {
     super(props);
     this.openModal = this.openModal.bind(this);
+
+    this.state = {
+      playButton: false
+    };
   }
 
   handleAddSong(e) {
