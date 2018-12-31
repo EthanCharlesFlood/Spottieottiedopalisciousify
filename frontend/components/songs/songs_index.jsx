@@ -5,6 +5,14 @@ import AudioBarContainer from './../bars/audio_bar_container';
 import Modal from '../modal/modal';
 
 class SongsIndex extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      playButton: false
+    };
+  }
+
   componentDidMount() {
     this.props.fetchSongs();
 
