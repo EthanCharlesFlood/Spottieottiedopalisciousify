@@ -9,7 +9,8 @@ class PlaylistShow extends React.Component {
 
     this.openModal = this.openModal.bind(this);
     this.state = {
-      follows: this.props.follows
+      follows: this.props.follows,
+      playButton: false
     };
 
     this.handleDelete = this.handleDelete.bind(this);
