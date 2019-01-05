@@ -49,3 +49,11 @@
   justify-content: center;
   align-items: center;
 }
+
+.users-show-subcontainer {
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+}
+.users-show-subcontainer::-webkit-scrollbar {
+    display: none;
+}

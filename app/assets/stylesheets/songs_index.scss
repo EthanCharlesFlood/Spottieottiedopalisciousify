@@ -22,7 +22,13 @@
   padding-right: 25px;
 }
 
-.song-index-container::-webkit-scrollbar { width: 0 !important }
+.song-index-list-container {
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+}
+.song-index-list-container::-webkit-scrollbar {
+    display: none;
+}
 
 .song-index-list {
   color: #fff;
