@@ -76,6 +76,13 @@
   display: flex;
   width: 100%;
   justify-content: space-between;
+  padding: 7px 7px 15px 7px;
+}
+
+.search-songs-list-item:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  color: #fff;
 }
 
 .search-songs-list-title {
