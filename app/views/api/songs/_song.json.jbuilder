@@ -1,4 +1,4 @@
-json.extract! song, :id, :song_name
+json.extract! song, :id, :song_name, :duration
 json.artist song.artist.artist_name
 json.album song.album.album_name
 json.songurl url_for(song.file)
