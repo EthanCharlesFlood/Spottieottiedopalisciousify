@@ -66,7 +66,7 @@ album.save!
 Song.destroy_all
 
 
-song = Song.new(song_name: "Hold on, be strong", artist_id: Artist.first.id, album_id: Album.first.id)
+song = Song.new(song_name: "Hold on, be strong", artist_id: Artist.first.id, album_id: Album.first.id, duration: )
 file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/01+Hold+On+Be+Strong.mp3')
 song.file.attach(io: file, filename:'01 Hold On Be Strong.mp3')
 song.save!
