@@ -13,6 +13,7 @@ class SongsIndex extends React.Component {
     };
   }
 
+
   componentDidMount() {
     this.props.fetchSongs();
 
@@ -29,6 +30,16 @@ class SongsIndex extends React.Component {
     this.props.openModal(payload);
   }
 
+  durationParser(duration) {
+    let minutes = Math.floor((duration / 60));
+    let seconds = Math.floor((duration % 60));
+    if (seconds < 10) {
+      return minutes + ":0" + seconds;
+    } else {
+      return minutes + ":" + seconds;
+    }
+  }
+
   render() {
     const songs = this.props.songs.map((song, idx) => {
       let songAdder = (song) => this.handleAddSong(song);
@@ -42,7 +53,7 @@ class SongsIndex extends React.Component {
           </span>
           <span className="song-index-list-features">
             <button key={song.id} id={song.id} className="song-modal" onClick={this.openModal}><i className="fas fa-ellipsis-h"></i></button>
-            {"4'33'"}
+            {this.durationParser(song.duration)}
           </span>
         </li>
       );
