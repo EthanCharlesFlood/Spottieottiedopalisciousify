@@ -59,6 +59,16 @@ class PlaylistShow extends React.Component {
     this.props.openModal(payload);
   }
 
+  durationParser(duration) {
+    let minutes = Math.floor((duration / 60));
+    let seconds = Math.floor((duration % 60));
+    if (seconds < 10) {
+      return minutes + ":0" + seconds;
+    } else {
+      return minutes + ":" + seconds;
+    }
+  }
+
   render() {
     let songs = "";
     let playlist_name = "";
@@ -83,14 +93,15 @@ class PlaylistShow extends React.Component {
 
               <span key={Math.random()} className="song-index-list-features">
                 {removeSongButton}
-                {"4'33'"}
+                {this.durationParser(song.duration)}
               </span>
             </li>
           );
         });
       playlist_name = this.props.playlist.playlist_name;
     }
-
+    let duration = 0;
+    this.props.songs.forEach((song) => duration += song.duration);
     let actionButton;
     if (this.props.playlist.user_id === this.props.currentUserId) {
       actionButton = <button className="playlist-show-delete" onClick={this.handleDelete} >Delete</button>;
@@ -110,7 +121,7 @@ class PlaylistShow extends React.Component {
                 <span className="playlist-show-author">By
                   <span className="playlist-show-user-show-link">{this.props.playlist.username}</span>
                 </span>
-                <span className="playlist-show-song-count">{this.props.songs.length} Songs</span>
+                <span className="playlist-show-song-count">{this.props.songs.length} Songs {this.durationParser(duration)}</span>
                 <div className="playlist-show-button-container">
                   <button onClick={this.handleAddToQueue} className="playlist-show-play">Play</button>
                   {actionButton}
