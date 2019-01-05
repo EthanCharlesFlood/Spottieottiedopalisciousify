@@ -66,82 +66,82 @@ album.save!
 Song.destroy_all
 
 
-song = Song.new(song_name: "Hold on, be strong", artist_id: Artist.first.id, album_id: Album.first.id, duration: )
+song = Song.new(song_name: "Hold on, be strong", artist_id: Artist.first.id, album_id: Album.first.id, duration: 71)
 file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/01+Hold+On+Be+Strong.mp3')
 song.file.attach(io: file, filename:'01 Hold On Be Strong.mp3')
 song.save!
 
-song = Song.new(song_name: "Return of the 'G'", artist_id: Artist.first.id, album_id: Album.first.id)
+song = Song.new(song_name: "Return of the 'G'", artist_id: Artist.first.id, album_id: Album.first.id, duration: 288)
 file = EzDownload.open("https://s3.amazonaws.com/spottieottiedopaliscious-prod/02+Return+of+the+'G'.mp3")
 song.file.attach(io: file, filename:"02 Return of the 'G'.mp3")
 song.save!
 
-song = Song.new(song_name: "Skew it on the Bar-B", artist_id: Artist.first.id, album_id: Album.first.id)
+song = Song.new(song_name: "Skew it on the Bar-B", artist_id: Artist.first.id, album_id: Album.first.id, duration: 324)
 file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/03+Skew+it+on+the+Bar-B.mp3')
 song.file.attach(io: file, filename:'03 Skew it on the Bar-B.mp3')
 song.save!
 
-song = Song.new(song_name: "Aquemini", artist_id: Artist.first.id, album_id: Album.first.id)
+song = Song.new(song_name: "Aquemini", artist_id: Artist.first.id, album_id: Album.first.id, duration: 194)
 file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/04+Aquemini.mp3')
 song.file.attach(io: file, filename:'04 Aquemini.mp3')
 song.save!
 
-song = Song.new(song_name: "Synthesizer", artist_id: Artist.first.id, album_id: Album.first.id)
+song = Song.new(song_name: "Synthesizer", artist_id: Artist.first.id, album_id: Album.first.id, duration: 319)
 file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/05+Synthesizer.mp3')
 song.file.attach(io: file, filename:'05 Synthesizer.mp3')
 song.save!
 
-song = Song.new(song_name: "Slump", artist_id: Artist.first.id, album_id: Album.first.id)
+song = Song.new(song_name: "Slump", artist_id: Artist.first.id, album_id: Album.first.id, duration: 311)
 file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/06+Slump.mp3')
 song.file.attach(io: file, filename:'06 Slump.mp3')
 song.save!
 
-song = Song.new(song_name: "West Savannah", artist_id: Artist.first.id, album_id: Album.first.id)
+song = Song.new(song_name: "West Savannah", artist_id: Artist.first.id, album_id: Album.first.id, duration: 308)
 file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/07+West+Savannah.mp3')
 song.file.attach(io: file, filename:'07 West Savannah.mp3')
 song.save!
 
-song = Song.new(song_name: "Rosa Parks", artist_id: Artist.first.id, album_id: Album.first.id)
+song = Song.new(song_name: "Rosa Parks", artist_id: Artist.first.id, album_id: Album.first.id, duration: 243)
 file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/08+Rosa+Parks.mp3')
 song.file.attach(io: file, filename:'08 Rosa Parks.mp3')
 song.save!
 
-song = Song.new(song_name: "Da Art of Storytellin' (Pt. 1)", artist_id: Artist.first.id, album_id: Album.first.id)
+song = Song.new(song_name: "Da Art of Storytellin' (Pt. 1)", artist_id: Artist.first.id, album_id: Album.first.id, duration: 222)
 file = EzDownload.open("https://s3.amazonaws.com/spottieottiedopaliscious-prod/09+Da+Art+of+Storytellin'+(Pt.+1).mp3")
 song.file.attach(io: file, filename:"09 Da Art of Storytellin (Pt. 1).mp3")
 song.save!
 
-song = Song.new(song_name: "Da Art of Storytellin' (Pt. 2)", artist_id: Artist.first.id, album_id: Album.first.id)
+song = Song.new(song_name: "Da Art of Storytellin' (Pt. 2)", artist_id: Artist.first.id, album_id: Album.first.id, duration: 167)
 file = EzDownload.open("https://s3.amazonaws.com/spottieottiedopaliscious-prod/10+Da+Art+of+Storytellin'+(Pt.+2).mp3")
 song.file.attach(io: file, filename:"10 Da Art of Storytellin' (Pt. 2).mp3")
 song.save!
 
-song = Song.new(song_name: "Mamacita", artist_id: Artist.first.id, album_id: Album.first.id)
+song = Song.new(song_name: "Mamacita", artist_id: Artist.first.id, album_id: Album.first.id, duration: 352)
 file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/11+Mamacita.mp3')
 song.file.attach(io: file, filename:'11 Mamacita.mp3')
 song.save!
 
-song = Song.new(song_name: "Spottieottiedopaliscious", artist_id: Artist.first.id, album_id: Album.first.id)
+song = Song.new(song_name: "Spottieottiedopaliscious", artist_id: Artist.first.id, album_id: Album.first.id, duration: 426)
 file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/12+Spottieottiedopaliscious.mp3')
 song.file.attach(io: file, filename:'12 Spottieottiedopaliscious.mp3')
 song.save!
 
-song = Song.new(song_name: "Y'all Scared", artist_id: Artist.first.id, album_id: Album.first.id)
+song = Song.new(song_name: "Y'all Scared", artist_id: Artist.first.id, album_id: Album.first.id, duration: 289)
 file = EzDownload.open("https://s3.amazonaws.com/spottieottiedopaliscious-prod/13+Y'all+Scared.mp3")
 song.file.attach(io: file, filename:"13 Y'all Scared.mp3")
 song.save!
 
-song = Song.new(song_name: "Nathaniel", artist_id: Artist.first.id, album_id: Album.first.id)
+song = Song.new(song_name: "Nathaniel", artist_id: Artist.first.id, album_id: Album.first.id, duration: 69)
 file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/14+Nathaniel.mp3')
 song.file.attach(io: file, filename:'14 Nathaniel.mp3')
 song.save!
 
-song = Song.new(song_name: "Liberation", artist_id: Artist.first.id, album_id: Album.first.id)
+song = Song.new(song_name: "Liberation", artist_id: Artist.first.id, album_id: Album.first.id, duration: 525)
 file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/15+Liberation.mp3')
 song.file.attach(io: file, filename:'15 Liberation.mp3')
 song.save!
 
-song = Song.new(song_name: "Chonkyfire", artist_id: Artist.first.id, album_id: Album.first.id)
+song = Song.new(song_name: "Chonkyfire", artist_id: Artist.first.id, album_id: Album.first.id, duration: 370)
 file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/16+Chonkyfire.mp3')
 song.file.attach(io: file, filename:'16 Chonkyfire.mp3')
 song.save!
@@ -150,77 +150,77 @@ song.save!
 
 
 
-song = Song.new(song_name: "You May Die (Intro)", artist_id: Artist.first.id, album_id: Album.second.id)
+song = Song.new(song_name: "You May Die (Intro)", artist_id: Artist.first.id, album_id: Album.second.id, duration: 75)
 file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/01+-+You+May+Die++(Intro).mp3')
 song.file.attach(io: file, filename:'01 - You May Die (Intro).mp3')
 song.save!
 
-song = Song.new(song_name: "Two Dope Boyz (In a Cadillac)", artist_id: Artist.first.id, album_id: Album.second.id)
+song = Song.new(song_name: "Two Dope Boyz (In a Cadillac)", artist_id: Artist.first.id, album_id: Album.second.id, duration: 161)
 file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/02+-+Two+Dope+Boyz+(In+A+Cadillac).mp3')
 song.file.attach(io: file, filename:'02 - Two Dope Boyz (In A Cadillac).mp3')
 song.save!
 
-song = Song.new(song_name: "ATLiens", artist_id: Artist.first.id, album_id: Album.second.id)
+song = Song.new(song_name: "ATLiens", artist_id: Artist.first.id, album_id: Album.second.id, duration: 230)
 file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/03+-+ATLiens.mp3')
 song.file.attach(io: file, filename:'03 - ATLiens.mp3')
 song.save!
 
-song = Song.new(song_name: "Wheelz of Steel", artist_id: Artist.first.id, album_id: Album.second.id)
-file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/04+-+Wheelz+Of+Steel.mp3')
-song.file.attach(io: file, filename:'04 - Wheelz Of Steel.mp3')
-song.save!
+# song = Song.new(song_name: "Wheelz of Steel", artist_id: Artist.first.id, album_id: Album.second.id)
+# file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/04+-+Wheelz+Of+Steel.mp3')
+# song.file.attach(io: file, filename:'04 - Wheelz Of Steel.mp3')
+# song.save!
 
-song = Song.new(song_name: "Jazzy Belle", artist_id: Artist.first.id, album_id: Album.second.id)
+song = Song.new(song_name: "Jazzy Belle", artist_id: Artist.first.id, album_id: Album.second.id, duration: 251)
 file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/05+-+Jazzy+Belle.mp3')
 song.file.attach(io: file, filename:'05 - Jazzy Belle.mp3')
 song.save!
 
-song = Song.new(song_name: "Elevators (Me & You)", artist_id: Artist.first.id, album_id: Album.second.id)
+song = Song.new(song_name: "Elevators (Me & You)", artist_id: Artist.first.id, album_id: Album.second.id, duration: 265)
 file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/06+-+Elevators+(Me+%26+You).mp3')
 song.file.attach(io: file, filename:'06 - Elevators (Me & You).mp3')
 song.save!
 
-song = Song.new(song_name: "Ova da Wudz", artist_id: Artist.first.id, album_id: Album.second.id)
+song = Song.new(song_name: "Ova da Wudz", artist_id: Artist.first.id, album_id: Album.second.id, duration: 227)
 file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/07+-+Ova+Da+Wudz.mp3')
 song.file.attach(io: file, filename:'07 - Ova Da Wudz.mp3')
 song.save!
 
-song = Song.new(song_name: "Babylon", artist_id: Artist.first.id, album_id: Album.second.id)
+song = Song.new(song_name: "Babylon", artist_id: Artist.first.id, album_id: Album.second.id, duration: 264)
 file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/08+-+Babylon.mp3')
 song.file.attach(io: file, filename:'08 - Babylon.mp3')
 song.save!
 
-song = Song.new(song_name: "Wailin", artist_id: Artist.first.id, album_id: Album.second.id)
+song = Song.new(song_name: "Wailin", artist_id: Artist.first.id, album_id: Album.second.id, duration: 118)
 file = EzDownload.open("https://s3.amazonaws.com/spottieottiedopaliscious-prod/09+-+Wailin'.mp3")
 song.file.attach(io: file, filename:"09 - Wailin'.mp3")
 song.save!
 
-song = Song.new(song_name: "Mainstream", artist_id: Artist.first.id, album_id: Album.second.id)
+song = Song.new(song_name: "Mainstream", artist_id: Artist.first.id, album_id: Album.second.id, duration: 318)
 file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/10+-+Mainstream.mp3')
 song.file.attach(io: file, filename:'10 - Mainstream.mp3')
 song.save!
 
-song = Song.new(song_name: "Decatur Psalm", artist_id: Artist.first.id, album_id: Album.second.id)
+song = Song.new(song_name: "Decatur Psalm", artist_id: Artist.first.id, album_id: Album.second.id, duration: 238)
 file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/11+-+Decatur+Psalm.mp3')
 song.file.attach(io: file, filename:'11 - Decatur Psalm.mp3')
 song.save!
 
-song = Song.new(song_name: "Millenium", artist_id: Artist.first.id, album_id: Album.second.id)
+song = Song.new(song_name: "Millenium", artist_id: Artist.first.id, album_id: Album.second.id, duration: 188)
 file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/12+-+Millennium.mp3')
 song.file.attach(io: file, filename:'12 - Millennium.mp3')
 song.save!
 
-song = Song.new(song_name: "E.T. (Extraterrestrial)", artist_id: Artist.first.id, album_id: Album.second.id)
+song = Song.new(song_name: "E.T. (Extraterrestrial)", artist_id: Artist.first.id, album_id: Album.second.id, duration: 186)
 file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/13+-+E.T.+(Extraterrestrial).mp3')
 song.file.attach(io: file, filename:'13 - E.T. (Extraterrestrial).mp3')
 song.save!
 
-song = Song.new(song_name: "13th Floor / Growing Old", artist_id: Artist.first.id, album_id: Album.second.id)
+song = Song.new(song_name: "13th Floor / Growing Old", artist_id: Artist.first.id, album_id: Album.second.id, duration: 410)
 file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/14+-+13th+Floor+%2C+Growing+Old.mp3')
 song.file.attach(io: file, filename:'14 - 13th Floor , Growing Old.mp3')
 song.save!
 
-song = Song.new(song_name: "Elevators (ONP 86 Mix)", artist_id: Artist.first.id, album_id: Album.second.id)
+song = Song.new(song_name: "Elevators (ONP 86 Mix)", artist_id: Artist.first.id, album_id: Album.second.id, duration: 277)
 file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/15+-+Elevators+(ONP+86+Mix).mp3')
 song.file.attach(io: file, filename:'15 - Elevators (ONP 86 Mix).mp3')
 song.save!
