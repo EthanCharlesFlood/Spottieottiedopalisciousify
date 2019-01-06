@@ -18,7 +18,7 @@ class SideBar extends React.Component {
   			<Link to={`/user/${currentUser.id}`} className="sidebar-link-user-show"><i className="fas fa-compact-disc"></i><span>Your Library</span></Link>
   			<h1 className="sidebar-username">
           <img className="sidebar-user-profile-pic" src={currentUser.imageurl}/>
-  				<span>{currentUser.username}</span>
+  				<Link to='/developer'>{currentUser.username}</Link>
           <button onClick={this.props.logout.bind(this)}>Log Out</button>
   			</h1>
 			</div>

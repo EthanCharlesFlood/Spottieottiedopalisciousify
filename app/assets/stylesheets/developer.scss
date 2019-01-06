@@ -1,0 +1,26 @@
+.developer-container {
+  display: flex;
+	height: 100vh;
+  background: linear-gradient(rgb(72, 77, 81), rgb(7, 8, 8) 85%);
+  justify-content: center;
+}
+
+.developer-inner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.developer-picture {
+  width: 400px;
+  height: 400px;
+}
+
+.developer-name {
+
+}
+
+.developer-a {
+
+}
