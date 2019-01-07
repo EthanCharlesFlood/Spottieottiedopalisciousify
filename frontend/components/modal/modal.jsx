@@ -18,7 +18,7 @@ function Modal(props) {
       component = <AddSongToPlaylistContainer songId={props.songId}/>;
       break;
     case 'ConfirmDelete':
-      component = <ConfirmDeleteContainer/>;
+      component = <ConfirmDeleteContainer playlistId={props.playlistId} />;
       break;
     default:
       return null;

@@ -1,16 +1,16 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 
 class ConfirmDeleteForm extends React.Component {
   constructor(props) {
     super(props);
-
+    console.log(this.props);
     this.handleDelete = this.handleDelete.bind(this);
   }
 
   handleDelete() {
-    this.props.deletePlaylist(this.props.match.params.playlistid).then(() => this.props.history.push("/main")
-    );
+    this.props.deletePlaylist(this.props.playlistId);
+    this.props.closeModal();
   }
 
   render() {
@@ -18,8 +18,11 @@ class ConfirmDeleteForm extends React.Component {
     return (
       <div className="confirm-delete-container">
         {blurb}
-        <div onClick={this.handleDelete}>Delete</div>
-        <div onClick={this.closeModal}>Cancel</div>
+        <br></br>
+        <div className="confirm-delete-button-container">
+          <Link className="confirm-delete-button" to={'/main'} onClick={this.handleDelete}>Delete</Link>
+          <button className="confirm-delete-button" onClick={this.props.closeModal}>Cancel</button>
+        </div>
       </div>
     );
   }

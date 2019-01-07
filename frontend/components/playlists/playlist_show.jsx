@@ -6,7 +6,7 @@ class PlaylistShow extends React.Component {
 
   constructor(props) {
     super(props);
-
+    console.log(this.props);
     this.openModal = this.openModal.bind(this);
     this.state = {
       follows: this.props.follows,
@@ -26,7 +26,7 @@ class PlaylistShow extends React.Component {
   }
 
   handleDelete() {
-    const payload = {modal: "ConfirmDelete"};
+    const payload = {modal: "ConfirmDelete", playlistId: this.props.match.params.playlistid};
     this.props.openModal(payload);
   }
 

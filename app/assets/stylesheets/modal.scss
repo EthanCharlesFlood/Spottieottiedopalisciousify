@@ -96,3 +96,47 @@
   border: none;
   margin-left: 900px;
 }
+
+.confirm-delete-container {
+  color: #fff;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.confirm-delete-button-container > button {
+  cursor: pointer;
+  color: #fff;
+  background-color: #1ed760;
+  font-size: 12px;
+  line-height: 1;
+  border-radius: 500px;
+  margin-top: 15px;
+  width: 150px;
+  height: 40px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  border: none;
+  margin-left: 20px;
+}
+
+.confirm-delete-button-container > a {
+  cursor: pointer;
+  color: #fff;
+  background-color: #1ed760;
+  font-size: 12px;
+  line-height: 1;
+  border-radius: 500px;
+  margin-top: 15px;
+  width: 150px;
+  height: 40px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  border: none;
+  margin-left: 20px;
+  text-decoration: none;
+  padding: 15px 45px 15px 45px;
+}
