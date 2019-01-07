@@ -68,7 +68,7 @@ class SearchResults extends React.Component {
               {song.artist.artist_name} - {song.album}
             </span>
             <span className="search-songs-list-features">
-              <button key={song.id} id={song.id} className="song-modal" onClick={this.openModal}><i className="fas fa-ellipsis-h"></i></button>
+              <button key={song.id} id={song.id} className="song-modal" onClick={this.openModal}><i className="fas fa-plus"></i></button>
               {this.durationParser(song.duration)}
             </span>
           </li>
