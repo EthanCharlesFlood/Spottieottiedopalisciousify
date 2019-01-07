@@ -3,6 +3,8 @@
 	height: 100vh;
   background: linear-gradient(rgb(72, 77, 81), rgb(7, 8, 8) 85%);
   justify-content: center;
+  color: #fff;
+  font-weight: 900;
 }
 
 .developer-inner-container {
@@ -10,11 +12,14 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-left: -120px;
 }
 
 .developer-picture {
-  width: 400px;
   height: 400px;
+  width: 400px;
+  border-radius: 1000px;
+  margin-bottom: 50px;
 }
 
 .developer-name {
@@ -22,5 +27,40 @@
 }
 
 .developer-a {
+  color: #fff;
+  background-color: #1ed760;
+  font-size: 12px;
+  line-height: 1;
+  border-radius: 500px;
+  width: 100px;
+  height: 25px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  padding-top: 15px;
+  border: none;
+  min-height: 25px;
+  text-decoration: none;
+  text-align: center;
+}
 
+.developer-logout {
+  color: #fff;
+  background-color: #1ed760;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 900;
+  border-radius: 500px;
+  width: 100px;
+  height: 25px;
+  min-height: 25px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border: none;
+  margin-top: 5px;
+  padding-top: 15px;
+  padding-bottom: 25px;
+  text-align: center;
+  cursor: pointer;
 }

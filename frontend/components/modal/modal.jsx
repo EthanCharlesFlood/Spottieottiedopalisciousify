@@ -3,6 +3,7 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import CreatePlaylistFormContainer from './../playlists/create_playlist_form_container';
 import AddSongToPlaylistContainer from './../songs/add_song_to_playlist_container';
+import ConfirmDeleteContainer from './../playlists/confirm_delete_container';
 
 function Modal(props) {
   if (!props.modal) {
@@ -15,6 +16,9 @@ function Modal(props) {
       break;
     case 'SongToPlaylist':
       component = <AddSongToPlaylistContainer songId={props.songId}/>;
+      break;
+    case 'ConfirmDelete':
+      component = <ConfirmDeleteContainer/>;
       break;
     default:
       return null;

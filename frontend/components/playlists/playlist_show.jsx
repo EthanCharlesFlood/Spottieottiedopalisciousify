@@ -26,8 +26,8 @@ class PlaylistShow extends React.Component {
   }
 
   handleDelete() {
-    this.props.deletePlaylist(this.props.match.params.playlistid).then(() => this.props.history.push("/main")
-    );
+    const payload = {modal: "ConfirmDelete"};
+    this.props.openModal(payload);
   }
 
   handleRemove(e) {

@@ -18,7 +18,7 @@ import UsersShowContainer from './users/users_show_container';
 import AudioBarContainer from './bars/audio_bar_container';
 import SideBarContainer from './bars/side_bar_container';
 import SearchContainer from './search/search_container';
-import DeveloperContainer from './developer/developer';
+import DeveloperContainer from './developer/developer_container';
 
 
 const App = (props) => {

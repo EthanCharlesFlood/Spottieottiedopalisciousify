@@ -11,6 +11,7 @@ import { fetchSongs } from './../../actions/song_actions';
 import { removeSongToPlaylist } from './../../actions/song_actions';
 import { addPlaylistToQueue, queueSong } from './../../actions/audio_actions';
 import { selectPlaylist, selectPlaylistSongs } from './../../reducers/selectors';
+import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const playlist = selectPlaylist(state, ownProps.match.params.playlistid);
@@ -41,6 +42,8 @@ const mapDispatchToProps = (dispatch) => {
     removeFollow: ids => dispatch(removeFollow(ids)),
     addPlaylistToQueue: playlist => dispatch(addPlaylistToQueue(playlist)),
     queueSong: (song) => dispatch(queueSong(song)),
+    openModal: (payload) => dispatch(openModal(payload)),
+    closeModal: () => dispatch(closeModal()),
   };
 };
 

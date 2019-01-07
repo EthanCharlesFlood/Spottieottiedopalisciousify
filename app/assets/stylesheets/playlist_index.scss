@@ -30,6 +30,8 @@
 	height: 200px;
   width: 200px;
   margin-bottom: 50px;
+	text-align: center;
+	text-decoration: none;
 }
 
 .playlist-index-item-container {
@@ -52,6 +54,7 @@
   margin-top: 0;
   height: 50px;
   color: #fff;
+	text-decoration: none;
 }
 
 .playlist-index-item-image {
@@ -73,7 +76,6 @@
 }
 
 .playlist-index-item-link {
-  text-decoration: none;
   font-size: 14px;
   line-height: 20px;
   letter-spacing: .015em;
@@ -82,4 +84,7 @@
   text-transform: none;
   max-height: 560px;
   text-overflow: ellipsis;
+	text-decoration: none;
+	text-align: center;
+	text-decoration: none;
 }
