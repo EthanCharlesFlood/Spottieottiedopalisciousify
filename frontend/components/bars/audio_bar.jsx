@@ -196,7 +196,7 @@ class AudioBar extends React.Component {
 
           <div className="audio-player-controls">
 
-            <span id="shuffle" className="shuffle" onClick={this.shuffle}><i className="fas fa-random"></i></span>
+
 
             <span className="next-song" onClick={this.previous}><i className="fas fa-backward" /></span>
 
@@ -204,7 +204,7 @@ class AudioBar extends React.Component {
 
             <span className="previous-song" onClick={this.next}><i className="fas fa-forward" /></span>
 
-            <span id="loop" className="loop" onClick={this.loop}><i className="fas fa-redo-alt"></i></span>
+
           </div>
 
           <div className="song-progress-container">
@@ -238,5 +238,7 @@ class AudioBar extends React.Component {
     );
   }
 }
+  // <span id="shuffle" className="shuffle" onClick={this.shuffle}><i className="fas fa-random"></i></span>
+  // <span id="loop" className="loop" onClick={this.loop}><i className="fas fa-redo-alt"></i></span>
 
 export default AudioBar;
