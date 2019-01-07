@@ -85,7 +85,7 @@ class PlaylistShow extends React.Component {
 
             <li key={Math.random()} className="song-index-list-item">
               <span id={idx} onClick={this.handleReceive} key={Math.random()} className="song-index-list-title">
-                <i className="fas fa-music"></i>
+                <i class="fas fa-play"></i>
                 {song.song_name}
                 <br></br>
                 {song.artist} - {song.album}

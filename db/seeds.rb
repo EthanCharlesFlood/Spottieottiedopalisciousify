@@ -17,28 +17,28 @@
 
 User.destroy_all
 user = User.new(username: "Three-Stacks", password: "password", email:"andre@southernplayalisticadillacmuzik.com")
-file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/170912-Andre-3000-Getty-800x600.jpg')
-user.image.attach(io: file, filename:'170912-Andre-3000-Getty-800x600.jpg')
+file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/Ethan-min.jpeg')
+user.image.attach(io: file, filename:'Ethan-min.jpeg')
 user.save!
 
 user = User.new(username: "Ethan", password: "password", email: "please dont ever email me")
-file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/13319801_10206564699502476_3957765955582086668_n.jpg')
-user.image.attach(io: file, filename:'13319801_10206564699502476_3957765955582086668_n.jpg')
+file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/Ethan-min.jpeg')
+user.image.attach(io: file, filename:'Ethan-min.jpeg')
 user.save!
 
 user = User.new(username: "BigBoi", password: "password", email: "daddyfatstacks@gmail.com")
-file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/MV5BMTY2NzAzMjg4N15BMl5BanBnXkFtZTcwMjYxODQwMg%40%40._V1_UY317_CR4%2C0%2C214%2C317_AL_.jpg')
-user.image.attach(io: file, filename:'MV5BMTY2NzAzMjg4N15BMl5BanBnXkFtZTcwMjYxODQwMg%40%40._V1_UY317_CR4%2C0%2C214%2C317_AL_.jpg')
+file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/Ethan-min.jpeg')
+user.image.attach(io: file, filename:'Ethan-min.jpeg')
 user.save!
 
 user = User.new(username: "Uncle Dennis", password: "gimmietheloot", email: "laorbust@gmail.com")
-file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/26905558.sfxl.jpg')
-user.image.attach(io: file, filename:'26905558.sfxl.jpg')
+file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/Ethan-min.jpeg')
+user.image.attach(io: file, filename:'Ethan-min.jpeg')
 user.save!
 
 user = User.new(username: "Tim Allen", password: "password", email: "tooltime@gmail.com")
-file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/27_v9_ba.jpg')
-user.image.attach(io: file, filename:'27_v9_ba.jpg')
+file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/Ethan-min.jpeg')
+user.image.attach(io: file, filename:'Ethan-min.jpeg')
 user.save!
 
 
@@ -267,23 +267,23 @@ song.save!
 Playlist.destroy_all
 
 playlist = Playlist.new(playlist_name: "Definately Not Outkast", user_id: User.first.id)
-file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/feet-face-599c412c22fa3a0011d92add.jpg')
-playlist.image.attach(io: file, filename:'feet-face-599c412c22fa3a0011d92add.jpg')
+file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/speakerbox.jpg')
+playlist.image.attach(io: file, filename:'speakerbox.jpg')
 playlist.save!
 
 playlist = Playlist.new(playlist_name: "Not Outkast", user_id: User.second.id)
-file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/images.jpeg')
-playlist.image.attach(io: file, filename:'images.jpeg')
+file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/souther.jpg')
+playlist.image.attach(io: file, filename:'souther.jpeg')
 playlist.save!
 
 playlist = Playlist.new(playlist_name: "Hello World", user_id: User.third.id)
-file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/blog-stock-02.jpg')
-playlist.image.attach(io: file, filename:'blog-stock-02.jpg')
+file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/stankonia.jpg')
+playlist.image.attach(io: file, filename:'stankonia.jpg')
 playlist.save!
 
 playlist = Playlist.new(playlist_name: "Outkast", user_id: User.fourth.id)
-file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/960x0.jpg')
-playlist.image.attach(io: file, filename:'960x0.jpg')
+file = EzDownload.open('https://s3.amazonaws.com/spottieottiedopaliscious-prod/aquemini.jpg')
+playlist.image.attach(io: file, filename:'aquemini.jpg')
 playlist.save!
 
 playlist = Playlist.new(playlist_name: "Fleetwood Mac", user_id: User.last.id)
