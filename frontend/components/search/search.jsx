@@ -27,7 +27,6 @@ class Search extends React.Component {
   render() {
     return (
       <div className="search-container">
-        <SideBarContainer />
         <div className="search-top">
         </div>
         <div className="search-input">

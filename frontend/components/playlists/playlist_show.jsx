@@ -112,7 +112,6 @@ class PlaylistShow extends React.Component {
     }
     return (
       <div className="playlist-show-container">
-        <SideBarContainer />
         <div className="playlist-show-items">
             <div className="playlist-show-info">
               <img src={this.props.playlist.imgurl} className="playlist-show-image" />

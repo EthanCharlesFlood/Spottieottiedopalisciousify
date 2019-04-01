@@ -60,7 +60,6 @@ class SongsIndex extends React.Component {
     });
     return (
       <div className="song-index-container">
-        <SideBarContainer />
           <div className="song-index-items">
             <NavBarContainer />
             {this.props.createModal1}

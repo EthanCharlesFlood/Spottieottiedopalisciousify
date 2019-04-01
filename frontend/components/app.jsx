@@ -26,6 +26,7 @@ const App = (props) => {
     <div>
       <Modal />
       <ProtectedRoute path='/' component={AudioBarContainer} />
+      <ProtectedRoute path='/' component={SideBarContainer} />
       <Switch>
 			  <ProtectedRoute exact path="/main" component={MainContainer} />
 			  <ProtectedRoute exact path="/user/:userid" component={UsersShowContainer} />
