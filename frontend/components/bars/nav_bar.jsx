@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 
 const NavBar = () => {
+  console.log(this.props.match);
   return (
     <div className="navbar-container">
       <Link className="navbar-button" to="/">Playlists</Link>

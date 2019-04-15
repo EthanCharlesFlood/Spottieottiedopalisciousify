@@ -94,12 +94,16 @@
   border: none;
 }
 
-.useer-form-submit:hover {
+.user-form-submit:hover {
   cursor: pointer;
 }
 
 .user-form-error {
   color: #eb1e32;
+}
+
+.user-form-submit:focus {
+  outline: none;
 }
 
 .user-form-link {
@@ -131,8 +135,9 @@
   text-transform: uppercase;
   margin-bottom: 15px;
   border: none;
+  cursor: pointer;
 }
 
-.user-form-demo {
-  cursor: pointer;
+.user-form-demo:focus {
+  outline: none;
 }
