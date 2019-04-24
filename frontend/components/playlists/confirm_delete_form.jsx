@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 class ConfirmDeleteForm extends React.Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
     this.handleDelete = this.handleDelete.bind(this);
   }
 
