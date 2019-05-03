@@ -32,6 +32,12 @@ class SearchResults extends React.Component {
     }
   }
 
+  noResults() {
+    return (
+      <span className="search-results-nil">Nothing found...</span>
+    )
+  }
+
   render() {
     let playlists;
     let songs;
