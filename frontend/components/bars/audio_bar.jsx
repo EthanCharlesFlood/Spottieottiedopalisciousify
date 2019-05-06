@@ -151,10 +151,10 @@ class AudioBar extends React.Component {
 
   updateTime(e) {
     let remainingTime = this.parseTime(this.audio.duration - this.audio.currentTime);
+    this.progressBar.value = ((this.audio.currentTime / this.audio.duration) * 100)
     if (remainingTime === "NaN:NaN") {
       remainingTime = "0:00";
     }
-    this.progressBar.value = ((this.audio.currentTime / this.audio.duration) * 100)
     this.setState({
       currentTime: this.parseTime(Math.floor(this.audio.currentTime)),
       remainingTime: remainingTime,
