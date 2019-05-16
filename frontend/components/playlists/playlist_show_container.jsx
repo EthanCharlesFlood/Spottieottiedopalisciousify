@@ -28,6 +28,9 @@ const mapStateToProps = (state, ownProps) => {
     currentUserId: state.session.id,
     currentUser: state.entities.users[state.session.id],
     follows: follows,
+    playingSong: state.ui.audio.songQueue[state.ui.audio.queueSelector],
+    queueIndex: state.ui.audio.queueSelector,
+    queueLength: state.ui.audio.songQueue.length,
   };
 };
 

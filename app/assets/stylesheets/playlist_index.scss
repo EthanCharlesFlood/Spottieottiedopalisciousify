@@ -10,6 +10,10 @@
   left: 125px;
 }
 
+.playlist-index-playlists {
+
+}
+
 .playlist-index-subcontainer {
   display: flex;
   flex-direction: row;
@@ -18,6 +22,7 @@
   width: 100%;
   overflow-y: scroll;
   padding-bottom: 300px;
+	overflow-y: scroll;
 }
 
 .playlist-index-header {

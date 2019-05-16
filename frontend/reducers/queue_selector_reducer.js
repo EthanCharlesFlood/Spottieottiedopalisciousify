@@ -3,7 +3,8 @@ import { NEXT_SONG,
          LOOP,
          BLOOP,
          RESET,
-         BRESET } from './../actions/audio_actions';
+         BRESET,
+         QUEUE_SONG } from './../actions/audio_actions';
 
 const queueSelectorReducer = (state = 0, action) => {
   switch (action.type) {
@@ -19,6 +20,8 @@ const queueSelectorReducer = (state = 0, action) => {
       return 0;
     case BRESET:
       return action.length;
+    case QUEUE_SONG:
+      return 0;
     default:
       return state;
   }

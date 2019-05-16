@@ -1,6 +1,7 @@
 import React from 'react';
 import SideBarContainer from './../bars/side_bar_container';
 import AudioBarContainer from './../bars/audio_bar_container';
+import SongIndexItem from './../songs/songs_index_item';
 
 class PlaylistShow extends React.Component {
 
@@ -17,7 +18,7 @@ class PlaylistShow extends React.Component {
     this.handleFollow = this.handleFollow.bind(this);
     this.handleUnfollow = this.handleUnfollow.bind(this);
     this.handleAddToQueue = this.handleAddToQueue.bind(this);
-    this.handleReceive = this.handleReceive.bind(this);
+    this.handleAddSong = this.handleAddSong.bind(this);
   }
 
   componentDidMount() {
@@ -49,7 +50,7 @@ class PlaylistShow extends React.Component {
     this.props.addPlaylistToQueue(this.props.songs);
   }
 
-  handleReceive(e) {
+  handleAddSong(e) {
     this.props.queueSong(this.props.songs[e.currentTarget.id]);
   }
 
@@ -75,26 +76,30 @@ class PlaylistShow extends React.Component {
     if (this.props.playlist !== undefined) {
         songs = this.props.songs.map((song, idx) => {
           let removeSongButton;
+          let functionality;
           if (this.props.playlist.user_id === this.props.currentUserId) {
-            removeSongButton = <button id={song.id} onClick={this.handleRemove}><i className="fas fa-trash-alt"></i></button>;
+            removeSongButton = <i className="fas fa-trash-alt"></i>;
+            functionality = this.handleRemove;
           } else {
             removeSongButton =  null;
+            functionality = null;
+          }
+          const songAdder = song => this.handleAddSong(song);
+          let playing;
+          if (this.props.playingSong && this.props.playingSong.id === song.id) {
+            if (this.props.queueIndex === idx || this.props.queueLength === 1) {
+              playing = true;
+            }
           }
           return (
-
-            <li key={Math.random()} className="song-index-list-item">
-              <span id={idx} onClick={this.handleReceive} key={Math.random()} className="song-index-list-title">
-                <i className="fas fa-play"></i>
-                {song.song_name}
-                <br></br>
-                {song.artist} - {song.album}
-              </span>
-
-              <span key={Math.random()} className="song-index-list-features">
-                {removeSongButton}
-                {this.durationParser(song.duration)}
-              </span>
-            </li>
+            <SongIndexItem song={song}
+                           idx={idx}
+                           songAdder={songAdder}
+                           functionality={functionality}
+                           key={idx}
+                           playing={playing}
+                           durationParser={this.durationParser}
+                           button={removeSongButton}/>
           );
         });
       playlist_name = this.props.playlist.playlist_name;

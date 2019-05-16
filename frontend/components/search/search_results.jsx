@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import Modal from '../modal/modal';
+import SongIndexItem from './../songs/songs_index_item';
 
 
 class SearchResults extends React.Component {
@@ -18,6 +19,7 @@ class SearchResults extends React.Component {
   }
 
   openModal(e) {
+    e.stopPropagation();
     const payload = {modal: "SongToPlaylist", song_id: e.currentTarget.id};
     this.props.openModal(payload);
   }
@@ -66,18 +68,14 @@ class SearchResults extends React.Component {
       songs = this.props.songs.map((song, idx) => {
         let songAdder = (song) => this.handleAddSong(song);
         return (
-          <li key={song.id} id={idx}  className="search-songs-list-item">
-            <span key={song.id} className="search-songs-list-title">
-              <span key={Math.random()} onClick={songAdder} id={idx} className="play-button"><i className="fas fa-play"></i></span>
-              {song.song_name}
-              <br></br>
-              {song.artist.artist_name} - {song.album}
-            </span>
-            <span className="search-songs-list-features">
-              <button key={song.id} id={song.id} className="song-modal" onClick={this.openModal}><i className="fas fa-plus"></i></button>
-              {this.durationParser(song.duration)}
-            </span>
-          </li>
+          <SongIndexItem song={song}
+                         idx={idx}
+                         songAdder={songAdder}
+                         functionality={this.openModal}
+                         key={idx}
+                         durationParser={this.durationParser}
+                         button={<i className="fas fa-plus"></i>}
+                         search={true} />
         );
       });
       sHeader = <h3 className="search-header">Songs</h3>;

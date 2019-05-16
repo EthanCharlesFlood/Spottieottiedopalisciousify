@@ -2,12 +2,15 @@ import React from 'react';
 import SideBarContainer from './../bars/side_bar_container';
 import NavBarContainer from './../bars/nav_bar_container';
 import AudioBarContainer from './../bars/audio_bar_container';
+import SongIndexItem from './songs_index_item';
 import Modal from '../modal/modal';
 
 class SongsIndex extends React.Component {
   constructor(props) {
     super(props);
 
+    this.openModal = this.openModal.bind(this);
+    this.handleAddSong = this.handleAddSong.bind(this);
     this.state = {
       playButton: false
     };
@@ -16,16 +19,15 @@ class SongsIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchSongs();
-
-    this.openModal = this.openModal.bind(this);
-    this.handleAddSong = this.handleAddSong.bind(this);
   }
 
   handleAddSong(e) {
+    console.log(1);
     this.props.queueSong(this.props.songs[e.currentTarget.id]);
   }
 
   openModal(e) {
+    e.stopPropagation();
     const payload = {modal: "SongToPlaylist", song_id: e.currentTarget.id};
     this.props.openModal(payload);
   }
@@ -42,20 +44,15 @@ class SongsIndex extends React.Component {
 
   render() {
     const songs = this.props.songs.map((song, idx) => {
-      let songAdder = (song) => this.handleAddSong(song);
+      const songAdder = (song) => this.handleAddSong(song);
       return (
-        <li key={song.id} id={idx}  className="song-index-list-item">
-          <span key={song.id} className="song-index-list-title">
-            <span key={Math.random()} onClick={songAdder} id={idx} className="play-button"><i className="fas fa-play"></i></span>
-            {song.song_name}
-            <br></br>
-            {song.artist.artist_name} - {song.album}
-          </span>
-          <span className="song-index-list-features">
-            <button key={song.id} id={song.id} className="song-modal" onClick={this.openModal}><i className="fas fa-plus"></i></button>
-            {this.durationParser(song.duration)}
-          </span>
-        </li>
+        <SongIndexItem song={song}
+                       idx={idx}
+                       songAdder={songAdder}
+                       functionality={this.openModal}
+                       key={idx}
+                       durationParser={this.durationParser}
+                       button={<i className="fas fa-plus"></i>}/>
       );
     });
     return (
