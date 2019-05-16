@@ -91,6 +91,7 @@ class PlaylistShow extends React.Component {
               playing = true;
             }
           }
+          let paused = !this.props.playing
           return (
             <SongIndexItem song={song}
                            idx={idx}
@@ -99,7 +100,10 @@ class PlaylistShow extends React.Component {
                            key={idx}
                            playing={playing}
                            durationParser={this.durationParser}
-                           button={removeSongButton}/>
+                           button={removeSongButton}
+                           pause={this.props.pause}
+                           play={this.props.play}
+                           paused={paused}/>
           );
         });
       playlist_name = this.props.playlist.playlist_name;

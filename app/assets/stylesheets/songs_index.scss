@@ -55,6 +55,14 @@
   color: #fff;
 }
 
+.song-index-artist-album {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: .015em;
+  color: #b3b3b3;
+  text-transform: none;
+}
+
 .song-index-list-title:hover {
   opacity: none;
 }
@@ -68,4 +76,9 @@
 .song-modal:active {
   outline: none;
   border: none;
+}
+
+#small-pause {
+  font-size: 16px;
+  font-weight: 400;
 }

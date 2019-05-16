@@ -22,7 +22,6 @@ class SongsIndex extends React.Component {
   }
 
   handleAddSong(e) {
-    console.log(1);
     this.props.queueSong(this.props.songs[e.currentTarget.id]);
   }
 
@@ -45,14 +44,25 @@ class SongsIndex extends React.Component {
   render() {
     const songs = this.props.songs.map((song, idx) => {
       const songAdder = (song) => this.handleAddSong(song);
+      let playing;
+      if (this.props.playingSong && this.props.playingSong.id === song.id) {
+        if (this.props.queueIndex === idx || this.props.queueLength === 1) {
+          playing = true;
+        }
+      }
+      let paused = !this.props.playing
       return (
         <SongIndexItem song={song}
                        idx={idx}
                        songAdder={songAdder}
                        functionality={this.openModal}
                        key={idx}
+                       playing={playing}
+                       paused={paused}
                        durationParser={this.durationParser}
-                       button={<i className="fas fa-plus"></i>}/>
+                       button={<i className="fas fa-plus"></i>}
+                       pause={this.props.pause}
+                       play={this.props.play}/>
       );
     });
     return (

@@ -67,6 +67,13 @@ class SearchResults extends React.Component {
     if (this.props.songs[0] !== undefined) {
       songs = this.props.songs.map((song, idx) => {
         let songAdder = (song) => this.handleAddSong(song);
+        let playing;
+        if (this.props.playingSong && this.props.playingSong.id === song.id) {
+          if (this.props.queueIndex === idx || this.props.queueLength === 1) {
+            playing = true;
+          }
+        }
+        let paused = !this.props.playing
         return (
           <SongIndexItem song={song}
                          idx={idx}
@@ -75,7 +82,11 @@ class SearchResults extends React.Component {
                          key={idx}
                          durationParser={this.durationParser}
                          button={<i className="fas fa-plus"></i>}
-                         search={true} />
+                         search={true}
+                         playing={playing}
+                         paused={paused}
+                         pause={this.props.pause}
+                         play={this.props.play} />
         );
       });
       sHeader = <h3 className="search-header">Songs</h3>;

@@ -9,7 +9,7 @@ import {
   removeFollow } from './../../actions/playlist_actions';
 import { fetchSongs } from './../../actions/song_actions';
 import { removeSongToPlaylist } from './../../actions/song_actions';
-import { addPlaylistToQueue, queueSong } from './../../actions/audio_actions';
+import { addPlaylistToQueue, queueSong, pause, play } from './../../actions/audio_actions';
 import { selectPlaylist, selectPlaylistSongs } from './../../reducers/selectors';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
@@ -31,6 +31,7 @@ const mapStateToProps = (state, ownProps) => {
     playingSong: state.ui.audio.songQueue[state.ui.audio.queueSelector],
     queueIndex: state.ui.audio.queueSelector,
     queueLength: state.ui.audio.songQueue.length,
+    playing: state.ui.audio.nowPlaying.playing,
   };
 };
 

@@ -190,6 +190,12 @@ class AudioBar extends React.Component {
       time = "0:00"
     }
 
+    if (this.audio && !this.props.playing) {
+      this.audio.pause();
+    } else if (this.audio && this.props.playing) {
+      this.audio.play();
+    }
+
     return (
       <div className="audio-bar-container">
 
