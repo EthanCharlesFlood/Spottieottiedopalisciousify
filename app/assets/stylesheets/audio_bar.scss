@@ -122,6 +122,8 @@ input[type=range]::-ms-fill-upper {
   width: 300px;
   margin-top: 10px;
   margin-right: -250px;
+  display: flex;
+  flex-direction: row;
 }
 
 .now-playing-img {
@@ -131,15 +133,25 @@ input[type=range]::-ms-fill-upper {
 }
 
 .now-playing-title {
-
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }
 
-.now-playing-title {
-
+.now-playing-song {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: .015em;
+  color: #fff;
 }
 
 .now-playing-artist {
-
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: .015em;
+  text-align: left;
+  color: #b3b3b3;
 }
 
 .audio-bar-volume {
