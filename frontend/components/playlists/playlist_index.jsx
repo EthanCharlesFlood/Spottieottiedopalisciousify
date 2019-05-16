@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import NavBarContainer from './../bars/nav_bar_container';
+import PlaylistItem from './playlist_item';
 
 class PlaylistIndex extends React.Component {
 	componentDidMount() {
@@ -11,23 +12,22 @@ class PlaylistIndex extends React.Component {
 	render() {
     const playlists = this.props.playlists.map(playlist => {
       return (
-      <div key={playlist.id} className="playlist-index-item">
-      <div className="playlist-index-item-container" key={playlist.id}>
-        <Link key={playlist.id} to={`/playlists/${playlist.id}`}>
-					<img className="playlist-index-item-image" key={playlist.id + 1} src={playlist.imgurl}/>
-					<span className="playlist-index-item-link">{playlist.playlist_name}</span>
-				</Link>
-      </div>
-      </div>
+      <PlaylistItem
+				key={playlist.id}
+				playlist={playlist}
+				playing={this.props.playing}
+				playingPlaylist={this.props.playingPlaylist}
+				fetchPlaylist={this.props.fetchPlaylist}
+				addPlaylistToQueue={this.props.addPlaylistToQueue}
+				pause={this.props.pause}
+				play={this.props.play} />
       );
     });
 		return (
 			<div className="component-container">
         <div className="playlist-index-subcontainer">
-          <div className="playlist-index-header">
-            <NavBarContainer />
-            <span className="playlist-index-title">Tunezz</span>
-          </div>
+          <NavBarContainer />
+          <span className="playlist-index-title">Tunezz</span>
           <div className="playlist-index-playlists">
   				       {playlists}
           </div>

@@ -12,7 +12,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-left: -120px;
+  margin-bottom: 5.6em;
 }
 
 .developer-picture {
@@ -29,18 +29,18 @@
 .developer-a {
   color: #fff;
   background-color: #1ed760;
-  font-size: 12px;
+  font-size: .75em;
   line-height: 1;
   border-radius: 500px;
-  width: 100px;
+  width: 6.35em;
   height: 25px;
-  letter-spacing: 1.5px;
+  letter-spacing: .08em;
   text-transform: uppercase;
-  margin-bottom: 5px;
-  margin-top: 5px;
-  padding-top: 15px;
+  margin-bottom: .30em;
+  margin-top: .3em;
+  padding-top: .90em;
   border: none;
-  min-height: 25px;
+  min-height: 1.6em;
   text-decoration: none;
   text-align: center;
 }
@@ -48,19 +48,19 @@
 .developer-logout {
   color: #fff;
   background-color: #1ed760;
-  font-size: 12px;
+  font-size: .75em;
   line-height: 1;
   font-weight: 900;
   border-radius: 500px;
-  width: 100px;
-  height: 25px;
-  min-height: 25px;
-  letter-spacing: 1.5px;
+  width: 6.35em;
+  height: 1.6em;
+  min-height: 1.6em;
+  letter-spacing: .08em;
   text-transform: uppercase;
   border: none;
-  margin-top: 5px;
-  padding-top: 15px;
-  padding-bottom: 25px;
+  margin-top: .3em;
+  padding-top: .90em;
+  padding-bottom: 1.6em;
   text-align: center;
   cursor: pointer;
 }

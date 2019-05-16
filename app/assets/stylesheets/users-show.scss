@@ -3,8 +3,8 @@
 	height: 100vh;
   background: #1a1a1a;
   justify-content: center;
-  padding-bottom: 2000px;
 	min-width: 1350px;
+	padding-bottom: 10em;
 }
 
 .users-show-subcontainer {
@@ -13,15 +13,14 @@
   align-items: center;
   width: 100%;
   min-width: 1250px;
-  left: 120px;
+	margin-left: 10em;
 }
 
 .users-show-playlists {
   width: 900px;
-  margin: 0 25px 0 25px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   min-width: 900px;
 }

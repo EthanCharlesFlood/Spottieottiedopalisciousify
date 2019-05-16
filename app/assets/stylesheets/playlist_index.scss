@@ -8,10 +8,13 @@
   min-width: 1250px;
   position: fixed;
   left: 125px;
+	overflow-y: scroll;
 }
 
 .playlist-index-playlists {
-
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
 }
 
 .playlist-index-subcontainer {
@@ -21,8 +24,6 @@
   flex-wrap: wrap;
   width: 100%;
   overflow-y: scroll;
-  padding-bottom: 300px;
-	overflow-y: scroll;
 }
 
 .playlist-index-header {
@@ -45,6 +46,8 @@
   align-items: center;
 	text-decoration: none;
 	color: white;
+	width: 13em;
+	height: 14em;
   margin: 50px;
   margin-top: 75px;
 }
@@ -95,11 +98,18 @@
   line-height: 20px;
   letter-spacing: .015em;
   font-weight: 400;
+	margin-top: -5em;
   color: #fff;
   text-transform: none;
-  max-height: 560px;
   text-overflow: ellipsis;
 	text-decoration: none;
-	text-align: center;
+	text-align: start;
 	text-decoration: none;
+}
+
+#playlist-index-play-button {
+	position: relative;
+	bottom: 4em;
+	font-size: 2em;
+	padding: 0 1em 1em 1em;
 }

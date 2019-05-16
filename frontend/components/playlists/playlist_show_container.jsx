@@ -48,6 +48,8 @@ const mapDispatchToProps = (dispatch) => {
     queueSong: (song) => dispatch(queueSong(song)),
     openModal: (payload) => dispatch(openModal(payload)),
     closeModal: () => dispatch(closeModal()),
+    pause: () => dispatch(pause()),
+    play: () => dispatch(play())
   };
 };
 

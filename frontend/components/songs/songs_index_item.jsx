@@ -8,22 +8,24 @@ class SongIndexItem extends React.Component {
     this.onMouseEnter = this.onMouseEnter.bind(this);
     this.onMouseLeave = this.onMouseLeave.bind(this);
     this.state = {
-      icon: <i className="fas fa-music"></i>,
+      icon: "fas fa-music",
       button: null
     };
   }
 
   onMouseEnter(e) {
+    e.stopPropagation();
     this.setState({
-      icon: <i className="fas fa-play"></i>,
+      icon: "fas fa-play",
       button: this.props.button
      });
   }
 
   onMouseLeave(e) {
+    e.stopPropagation();
     this.setState({
       button: null,
-      icon: <i className="fas fa-music"></i>
+      icon: "fas fa-music"
     });
   }
 
@@ -62,17 +64,19 @@ class SongIndexItem extends React.Component {
         }
         icon = <i style={color}
                   id="small-pause"
+                  onClick={songAdder}
                   className="far fa-pause-circle"></i>;
       } else {
         songAdder = () => {
           this.props.play();
         }
         icon = <i style={color}
+                  onClick={songAdder}
                   className="fas fa-play"></i>
       }
     } else {
       color = { color: "#fff" };
-      icon = this.state.icon;
+      icon = <i onClick={this.props.songAdder} className={this.state.icon}></i>;
     }
     return (
       <li key={song.id}
@@ -85,7 +89,9 @@ class SongIndexItem extends React.Component {
         <span key={song.id} className={class2}>
           <span key={Math.random()}
             id={this.props.idx}
-            className="play-button" style={color}>{icon}</span>
+            className="play-button"
+            style={color}
+            onClick={songAdder}>{icon}</span>
           <span style={color}>{song.song_name}</span>
           <br></br>
           <span className="song-index-artist-album">{artist} - {song.album}</span>
