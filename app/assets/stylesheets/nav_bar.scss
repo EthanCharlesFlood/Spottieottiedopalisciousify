@@ -22,6 +22,20 @@
   margin-right: 15px;
 }
 
+.navbar-button-underlined {
+  font-family: Helvetica,Helvetica,Arial,sans-serif;
+  background: none;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: hsla(0,0%,100%,1);
+  margin-left: 15px;
+  margin-right: 15px;
+  border-bottom: .2em solid #1db954;
+}
+
 .navbar-button:hover {
   transition-property: color;
   transition-duration: .2s;

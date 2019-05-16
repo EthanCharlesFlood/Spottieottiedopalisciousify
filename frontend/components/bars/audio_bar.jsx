@@ -168,7 +168,10 @@ class AudioBar extends React.Component {
     if (this.props.playingSong) {
       info = <div className="now-playing-info">
               <img src={this.props.playingSong.imgurl} className="now-playing-img" />
-              <span className="now-playing-title">{this.props.playingSong.song_name} - {this.props.playingSong.artist}</span>
+              <div className="now-playing-title">
+                <span className="now-playing-song">{this.props.playingSong.song_name}</span>
+                <span className="now-playing-artist">{this.props.playingSong.artist}</span>
+              </div>
             </div>;
       song = this.props.playingSong.songurl;
     } else {
