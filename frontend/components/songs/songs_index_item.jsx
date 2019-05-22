@@ -30,7 +30,6 @@ class SongIndexItem extends React.Component {
   }
 
   render() {
-    console.log(1);
     const song = this.props.song;
     let artist;
     if (song.artist.artist_name !== undefined) {
@@ -76,13 +75,13 @@ class SongIndexItem extends React.Component {
       }
     } else {
       color = { color: "#fff" };
-      icon = <i onClick={this.props.songAdder} className={this.state.icon}></i>;
+      icon = <i className={this.state.icon}></i>;
     }
     return (
       <li key={song.id}
           id={this.props.idx}
           className={class1}
-          onMouseOver={this.onMouseEnter}
+          onMouseEnter={this.onMouseEnter}
           onMouseLeave={this.onMouseLeave}
           onClick={songAdder}
           style={background}>

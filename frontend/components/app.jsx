@@ -23,10 +23,8 @@ import DeveloperContainer from './developer/developer_container';
 
 const App = (props) => {
   return (
-    <div>
+    <div className="app-container">
       <Modal />
-      <ProtectedRoute path='/' component={AudioBarContainer} />
-      <ProtectedRoute path='/' component={SideBarContainer} />
       <Switch>
 			  <ProtectedRoute exact path="/main" component={MainContainer} />
 			  <ProtectedRoute exact path="/user/:userid" component={UsersShowContainer} />
@@ -35,6 +33,8 @@ const App = (props) => {
         <ProtectedRoute exact path='/search' component={SearchContainer} />
         <ProtectedRoute exact path='/developer' component={DeveloperContainer} />
       </Switch>
+      <ProtectedRoute path='/' component={AudioBarContainer} />
+      <ProtectedRoute path='/' component={SideBarContainer} />
       <Switch>
         <AuthRoute exact path="/" component={Greeting} />
         <AuthRoute exact path="/login" component={LoginFormContainer} />

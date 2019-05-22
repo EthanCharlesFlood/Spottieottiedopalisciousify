@@ -55,8 +55,10 @@ class PlaylistItem extends React.Component {
     let style = { visibility: this.state.visible};
     let icon = "fas fa-play";
     let imageStyle = { filter: "none" };
-    if (this.props.playing && this.isPlaying()) {
-      icon = "far fa-pause-circle";
+    if (this.isPlaying()) {
+      if (this.props.playing) {
+        icon = "far fa-pause-circle";
+      }
       imageStyle = { filter: "brightness(.3)" };
       style = { visibility: "visible" } ;
     }
