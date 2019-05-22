@@ -3,12 +3,8 @@
   flex-direction: row;
   justify-content: center;
   font-family: Helvetica,Helvetica,Arial,sans-serif;
-  margin: 0;
-  width: 100%;
-  min-width: 1250px;
-  position: fixed;
-  left: 125px;
-	overflow-y: scroll;
+  width: 83%;
+	height: 89%;
 }
 
 .playlist-index-playlists {
@@ -74,6 +70,14 @@
   color: #fff;
 	text-decoration: none;
 }
+.playlist-index-playlists {
+	min-width: 700px;
+	width: 900px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
 
 .playlist-index-item-image {
   width: 200px;
@@ -84,14 +88,6 @@
 	filter: brightness(.3);
 }
 
-.playlist-index-playlists {
-  min-width: 700px;
-  width: 900px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
 
 .playlist-index-item-link {
   font-size: 14px;

@@ -1,12 +1,9 @@
-.search-top {
-
-}
 
 .search-container {
   display: flex;
-  height: 100vh;
   background: #1a1a1a;
   justify-content: center;
+  width: 83%;
   color: #fff;
 }
 
@@ -18,8 +15,6 @@
   align-items: center;
   opacity: 1;
   background-color: #282828;
-  position: fixed;
-  margin-left: 198px;
   caret-color: #1db954;
 }
 
@@ -41,9 +36,7 @@
 .search-results-container {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 76px;
-  margin-left: 198px;
-  width: 900px;
+  width: 100%;
   justify-content: center;
 }
 
@@ -61,14 +54,12 @@
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
-  padding-bottom: 300px;
 }
 
 .search-songs-list {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 700px;
   width: 100%;
 }
 

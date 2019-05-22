@@ -1,6 +1,6 @@
 .playlist-show-container {
   display: flex;
-	height: 100vh;
+	height: 89%;
   background: #1a1a1a;
   justify-content: center;
 }
@@ -10,9 +10,6 @@
   display: flex;
   justify-content: flex-start;
   border-bottom: 1px solid hsla(0,0%,100%,.1);
-  padding-bottom: 30px;
-  position: fixed;
-  left: 250px;
 }
 
 .playlist-show-info {
@@ -116,10 +113,6 @@
   line-height: 22px;
   letter-spacing: .015em;
   color: #fff;
-  width: 800px;
-  position: fixed;
-  left: 250px;
-  top: 250px;
 }
 
 .fa-music:hover {
