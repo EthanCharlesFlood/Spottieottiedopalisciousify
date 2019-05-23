@@ -27,7 +27,7 @@ class PlaylistIndex extends React.Component {
 			<div className="component-container">
         <div className="playlist-index-subcontainer">
           <NavBarContainer />
-          <span className="playlist-index-title">Tunezz</span>
+          <span className="playlist-index-title">Playlists</span>
           <div className="playlist-index-playlists">
   				       {playlists}
           </div>

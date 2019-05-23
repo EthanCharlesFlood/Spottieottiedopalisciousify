@@ -10,7 +10,6 @@
   width: 100%;
   display: flex;
   justify-content: flex-start;
-  border-bottom: 1px solid hsla(0,0%,100%,.1);
   flex-direction: column;
 }
 
@@ -18,7 +17,7 @@
   margin-left: 40px;
   margin-top: 40px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .playlist-show-play {
@@ -72,11 +71,12 @@
   color: #fff;
   text-transform: none;
   height: 35px;
+  text-overflow: ellipsis;
 }
 
 .playlist-show-image {
-  width: 157px;
-  height: 157px;
+  width: 25em;
+  height: 25em;
 }
 
 .playlist-show-song-count {

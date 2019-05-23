@@ -39,8 +39,6 @@ class PlaylistItem extends React.Component {
   }
 
   play(e) {
-    console.log(this.props.playing);
-    console.log(this.isPlaying());
     e.preventDefault();
     if (!this.isPlaying() && !this.props.paused) {
       this.props.fetchPlaylist(this.props.playlist.id).then(
@@ -77,12 +75,12 @@ class PlaylistItem extends React.Component {
           key={playlist.id + 1}
           src={playlist.imgurl}
           style={imageStyle}/>
+        {playlist.playlist_name}
         <div onClick={this.play}
            style={style}
            id="playlist-index-play-button">
            <i className={icon}></i>
          </div>
-        {playlist.playlist_name}
       </Link>
     </div>
     );
