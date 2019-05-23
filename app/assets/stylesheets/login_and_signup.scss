@@ -1,8 +1,17 @@
 .user-form-container {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-start;
   flex-direction: column;
+  width: 100%;
+  background-color: white;
+}
+
+.user-form-items {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .user-form-container i {

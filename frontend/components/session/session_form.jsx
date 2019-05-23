@@ -57,6 +57,7 @@ class SessionForm extends React.Component {
     return (
       <div className={"user-form-container"}>
         <h1 className="user-form-header"><i className="fab fa-spotify" />Spottieottiedopalisciousify</h1>
+        <div className="user-form-items">
           <form className="user-form" onSubmit={this.handleSubmit}>
             <input className="user-form-input" type="text" placeholder="Username" onChange={this.update("username")}></input>
             {emailForm}
@@ -64,9 +65,10 @@ class SessionForm extends React.Component {
             {this.renderErrors()}
             <input type="submit" className={"user-form-submit"} value={this.props.formHeader}/>
           </form>
-        <button className="user-form-demo" onClick={this.props.demoLogin.bind(this)}>Demo Login</button>
-        {this.props.link}
-        <p className="user-form-terms">We do not have any terms here at Spottieottiedopalisciousify! Relax, you're doing great!</p>
+          <button className="user-form-demo" onClick={this.props.demoLogin.bind(this)}>Demo Login</button>
+          {this.props.link}
+          <p className="user-form-terms">We do not have any terms here at Spottieottiedopalisciousify! Relax, you're doing great!</p>
+        </div>
       </div>
     );
   }
