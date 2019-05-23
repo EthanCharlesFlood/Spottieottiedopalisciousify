@@ -4,7 +4,7 @@
   justify-content: center;
   font-family: Helvetica,Helvetica,Arial,sans-serif;
   width: 83%;
-	height: 89%;
+	height: 88%;
 }
 
 .playlist-index-playlists {
@@ -39,7 +39,7 @@
 .playlist-index-item-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 	text-decoration: none;
 	color: white;
 	width: 13em;

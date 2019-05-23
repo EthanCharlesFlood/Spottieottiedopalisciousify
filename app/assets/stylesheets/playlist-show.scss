@@ -1,15 +1,17 @@
 .playlist-show-container {
   display: flex;
-	height: 89%;
+	height: 88%;
   background: #1a1a1a;
   justify-content: center;
+  width: 84%;
 }
 
 .playlist-show-items {
-  width: 900px;
+  width: 100%;
   display: flex;
   justify-content: flex-start;
   border-bottom: 1px solid hsla(0,0%,100%,.1);
+  flex-direction: column;
 }
 
 .playlist-show-info {
@@ -112,6 +114,10 @@
   font-size: 16px;
   line-height: 22px;
   letter-spacing: .015em;
+  overflow-y: auto;
+  margin-right: 3%;
+  margin-top: 3%;
+  width: 100%;
   color: #fff;
 }
 

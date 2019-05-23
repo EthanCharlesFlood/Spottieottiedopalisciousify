@@ -1,18 +1,11 @@
 .developer-container {
   display: flex;
-	height: 100vh;
-  background: linear-gradient(rgb(72, 77, 81), rgb(7, 8, 8) 85%);
+  align-items: center;
   justify-content: center;
+  flex-direction: column;
   color: #fff;
   font-weight: 900;
-}
-
-.developer-inner-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-bottom: 5.6em;
+  width: 83%;
 }
 
 .developer-picture {

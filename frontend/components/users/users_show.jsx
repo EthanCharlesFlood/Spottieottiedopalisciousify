@@ -46,10 +46,7 @@ class UsersShow extends React.Component {
           {this.props.createModal}
           <div className="users-show-playlists">
             {playlists}
-            <span className="users-show-followed-title">Followed Playlists</span>
-            <div className="users-show-followed-playlists">
-              {followedPlaylists}
-            </div>
+            {followedPlaylists}
           </div>
       </div>
     );

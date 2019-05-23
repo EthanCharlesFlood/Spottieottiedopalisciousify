@@ -13,14 +13,11 @@ class Developer extends React.Component {
   render() {
     return (
       <div className="developer-container">
-        <SideBarContainer />
-        <div className="developer-inner-container">
           <img className="developer-picture" src={this.props.currentUser.imageurl} />
           <span className="developer-name">Site Created by Ethan Charles Flood</span>
           <a href="https://github.com/EthanCharlesFlood" className="developer-a">Github</a>
           <a href="https://www.linkedin.com/in/ethan-flood-58239589/" className="developer-a">Linkedin</a>
           <button className="developer-logout" onClick={this.logout}>Log Out</button>
-        </div>
       </div>
     );
   }
