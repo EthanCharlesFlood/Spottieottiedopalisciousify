@@ -39,12 +39,15 @@ class PlaylistItem extends React.Component {
   }
 
   play(e) {
+    console.log(this.props.playing);
+    console.log(this.isPlaying());
     e.preventDefault();
-    if (!this.props.playing && !this.props.paused) {
+    if (!this.isPlaying() && !this.props.paused) {
       this.props.fetchPlaylist(this.props.playlist.id).then(
         playlist => this.props.addPlaylistToQueue(Object.values(playlist.songs))
       );
-    } else if (this.isPlaying() && !this.props.paused) {
+    } else
+    if (this.props.playing && !this.props.paused) {
       this.props.pause();
     } else {
       this.props.play();
