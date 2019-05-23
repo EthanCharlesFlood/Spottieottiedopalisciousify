@@ -77,9 +77,7 @@ class PlaylistItem extends React.Component {
            id="playlist-index-play-button">
            <i className={icon}></i>
          </div>
-        <span className="playlist-index-item-link">
-          {playlist.playlist_name}
-        </span>
+        {playlist.playlist_name}
       </Link>
     </div>
     );

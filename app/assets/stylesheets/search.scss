@@ -40,7 +40,7 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .search-header {
@@ -49,6 +49,7 @@
   letter-spacing: -.005em;
   color: #fff;
   margin-bottom: 15px;
+  width: 100%;
 }
 
 .search-playlists-list {
@@ -79,10 +80,6 @@
   color: #fff;
 }
 
-.search-songs-list-title {
-
-}
-
-.search-songs-list-features {
-
+ul.playlist-index-playlists {
+  margin-left: 2%;
 }

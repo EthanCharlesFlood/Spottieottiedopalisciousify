@@ -44,7 +44,7 @@ class UsersShow extends React.Component {
       <div className="users-show-container">
           <NavBarContainer />
           {this.props.createModal}
-          <div className="users-show-playlists">
+          <div className="playlist-index-playlists">
             {playlists}
             {followedPlaylists}
           </div>

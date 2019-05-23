@@ -101,7 +101,7 @@ class SearchResults extends React.Component {
             {songs}
           </ul>
           {pHeader}
-          <ul className="search-playlists-list">
+          <ul className="playlist-index-playlists">
             {playlists}
           </ul>
 
