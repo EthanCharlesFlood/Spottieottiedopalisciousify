@@ -1,8 +1,9 @@
 import React from "react";
 import { connect } from 'react-redux';
 import SearchResults from "./search_results";
-import { queueSong, pause, play } from '../../actions/audio_actions';
+import { addPlaylistToQueue, queueSong, pause, play } from '../../actions/audio_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
+import { fetchPlaylist } from '../../actions/playlist_actions';
 
 const mapStateToProps = (state) => {
   return {
@@ -22,6 +23,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     closeModal: () => dispatch(closeModal()),
     pause: () => dispatch(pause()),
     play: () => dispatch(play()),
+    fetchPlaylist: (id) => dispatch(fetchPlaylist(id)),
+    addPlaylistToQueue: (playlist) => dispatch(addPlaylistToQueue(playlist)),
   };
 };
 

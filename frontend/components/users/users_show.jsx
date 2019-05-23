@@ -1,7 +1,6 @@
 import React from 'react';
-import SideBarContainer from './../bars/side_bar_container';
 import NavBarContainer from './../bars/nav_bar_container';
-import AudioBarContainer from './../bars/audio_bar_container';
+import PlaylistItem from './../playlists/playlist_item';
 import { Link } from 'react-router-dom';
 import Modal from '../modal/modal';
 
@@ -15,12 +14,15 @@ class UsersShow extends React.Component {
   render() {
     const playlists = this.props.playlists.map(playlist => {
       return (
-      <div key={playlist.id} className="playlist-index-item">
-        <Link className="playlist-index-item-container" key={playlist.id} to={`/playlists/${playlist.id}`}>
-          <img className="playlist-index-item-image" src={playlist.imgurl}/>
-          <div className="playlist-index-item-link">{playlist.playlist_name}</div>
-        </Link>
-      </div>
+      <PlaylistItem
+				key={playlist.id}
+				playlist={playlist}
+				playing={this.props.playing}
+				playingPlaylist={this.props.playingPlaylist}
+				fetchPlaylist={this.props.fetchPlaylist}
+				addPlaylistToQueue={this.props.addPlaylistToQueue}
+				pause={this.props.pause}
+				play={this.props.play} />
       );
     });
 
@@ -29,13 +31,16 @@ class UsersShow extends React.Component {
     if (this.props.followedPlaylists[0] !== undefined) {
     followedPlaylists = this.props.followedPlaylists.map(playlist => {
       return (
-        <div key={playlist.id} className="playlist-index-item">
-        <Link className="playlist-index-item-container" key={playlist.id} to={`/playlists/${playlist.id}`}>
-          <img className="playlist-index-item-image" src={playlist.imgurl}/>
-          <div className="playlist-index-item-link">{playlist.playlist_name}</div>
-        </Link>
-        </div>
-        );
+      <PlaylistItem
+				key={playlist.id}
+				playlist={playlist}
+				playing={this.props.playing}
+				playingPlaylist={this.props.playingPlaylist}
+				fetchPlaylist={this.props.fetchPlaylist}
+				addPlaylistToQueue={this.props.addPlaylistToQueue}
+				pause={this.props.pause}
+				play={this.props.play} />
+      );
       });
     } else {
       followedPlaylists = "";

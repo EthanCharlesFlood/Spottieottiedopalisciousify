@@ -67,7 +67,9 @@ class PlaylistItem extends React.Component {
          key={playlist.id}
          onMouseEnter={this.onMouseEnter}
          onMouseLeave={this.onMouseLeave}>
-      <Link key={playlist.id} to={`/playlists/${playlist.id}`}>
+      <Link className="playlist-index-item-big-link"
+            key={playlist.id}
+            to={`/playlists/${playlist.id}`}>
         <img className="playlist-index-item-image"
           key={playlist.id + 1}
           src={playlist.imgurl}

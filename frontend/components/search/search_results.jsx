@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import Modal from '../modal/modal';
 import SongIndexItem from './../songs/songs_index_item';
+import PlaylistItem from './../playlists/playlist_item';
 
 
 class SearchResults extends React.Component {
@@ -48,12 +49,15 @@ class SearchResults extends React.Component {
     if (this.props.playlists[0] !== undefined) {
       playlists = this.props.playlists.map(playlist => {
         return (
-        <div key={playlist.id} className="playlist-index-item">
-          <Link className="playlist-index-item-container" key={playlist.id} to={`/playlists/${playlist.id}`}>
-            <img className="playlist-index-item-image" src={playlist.imgurl}/>
-            <div className="playlist-index-item-link">{playlist.playlist_name}</div>
-          </Link>
-        </div>
+        <PlaylistItem
+          key={playlist.id}
+          playlist={playlist}
+          playing={this.props.playing}
+          playingPlaylist={this.props.playingPlaylist}
+          fetchPlaylist={this.props.fetchPlaylist}
+          addPlaylistToQueue={this.props.addPlaylistToQueue}
+          pause={this.props.pause}
+          play={this.props.play} />
         );
       });
       pHeader = <h3 className="search-header">Playlists</h3>;

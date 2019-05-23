@@ -3,10 +3,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { logout } from './../../actions/session_actions';
 import UsersShow from './users_show';
-import { fetchPlaylists } from './../../actions/playlist_actions';
+import { fetchPlaylists, fetchPlaylist } from './../../actions/playlist_actions';
 import { selectPlaylists, selectFollowedPlaylists } from './../../reducers/selectors';
 import { openModal, closeModal } from '../../actions/modal_actions';
-
+import { addPlaylistToQueue, pause, play } from "./../../actions/audio_actions";
 
 const mapStateToProps = (state) => {
   const currentUser = state.entities.users[state.session.id];
@@ -15,6 +15,8 @@ const mapStateToProps = (state) => {
     currentUser: currentUser,
     playlists: selectPlaylists(state),
     followedPlaylists: selectFollowedPlaylists(state),
+    playing: state.ui.audio.nowPlaying.playing,
+    playingPlaylist: state.ui.audio.songQueue,
   };
 };
 
@@ -28,6 +30,10 @@ const mapDispatchToProps = (dispatch) => {
       </button>
     ),
     closeModal: () => dispatch(closeModal()),
+    fetchPlaylist: (id) => dispatch(fetchPlaylist(id)),
+    addPlaylistToQueue: (playlist) => dispatch(addPlaylistToQueue(playlist)),
+    pause: () => dispatch(pause()),
+    play: () => dispatch(play()),
   };
 };
 
